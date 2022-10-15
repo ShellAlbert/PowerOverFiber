@@ -1,0 +1,130 @@
+(ExpressProject "SerialCamera"
+  (ProjectVersion "19981106")
+  (SoftwareVersion "17.4-2019 S017 (3936576)  [4/19/2021]-[10/15/22]")
+  (ProjectType "PCB")
+  (Folder "Design Resources"
+    (Folder "Library"
+      (File ".\library1.olb"
+        (Type "Schematic Library")))
+    ("Allegro Netlist Directory" "allegro")
+    (DOCKED "TRUE")
+    (DOCKING_POSITION "59420")
+    (NoModify)
+    (File ".\serialcamera.dsn"
+      (Type "Schematic Design"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x")
+    (Display_Online_DRC_Results "FALSE")
+    (Board_sim_option "VHDL_flow"))
+  (Folder "Layout")
+  (Folder "Outputs")
+  (Folder "Referenced Projects")
+  (Folder "PSpice Resources"
+    (Folder "Simulation Profiles")
+    (Folder "Model Libraries"
+      (Sort User))
+    (Folder "Stimulus Files"
+      (Sort User))
+    (Folder "Include Files"
+      (Sort User)))
+  (Folder "Logs")
+  (PartMRUSelector
+    (GND
+      (LibraryName
+         "C:\CADENCE\CADENCE_SPB_17.4-2019\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    (VCC_BAR
+      (LibraryName
+         "C:\CADENCE\CADENCE_SPB_17.4-2019\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    (MAX4761EBX+T
+      (FullPartName "MAX4761EBX+T.Normal")
+      (LibraryName "D:\WORK\GITHUB\POWEROVERFIBER\SCHEMATIC\LIBRARY1.OLB")
+      (DeviceIndex "0"))
+    (STM32L496ZGT6
+      (FullPartName "STM32L496ZGT6.Normal")
+      (LibraryName "D:\WORK\GITHUB\POWEROVERFIBER\SCHEMATIC\LIBRARY1.OLB")
+      (DeviceIndex "0"))
+    (IS66WVE2M16EBLL-70BLI-TR
+      (FullPartName "IS66WVE2M16EBLL-70BLI-TR.Normal")
+      (LibraryName "D:\WORK\GITHUB\POWEROVERFIBER\SCHEMATIC\LIBRARY1.OLB")
+      (DeviceIndex "0"))
+    (Header2x35
+      (FullPartName "Header2x35.Normal")
+      (LibraryName "D:\WORK\GITHUB\POWEROVERFIBER\SCHEMATIC\LIBRARY1.OLB")
+      (DeviceIndex "0"))
+    ("RESISTOR VAR"
+      (FullPartName "RESISTOR VAR.Normal")
+      (LibraryName
+         "C:\CADENCE\CADENCE_SPB_17.4-2019\TOOLS\CAPTURE\LIBRARY\DISCRETE.OLB")
+      (DeviceIndex "0"))
+    ("RESISTOR VAR 2"
+      (FullPartName "RESISTOR VAR 2.Normal")
+      (LibraryName
+         "C:\CADENCE\CADENCE_SPB_17.4-2019\TOOLS\CAPTURE\LIBRARY\DISCRETE.OLB")
+      (DeviceIndex "0"))
+    (ADA4051-2ARMZ
+      (FullPartName "ADA4051-2ARMZ.Normal")
+      (LibraryName "D:\WORK\GITHUB\POWEROVERFIBER\SCHEMATIC\LIBRARY1.OLB")
+      (DeviceIndex "0"))
+    (Header2x9
+      (FullPartName "Header2x9.Normal")
+      (LibraryName "D:\WORK\GITHUB\POWEROVERFIBER\SCHEMATIC\LIBRARY1.OLB")
+      (DeviceIndex "0"))
+    (TPS22976ADPUR
+      (FullPartName "TPS22976ADPUR.Normal")
+      (LibraryName "D:\WORK\GITHUB\POWEROVERFIBER\SCHEMATIC\LIBRARY1.OLB")
+      (DeviceIndex "0"))
+    (ADCMP380-1ACBZ-RL7
+      (FullPartName "ADCMP380-1ACBZ-RL7.Normal")
+      (LibraryName "D:\WORK\GITHUB\POWEROVERFIBER\SCHEMATIC\LIBRARY1.OLB")
+      (DeviceIndex "0"))
+    (ADA4051-1AKSZ-R7
+      (FullPartName "ADA4051-1AKSZ-R7.Normal")
+      (LibraryName "D:\WORK\GITHUB\POWEROVERFIBER\SCHEMATIC\LIBRARY1.OLB")
+      (DeviceIndex "0"))
+    (LTC3539EDCB#PBF
+      (FullPartName "LTC3539EDCB#PBF.Normal")
+      (LibraryName "D:\WORK\GITHUB\POWEROVERFIBER\SCHEMATIC\LIBRARY1.OLB")
+      (DeviceIndex "0"))
+    (C
+      (FullPartName "C.Normal")
+      (LibraryName
+         "C:\CADENCE\CADENCE_SPB_17.4-2019\TOOLS\CAPTURE\LIBRARY\DISCRETE.OLB")
+      (DeviceIndex "0"))
+    ("T POINT A"
+      (FullPartName "T POINT A.Normal")
+      (LibraryName
+         "C:\CADENCE\CADENCE_SPB_17.4-2019\TOOLS\CAPTURE\LIBRARY\DISCRETE.OLB")
+      (DeviceIndex "0"))
+    ("CAP NP"
+      (FullPartName "CAP NP.Normal")
+      (LibraryName
+         "C:\CADENCE\CADENCE_SPB_17.4-2019\TOOLS\CAPTURE\LIBRARY\DISCRETE.OLB")
+      (DeviceIndex "0"))
+    (R
+      (FullPartName "R.Normal")
+      (LibraryName
+         "C:\CADENCE\CADENCE_SPB_17.4-2019\TOOLS\CAPTURE\LIBRARY\DISCRETE.OLB")
+      (DeviceIndex "0"))
+    (INDUCTOR
+      (FullPartName "INDUCTOR.Normal")
+      (LibraryName
+         "C:\CADENCE\CADENCE_SPB_17.4-2019\TOOLS\CAPTURE\LIBRARY\DISCRETE.OLB")
+      (DeviceIndex "0"))
+    (LTC3105EDD#PBF
+      (FullPartName "LTC3105EDD#PBF.Normal")
+      (LibraryName "D:\WORK\GITHUB\POWEROVERFIBER\SCHEMATIC\LIBRARY1.OLB")
+      (DeviceIndex "0")))
+  (MPSSessionName "Administrator")
+  (LastUsedLibraryBrowseDirectory
+     "C:\Cadence\Cadence_SPB_17.4-2019\tools\capture\library")
+  (GlobalState
+    (FileView
+      (Path "Design Resources"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -1 -1 0 289 0 547"))
+      (Tab 0))))
