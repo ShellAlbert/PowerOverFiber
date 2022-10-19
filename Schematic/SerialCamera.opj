@@ -1,12 +1,13 @@
 (ExpressProject "SerialCamera"
   (ProjectVersion "19981106")
-  (SoftwareVersion "17.4-2019 S017 (3936576)  [4/19/2021]-[10/17/22]")
+  (SoftwareVersion "17.4-2019 S017 (3936576)  [4/19/2021]-[10/19/22]")
   (ProjectType "PCB")
   (Folder "Design Resources"
     (Folder "Library"
       (File ".\library1.olb"
         (Type "Schematic Library")))
-    ("Allegro Netlist Directory" "allegro")
+    ("Allegro Netlist Directory"
+       "D:\Work\GitHub\PowerOverFiber\Schematic\Netlist")
     (DOCKED "TRUE")
     (DOCKING_POSITION "59420")
     (NoModify)
@@ -15,9 +16,48 @@
     (BuildFileAddedOrDeleted "x")
     (CompileFileAddedOrDeleted "x")
     (Display_Online_DRC_Results "FALSE")
+    (BOM_Scope "0")
+    (BOM_Mode "0")
+    (BOM_Report_File "D:\WORK\GITHUB\POWEROVERFIBER\SCHEMATIC\SERIALCAMERA.BOM")
+    (BOM_Merge_Include "FALSE")
+    (BOM_Property_Combine_7.0
+       "{Item}\t{Quantity}\t{Reference}\t{Value}\t{PCB Footprint}\t{Memo}")
+    (BOM_Header "Item\tQuantity\tReference\tPart\tPCBFootprint\tMemo")
+    (BOM_Include_File
+       "D:\WORK\GITHUB\POWEROVERFIBER\SCHEMATIC\SERIALCAMERA.INC")
+    (BOM_Include_File_Combine_7.0 "{Item}\t{Quantity}\t{Reference}\t{Value}")
+    (BOM_One_Part_Per_Line "FALSE")
+    (Open_BOM_in_Excel "TRUE")
+    (BOM_View_Output "FALSE")
+    (Netlist_TAB "0")
+    ("Create Allegro Netlist" "TRUE")
+    ("View Allegro Netlist Files" "FALSE")
+    ("Allegro Netlist Create DCF File" "FALSE")
+    ("Update Allegro Board" "FALSE")
+    ("Allegro Netlist Output Board File" ".\allegro\serialcamera.brd")
+    ("Allegro Netlist Remove Etch" "FALSE")
+    ("Allegro Netlist Place Changed Component" "ALWAYS_REPLACE")
+    ("Allegro Netlist Open Board in Allegro" "ALLEGRO")
+    ("Allegro Setup Backup Versions" "3")
+    ("Allegro Setup Ignore Constraints" "FALSE")
+    ("Allegro Setup Part Type Length" "255")
+    ("Allegro Netlist Combine Property String" "PCB Footprint")
+    ("Allegro Netlist Ignore Fixed Property" "FALSE")
+    ("Allegro Netlist User Defined Property" "FALSE")
     (Board_sim_option "VHDL_flow"))
   (Folder "Layout")
-  (Folder "Outputs")
+  (Folder "Outputs"
+    (File ".\serialcamera.bom"
+      (Type "Report"))
+    (File ".\netlist\pstxnet.dat"
+      (Type "Report")
+      (DisplayName "pstxnet.dat"))
+    (File ".\netlist\pstxprt.dat"
+      (Type "Report")
+      (DisplayName "pstxprt.dat"))
+    (File ".\netlist\pstchip.dat"
+      (Type "Report")
+      (DisplayName "pstchip.dat")))
   (Folder "Referenced Projects")
   (Folder "PSpice Resources"
     (Folder "Simulation Profiles")
@@ -29,9 +69,27 @@
       (Sort User)))
   (Folder "Logs")
   (PartMRUSelector
+    (MAX4754AEBE+T
+      (FullPartName "MAX4754AEBE+T.Normal")
+      (LibraryName "D:\WORK\GITHUB\POWEROVERFIBER\SCHEMATIC\LIBRARY1.OLB")
+      (DeviceIndex "0"))
+    (FH3415A
+      (FullPartName "FH3415A.Normal")
+      (LibraryName "D:\WORK\GITHUB\POWEROVERFIBER\SCHEMATIC\LIBRARY1.OLB")
+      (DeviceIndex "0"))
+    ("MOSFET P"
+      (FullPartName "MOSFET P.Normal")
+      (LibraryName
+         "C:\CADENCE\CADENCE_SPB_17.4-2019\TOOLS\CAPTURE\LIBRARY\DISCRETE.OLB")
+      (DeviceIndex "0"))
     (GND
       (LibraryName
          "C:\CADENCE\CADENCE_SPB_17.4-2019\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    ("T POINT S"
+      (FullPartName "T POINT S.Normal")
+      (LibraryName
+         "C:\CADENCE\CADENCE_SPB_17.4-2019\TOOLS\CAPTURE\LIBRARY\DISCRETE.OLB")
       (DeviceIndex "0"))
     (HDC1010YPAR
       (FullPartName "HDC1010YPAR.Normal")
@@ -65,10 +123,6 @@
       (FullPartName "LED.Normal")
       (LibraryName
          "C:\CADENCE\CADENCE_SPB_17.4-2019\TOOLS\CAPTURE\LIBRARY\DISCRETE.OLB")
-      (DeviceIndex "0"))
-    (MAX4754AEBE+T
-      (FullPartName "MAX4754AEBE+T.Normal")
-      (LibraryName "D:\WORK\GITHUB\POWEROVERFIBER\SCHEMATIC\LIBRARY1.OLB")
       (DeviceIndex "0"))
     (SN74LVC1G08QDBVRQ1
       (FullPartName "SN74LVC1G08QDBVRQ1.Normal")
@@ -125,18 +179,6 @@
     (Header2x9
       (FullPartName "Header2x9.Normal")
       (LibraryName "D:\WORK\GITHUB\POWEROVERFIBER\SCHEMATIC\LIBRARY1.OLB")
-      (DeviceIndex "0"))
-    (TPS22976ADPUR
-      (FullPartName "TPS22976ADPUR.Normal")
-      (LibraryName "D:\WORK\GITHUB\POWEROVERFIBER\SCHEMATIC\LIBRARY1.OLB")
-      (DeviceIndex "0"))
-    (ADCMP380-1ACBZ-RL7
-      (FullPartName "ADCMP380-1ACBZ-RL7.Normal")
-      (LibraryName "D:\WORK\GITHUB\POWEROVERFIBER\SCHEMATIC\LIBRARY1.OLB")
-      (DeviceIndex "0"))
-    (ADA4051-1AKSZ-R7
-      (FullPartName "ADA4051-1AKSZ-R7.Normal")
-      (LibraryName "D:\WORK\GITHUB\POWEROVERFIBER\SCHEMATIC\LIBRARY1.OLB")
       (DeviceIndex "0")))
   (MPSSessionName "Administrator")
   (LastUsedLibraryBrowseDirectory
@@ -144,10 +186,29 @@
   (GlobalState
     (FileView
       (Path "Design Resources")
-      (Path "Design Resources" "Library"))
+      (Path "Design Resources"
+         "d:\work\github\poweroverfiber\schematic\serialcamera.dsn")
+      (Path "Design Resources"
+         "d:\work\github\poweroverfiber\schematic\serialcamera.dsn" "SCHEMATIC1")
+      (Path "Design Resources" "Library")
+      (Path "Outputs")
+      (Select "Design Resources"
+         "d:\work\github\poweroverfiber\schematic\serialcamera.dsn" "SCHEMATIC1"
+         "PAGE1"))
     (HierarchyView)
     (Doc
       (Type "COrCapturePMDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 -1 -1 0 200 0 947"))
-      (Tab 0))))
+        (Placement "44 0 1 -1 -1 -1 -1 0 138 0 750"))
+      (Tab 0))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -1 -1 5 1492 26 770")
+        (Scroll "2129 1169")
+        (Zoom "240")
+        (Occurrence "/"))
+      (Path "D:\WORK\GITHUB\POWEROVERFIBER\SCHEMATIC\SERIALCAMERA.DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "PAGE1")))
+  (ISPCBBASICLICENSE "false"))

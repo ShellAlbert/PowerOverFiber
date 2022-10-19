@@ -1,0 +1,66 @@
+# 
+# ===============================================================================
+#                               Allegro PCB Router                               
+# Copyright 1990-2010 Cadence Design Systems, Inc.  All Rights Reserved.
+# ===============================================================================
+# 
+# Software licensed for sale by Cadence Design Systems, Inc.
+# Current time = Wed Oct 19 15:25:19 2022
+# 
+# Allegro PCB Router v17-4-0 made 2021/02/21 at 12:48:59
+# Running on: thinkpad1, OS Version: WindowsNT 6.2.9200, Architecture: Intel Pentium II, III, or 4
+# Licensing: The program will not obey any unlicensed rules
+# No graphics will be displayed.
+# Design Name D:/Work/GitHub/PowerOverFiber/PCB\PoFA1-1.dsn
+# Batch File Name: pasde.do
+# Did File Name: D:/Work/GitHub/PowerOverFiber/PCB/specctra.did
+# Current time = Wed Oct 19 15:25:19 2022
+# PCB D:/Work/GitHub/PowerOverFiber/PCB
+# Master Unit set up as: MM 100000
+# PCB Limits xlo=-41.8550 ylo=-41.8550 xhi= 41.8550 yhi= 41.8550
+# Total 120 Images Consolidated.
+# Via VIA z=1, 4 xlo= -0.3048 ylo= -0.3048 xhi=  0.3048 yhi=  0.3048
+# 
+#    VIA     TOP     GND     VCC  BOTTOM
+# 
+#    TOP  ------   VIA     VIA     VIA  
+#    GND   VIA    ------   VIA     VIA  
+#    VCC   VIA     VIA    ------   VIA  
+# BOTTOM   VIA     VIA     VIA    ------
+# 
+# <<WARNING:>> Net GND is defined as a signal net and contains 118 pins.
+# This is more pins than most signal nets contain.
+# Please verify whether net GND should be a signal net or a power net.
+# Note that a signal net will be routed as starburst or daisy chain.
+# Wires Processed 0, Vias Processed 0
+# Using colormap in design file.
+# Layers Processed: Signal Layers 4
+# Components Placed 147, Images Processed 177, Padstacks Processed 30
+# Nets Processed 166, Net Terminals 574
+# PCB Area= 5791.210  EIC=45  Area/EIC=128.694  SMDs=133
+# Total Pin Count: 642
+# Signal Connections Created 408
+# 
+# Design Rules --------------------------------------------
+# Via Grid 0.0001 with offset 0.0000
+# Layer TOP Horz Signal Wire Grid 0.0001 with offset 0.0000, Width= 0.1500, Clearance= 0.2000
+# Layer GND Vert Signal Wire Grid 0.0001 with offset 0.0000, Width= 0.1500, Clearance= 0.2000
+# Layer VCC Horz Signal Wire Grid 0.0001 with offset 0.0000, Width= 0.1500, Clearance= 0.2000
+# Layer BOTTOM Vert Signal Wire Grid 0.0001 with offset 0.0000, Width= 0.1500, Clearance= 0.2000
+# Cpu Time = 0:00:00  Elapsed Time = 0:00:00
+# 
+# Wiring Statistics ----------------- D:/Work/GitHub/PowerOverFiber/PCB\PoFA1-1.dsn
+# Nets 166 Connections 408 Unroutes 408
+# Signal Layers 4 Power Layers 0
+# Wire Junctions 0, at vias 0 Total Vias 0
+# Percent Connected    0.00
+# Manhattan Length 5081.3800 Horizontal 2803.3076 Vertical 2278.0725
+# Routed Length   0.0000 Horizontal   0.0000 Vertical   0.0000
+# Ratio Actual / Manhattan   0.0000
+# Unconnected Length 5081.3800 Horizontal 2752.3323 Vertical 2329.0477
+# Total Conflicts: 0 (Cross: 0, Clear: 0, Xtalk: 0, Length: 0, Polygon Clear: 0 )
+# Cpu Time = 0:00:00  Elapsed Time = 0:00:00
+# Loading Do File pasde.do ...
+# Loading Do File D:/Work/GitHub/PowerOverFiber/PCB\PoFA1-1_rules.do ...
+# Colormap Written to File _notify.std
+# Enter command <quit

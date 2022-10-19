@@ -1,0 +1,1420 @@
+FILE_TYPE = EXPANDEDPARTLIST;
+{ Using PSTWRITER 17.4.0 d001Oct-19-2022 at 10:00:09 }
+DIRECTIVES
+ PST_VERSION='PST_HDL_CENTRIC_VERSION_0';
+ ROOT_DRAWING='SERIALCAMERA';
+ POST_TIME='Apr 19 2021 16:22:31';
+ SOURCE_TOOL='CAPTURE_WRITER';
+END_DIRECTIVES;
+
+PART_NAME
+ C1 'CAP NP_C0805_10UF':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS157@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins157@discrete.\cap np.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins157@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C10 'CAP NP_C0402_0.1UF':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS5566@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins5566@discrete.\cap np.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins5566@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C11 'CAP NP_C0603_2.2UF':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS6681@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins6681@discrete.\cap np.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins6681@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C12 'CAP NP_C0402_0.1UF':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS7637@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins7637@discrete.\cap np.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins7637@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C13 'CAP NP_C0603_1UF':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS8358@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins8358@discrete.\cap np.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins8358@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C14 'CAP NP_C0603_1UF':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS8582@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins8582@discrete.\cap np.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins8582@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C15 'CAP NP_C0603_1UF':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS11051@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins11051@discrete.\cap np.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins11051@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C16 'CAP NP_C0603_1UF':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS11077@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins11077@discrete.\cap np.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins11077@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C17 'CAP NP_C0603_2.2UF':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS16402@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins16402@discrete.\cap np.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins16402@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C18 'CAP NP_C0402_0.1UF':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS16538@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins16538@discrete.\cap np.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins16538@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C19 'CAP NP_C0603_10UF':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS91747@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins91747@discrete.\cap np.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins91747@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C2 'CAP NP_C0603_1UF':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS173@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins173@discrete.\cap np.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins173@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C20 'CAP NP_C0402_0.1UF':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS91675@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins91675@discrete.\cap np.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins91675@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C21 'CAP NP_C0402_0.1UF':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS91803@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins91803@discrete.\cap np.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins91803@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C22 'CAP NP_C0603_10UF':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS91855@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins91855@discrete.\cap np.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins91855@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C23 'CAP NP_C0402_0.1UF':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS56688@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins56688@discrete.\cap np.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins56688@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C24 'CAP NP_C0603_10UF':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS56704@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins56704@discrete.\cap np.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins56704@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C25 'CAP NP_C0402_0.1UF':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS70930@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins70930@discrete.\cap np.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins70930@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C26 'CAP NP_C0402_0.1UF':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS95062@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins95062@discrete.\cap np.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins95062@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C27 'CAP NP_C0603_10UF':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS95078@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins95078@discrete.\cap np.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins95078@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C28 'CAP NP_C0402_0.1UF':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS98250@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins98250@discrete.\cap np.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins98250@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C29 'CAP NP_C0402_0.1UF':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS98276@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins98276@discrete.\cap np.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins98276@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C3 'CAP NP_C0805_10UF':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS311@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins311@discrete.\cap np.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins311@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C30 'CAP NP_C0402_0.1UF':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS98302@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins98302@discrete.\cap np.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins98302@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C31 'CAP NP_C0402_0.1UF':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS98328@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins98328@discrete.\cap np.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins98328@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C32 'CAP NP_C0402_0.1UF':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS98354@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins98354@discrete.\cap np.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins98354@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C33 'CAP NP_C0402_0.1UF':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS98380@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins98380@discrete.\cap np.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins98380@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C34 'CAP NP_C0402_0.1UF':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS98516@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins98516@discrete.\cap np.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins98516@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C35 'CAP NP_C0402_0.1UF':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS98532@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins98532@discrete.\cap np.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins98532@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C36 'CAP NP_C0402_0.1UF':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS98548@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins98548@discrete.\cap np.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins98548@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C37 'CAP NP_C0402_0.1UF':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS98564@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins98564@discrete.\cap np.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins98564@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C38 'CAP NP_C0402_0.1UF':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS98580@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins98580@discrete.\cap np.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins98580@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C39 'CAP NP_C0402_0.1UF':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS98596@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins98596@discrete.\cap np.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins98596@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C4 'CAP NP_C0805_10UF':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS788@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins788@discrete.\cap np.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins788@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C40 'CAP NP_C0402_0.1UF':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS120201@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins120201@discrete.\cap np.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins120201@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C41 'CAP NP_C0402_12PF':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS130298@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins130298@discrete.\cap np.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins130298@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C42 'CAP NP_C0402_12PF':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS130324@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins130324@discrete.\cap np.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins130324@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C43 'CAP NP_C0402_0.1UF':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS139071@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins139071@discrete.\cap np.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins139071@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C6 'CAP NP_C0805_10UF':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS1863@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins1863@discrete.\cap np.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins1863@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C7 'CAP NP_C0402_33PF':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS3974@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins3974@discrete.\cap np.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins3974@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C8 'CAP NP_C1206_22UF':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS4134@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins4134@discrete.\cap np.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins4134@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ C9 'CAP NP_C1206_22UF':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS4160@DISCRETE.CAP NP.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins4160@discrete.\cap np.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins4160@discrete.\cap np.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ D1 'LED_LED0402_LED':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS107822@DISCRETE.LED.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins107822@discrete.\led.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins107822@discrete.\led.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ D2 'LED_LED0402_LED':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS107838@DISCRETE.LED.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins107838@discrete.\led.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins107838@discrete.\led.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ D3 'DIODE TVS_SOD123W_PTVS3V3S1UTR':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS112329@DISCRETE.DIODE TVS.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins112329@discrete.\diode tvs.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins112329@discrete.\diode tvs.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ D4 'DIODE TVS_SOD123W_PTVS3V3S1UTR':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS112345@DISCRETE.DIODE TVS.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins112345@discrete.\diode tvs.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins112345@discrete.\diode tvs.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ D5 'DIODE TVS_SOD123W_PTVS3V3S1UTR':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS169870@DISCRETE.DIODE TVS.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins169870@discrete.\diode tvs.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins169870@discrete.\diode tvs.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ D6 'DIODE TVS_SOD123W_PTVS3V3S1UTR':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS170402@DISCRETE.DIODE TVS.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins170402@discrete.\diode tvs.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins170402@discrete.\diode tvs.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ D7 'DIODE TVS_SOD123W_PTVS3V3S1UTR':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS223380@DISCRETE.DIODE TVS.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins223380@discrete.\diode tvs.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins223380@discrete.\diode tvs.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ D8 'DIODE TVS_SOD123W_PTVS3V3S1UTR':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS225469@DISCRETE.DIODE TVS.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins225469@discrete.\diode tvs.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins225469@discrete.\diode tvs.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ J1 'HEADER2X9_HEADER2X9-2D54_HEADER2X9-2.54MM':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS11680@LIBRARY1.HEADER2X9.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins11680@library1.\header2x9.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins11680@library1.\header2x9.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ J2 'HEADER2X35_DF40HC-70DS_DF40HC(3.0)-70DS-0.4V(51)':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS18896@LIBRARY1.HEADER2X35.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins18896@library1.\header2x35.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins18896@library1.\header2x35.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ L1 'INDUCTOR_L47473_10UH':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS99@DISCRETE.INDUCTOR.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins99@discrete.\inductor.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins99@discrete.\inductor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ L2 'INDUCTOR_L3015_4.7UH':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS2372@DISCRETE.INDUCTOR.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins2372@discrete.\inductor.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins2372@discrete.\inductor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ L3 'INDUCTOR_L0603_1UH':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS118979@DISCRETE.INDUCTOR.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins118979@discrete.\inductor.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins118979@discrete.\inductor.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ Q1 '2SC1815_SOT23-3_2SC1815':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS66975@LIBRARY1.2SC1815.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins66975@library1.\2sc1815.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins66975@library1.\2sc1815.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ Q2 '2SC1815_SOT23-3_2SC1815':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS67096@LIBRARY1.2SC1815.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins67096@library1.\2sc1815.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins67096@library1.\2sc1815.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ Q3 'FH3415A_SOT23-3_FH3415A':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS226387@LIBRARY1.FH3415A.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins226387@library1.\fh3415a.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins226387@library1.\fh3415a.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R1 'R_R0402_200K':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS248@DISCRETE.R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins248@discrete.\r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins248@discrete.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R10 'R_R0402_36K':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS6040@DISCRETE.R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins6040@discrete.\r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins6040@discrete.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R11 'R_R0402_10K':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS6577@DISCRETE.R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins6577@discrete.\r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins6577@discrete.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R12 'R_R0402_147K':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS6904@DISCRETE.R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins6904@discrete.\r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins6904@discrete.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R13 'R_R0402_3.3K':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS7842@DISCRETE.R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins7842@discrete.\r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins7842@discrete.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R14 'R_R0402_100K':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS10684@DISCRETE.R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins10684@discrete.\r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins10684@discrete.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R15 'R_R0402_100K':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS10710@DISCRETE.R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins10710@discrete.\r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins10710@discrete.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R17 'RESISTOR VAR 2_AXIAL-5D0_GL7549':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS82953@DISCRETE.RESISTOR VAR 2.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins82953@discrete.\resistor var 2.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins82953@discrete.\resistor var 2.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R19 'R_R0402_3.3K':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS16418@DISCRETE.R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins16418@discrete.\r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins16418@discrete.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R2 'R_R0402_2.26M':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS488@DISCRETE.R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins488@discrete.\r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins488@discrete.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R20 'R_R0402_10K':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS16470@DISCRETE.R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins16470@discrete.\r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins16470@discrete.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R21 'R_R0402_36K':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS16566@DISCRETE.R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins16566@discrete.\r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins16566@discrete.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R22 'R_R0402_147K':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS16616@DISCRETE.R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins16616@discrete.\r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins16616@discrete.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R23 'R_R0402_10K':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS17659@DISCRETE.R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins17659@discrete.\r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins17659@discrete.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R24 'R_R0402_1K':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS94429@DISCRETE.R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins94429@discrete.\r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins94429@discrete.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R25 'R_R0402_510':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS66887@DISCRETE.R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins66887@discrete.\r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins66887@discrete.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R26 'R_R0402_510':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS66903@DISCRETE.R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins66903@discrete.\r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins66903@discrete.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R27 'R_R0402_40':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS67040@DISCRETE.R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins67040@discrete.\r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins67040@discrete.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R28 'R_R0402_510':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS67344@DISCRETE.R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins67344@discrete.\r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins67344@discrete.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R29 'R_R0402_510':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS67377@DISCRETE.R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins67377@discrete.\r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins67377@discrete.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R3 'R_R0402_1M':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS514@DISCRETE.R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins514@discrete.\r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins514@discrete.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R30 'R_R0402_40':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS69222@DISCRETE.R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins69222@discrete.\r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins69222@discrete.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R31 'R_R0402_510':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS70705@DISCRETE.R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins70705@discrete.\r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins70705@discrete.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R32 'R_R0402_68K':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS82590@DISCRETE.R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins82590@discrete.\r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins82590@discrete.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R33 'R_R0402_0':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS74173@DISCRETE.R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins74173@discrete.\r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins74173@discrete.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R34 'R_R0402_0':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS103977@DISCRETE.R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins103977@discrete.\r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins103977@discrete.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R35 'R_R0402_DNP':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS104003@DISCRETE.R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins104003@discrete.\r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins104003@discrete.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R36 'R_R0402_2K':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS107864@DISCRETE.R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins107864@discrete.\r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins107864@discrete.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R37 'R_R0402_2K':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS107890@DISCRETE.R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins107890@discrete.\r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins107890@discrete.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R38 'R_R0402_10K':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS113654@DISCRETE.R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins113654@discrete.\r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins113654@discrete.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R39 'R_R0402_10K':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS115274@DISCRETE.R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins115274@discrete.\r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins115274@discrete.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R4 'R_R0402_10K':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS1901@DISCRETE.R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins1901@discrete.\r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins1901@discrete.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R40 'R_R0402_10K':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS120227@DISCRETE.R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins120227@discrete.\r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins120227@discrete.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R41 'R_R0402_10K':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS142968@DISCRETE.R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins142968@discrete.\r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins142968@discrete.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R42 'R_R0402_10K':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS142994@DISCRETE.R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins142994@discrete.\r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins142994@discrete.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R43 'R_R0402_10K':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS143020@DISCRETE.R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins143020@discrete.\r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins143020@discrete.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R44 'R_R0402_10K':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS169808@DISCRETE.R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins169808@discrete.\r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins169808@discrete.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R45 'R_R0402_10K':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS170428@DISCRETE.R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins170428@discrete.\r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins170428@discrete.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R46 'R_R0402_10K':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS222526@DISCRETE.R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins222526@discrete.\r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins222526@discrete.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R47 'R_R0402_10K':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS222552@DISCRETE.R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins222552@discrete.\r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins222552@discrete.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R48 'R_R0402_10K':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS226841@DISCRETE.R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins226841@discrete.\r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins226841@discrete.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R5 'R_R0402_562K':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS2759@DISCRETE.R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins2759@discrete.\r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins2759@discrete.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R6 'R_R0402_1M':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS2785@DISCRETE.R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins2785@discrete.\r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins2785@discrete.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R8 'R_R0402_1M':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS4834@DISCRETE.R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins4834@discrete.\r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins4834@discrete.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R9 'R_R0402_1M':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS4860@DISCRETE.R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins4860@discrete.\r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins4860@discrete.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ TP1 'T POINT A_TP_SMD_OD2D0_SOLAR CELL V+':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS1023@DISCRETE.T POINT A.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins1023@discrete.\t point a.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins1023@discrete.\t point a.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ TP10 'T POINT R_TP_THR_ID1D0_SMD TP':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS121417@DISCRETE.T POINT R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins121417@discrete.\t point r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins121417@discrete.\t point r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ TP11 'T POINT R_TP_THR_ID1D0_SMD TP':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS121439@DISCRETE.T POINT R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins121439@discrete.\t point r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins121439@discrete.\t point r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ TP12 'T POINT R_TP_SMD_OD1D5_SMD TP':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS127657@DISCRETE.T POINT R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins127657@discrete.\t point r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins127657@discrete.\t point r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ TP13 'T POINT R_TP_SMD_OD1D5_SMD TP':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS127691@DISCRETE.T POINT R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins127691@discrete.\t point r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins127691@discrete.\t point r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ TP14 'T POINT R_TP_SMD_OD1D5_SMD TP':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS169836@DISCRETE.T POINT R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins169836@discrete.\t point r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins169836@discrete.\t point r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ TP15 'T POINT R_TP_SMD_OD1D5_SMD TP':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS170709@DISCRETE.T POINT R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins170709@discrete.\t point r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins170709@discrete.\t point r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ TP16 'T POINT R_TP_SMD_OD1D5_SMD TP':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS172905@DISCRETE.T POINT R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins172905@discrete.\t point r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins172905@discrete.\t point r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ TP17 'T POINT R_TP_SMD_OD1D5_SMD TP':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS174965@DISCRETE.T POINT R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins174965@discrete.\t point r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins174965@discrete.\t point r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ TP18 'T POINT R_TP_SMD_OD1D5_SMD TP':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS174983@DISCRETE.T POINT R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins174983@discrete.\t point r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins174983@discrete.\t point r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ TP19 'T POINT R_TP_SMD_OD1D5_SMD TP':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS175270@DISCRETE.T POINT R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins175270@discrete.\t point r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins175270@discrete.\t point r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ TP2 'T POINT A_TP_SMD_OD2D0_SOLAR CELL V-':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS1057@DISCRETE.T POINT A.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins1057@discrete.\t point a.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins1057@discrete.\t point a.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ TP20 'T POINT R_TP_SMD_OD1D5_SMD TP':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS175288@DISCRETE.T POINT R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins175288@discrete.\t point r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins175288@discrete.\t point r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ TP21 'T POINT R_TP_SMD_OD1D5_SMD TP':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS175306@DISCRETE.T POINT R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins175306@discrete.\t point r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins175306@discrete.\t point r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ TP22 'T POINT R_TP_SMD_OD1D5_SMD TP':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS175324@DISCRETE.T POINT R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins175324@discrete.\t point r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins175324@discrete.\t point r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ TP23 'T POINT S_TP_SMD_3D0X5D0_SOLDER POINT':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS206998@DISCRETE.T POINT S.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins206998@discrete.\t point s.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins206998@discrete.\t point s.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ TP24 'T POINT S_TP_SMD_3D0X5D0_SOLDER POINT':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS207018@DISCRETE.T POINT S.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins207018@discrete.\t point s.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins207018@discrete.\t point s.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ TP3 'T POINT A_TP_THR_ID1D0_LED+':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS67238@DISCRETE.T POINT A.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins67238@discrete.\t point a.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins67238@discrete.\t point a.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ TP4 'T POINT A_TP_THR_ID1D0_LED-':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS67260@DISCRETE.T POINT A.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins67260@discrete.\t point a.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins67260@discrete.\t point a.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ TP5 'T POINT R_TP_SMD_OD1D5_SMD TP':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS111105@DISCRETE.T POINT R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins111105@discrete.\t point r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins111105@discrete.\t point r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ TP6 'T POINT R_TP_SMD_OD1D5_SMD TP':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS111127@DISCRETE.T POINT R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins111127@discrete.\t point r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins111127@discrete.\t point r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ TP7 'T POINT R_TP_SMD_OD1D5_SMD TP':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS114163@DISCRETE.T POINT R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins114163@discrete.\t point r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins114163@discrete.\t point r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ TP8 'T POINT R_TP_THR_ID1D0_SMD TP':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS121389@DISCRETE.T POINT R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins121389@discrete.\t point r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins121389@discrete.\t point r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ TP9 'T POINT R_TP_THR_ID1D0_SMD TP':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS121403@DISCRETE.T POINT R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins121403@discrete.\t point r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins121403@discrete.\t point r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U1 'LTC3105EDD#PBF_DFN-10_LTC3105EDD#PBF':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS46@LIBRARY1.LTC3105EDD#PBF.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins46@library1.\ltc3105edd#pbf.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins46@library1.\ltc3105edd#pbf.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U10 'MAX4761EBX+T_TQFN-36_MAX4761ETX+T':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS44689@LIBRARY1.MAX4761EBX+T.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins44689@library1.\max4761ebx+t.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins44689@library1.\max4761ebx+t.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U11 'SN74LVC1G08QDBVRQ1_SOT-23-5_SN74LVC1G08QDBVRQ1':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS70745@LIBRARY1.SN74LVC1G08QDBVRQ1.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins70745@library1.\sn74lvc1g08qdbvrq1.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins70745@library1.\sn74lvc1g08qdbvrq1.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U13 'BAT754C_SOT23-3_BAT754C':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS125939@LIBRARY1.BAT754C.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins125939@library1.\bat754c.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins125939@library1.\bat754c.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U14 'HDC1010YPAR_DSBGA-8_HDC1010YPAR':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS137438@LIBRARY1.HDC1010YPAR.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins137438@library1.\hdc1010ypar.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins137438@library1.\hdc1010ypar.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U15 'MAX4754AEBE+T_QFN-16_MAX4754AEBE+T':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS260299@LIBRARY1.MAX4754AEBE+T.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins260299@library1.\max4754aebe+t.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins260299@library1.\max4754aebe+t.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U2 'LTC3539EDCB#PBF_DFN-8_LTC3539EDCB#PBF':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS1768@LIBRARY1.LTC3539EDCB#PBF.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins1768@library1.\ltc3539edcb#pbf.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins1768@library1.\ltc3539edcb#pbf.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U4 'ADCMP380-1ACBZ-RL7_WLCSP-6_ADCMP380-1ACBZ-RL7':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS5800@LIBRARY1.ADCMP380-1ACBZ-RL7.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins5800@library1.\adcmp380-1acbz-rl7.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins5800@library1.\adcmp380-1acbz-rl7.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U5 'TPS22976ADPUR_WSON-14_TPS22976ADPUR':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS8039@LIBRARY1.TPS22976ADPUR.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins8039@library1.\tps22976adpur.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins8039@library1.\tps22976adpur.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U6 'ADA4051-2ARMZ_RM-8_ADA4051-2ARMZ':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS12467@LIBRARY1.ADA4051-2ARMZ.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins12467@library1.\ada4051-2armz.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins12467@library1.\ada4051-2armz.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U7 'ADCMP380-1ACBZ-RL7_WLCSP-6_ADCMP380-1ACBZ-RL7':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS16486@LIBRARY1.ADCMP380-1ACBZ-RL7.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins16486@library1.\adcmp380-1acbz-rl7.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins16486@library1.\adcmp380-1acbz-rl7.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U8 'IS66WVE2M16EBLL-70BLI-TR_TFBGA-48_IS66WVE2M16EBLL-70BLI-TR':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS91155@LIBRARY1.IS66WVE2M16EBLL-70BLI-TR.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins91155@library1.\is66wve2m16ebll-70bli-tr.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins91155@library1.\is66wve2m16ebll-70bli-tr.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ U9 'STM32L496ZGT6_LQFP-144_STM32L496ZGT6':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS31350@LIBRARY1.STM32L496ZGT6.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins31350@library1.\stm32l496zgt6.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins31350@library1.\stm32l496zgt6.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ Y1 'CRYSTAL_CRYSTAL_3215_32.768KHZ':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS129828@DISCRETE.CRYSTAL.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins129828@discrete.\crystal.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins129828@discrete.\crystal.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+END.

@@ -1,0 +1,358 @@
+|------------------------------------------------------------------------------|
+|                                 ECO   REPORT                                 |
+|                                                                    Page   1  |
+|------------------------------------------------------------------------------|
+|  D:/Work/GitHub/PowerOverFiber/PCB/PoFA1.brd                                 |
+|                                                    Wed Oct 19 10:45:10 2022  |
+|------------------------------------------------------------------------------|
+| NET CHANGES                                                                  |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+|   net  name |  type of change |    pin_id     |   x   |   y   |   to  net    |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+  CAM1_D0      pins ADDED TO this existing net (pins not previously on any net)
+                                 U10.1                          
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  CAM1_D1      pins ADDED TO this existing net (pins not previously on any net)
+                                 U10.3                          
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  CAM1_D2      pins ADDED TO this existing net (pins not previously on any net)
+                                 U10.7                          
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  CAM1_D3      pins ADDED TO this existing net (pins not previously on any net)
+                                 U10.9                          
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  CAM1_D4      pins ADDED TO this existing net (pins not previously on any net)
+                                 U10.27                         
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  CAM1_D5      pins ADDED TO this existing net (pins not previously on any net)
+                                 U10.25                         
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  CAM1_D6      pins ADDED TO this existing net (pins not previously on any net)
+                                 U10.21                         
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  CAM1_D7      pins ADDED TO this existing net (pins not previously on any net)
+                                 U10.19                         
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  CAM1_HSYNC   pins ADDED TO this existing net (pins not previously on any net)
+                                 U15.16                         
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  CAM1_PCLK    pins ADDED TO this existing net (pins not previously on any net)
+                                 U15.4                          
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  CAM1_PWDN    pins ADDED TO this existing net (pins not previously on any net)
+                                 U9.29                          
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  CAM1_RST     pins ADDED TO this existing net (pins not previously on any net)
+                                 U9.28                          
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  CAM1_VDD     pins MOVED FROM this net (to net name listed on right)
+                                 J1.1                           
+                                                                       VDD_CAM1
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  CAM1_VSYNC   pins ADDED TO this existing net (pins not previously on any net)
+                                 U15.12                         
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  CAM2_D0      pins ADDED TO this existing net (pins not previously on any net)
+                                 U10.33                         
+|------------------------------------------------------------------------------|
+|                                 ECO   REPORT                                 |
+|                                                                    Page   2  |
+|------------------------------------------------------------------------------|
+|  D:/Work/GitHub/PowerOverFiber/PCB/PoFA1.brd                                 |
+|                                                    Wed Oct 19 10:45:10 2022  |
+|------------------------------------------------------------------------------|
+| NET CHANGES                                                                  |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+|   net  name |  type of change |    pin_id     |   x   |   y   |   to  net    |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+  CAM2_D1      pins ADDED TO this existing net (pins not previously on any net)
+                                 U10.34                         
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  CAM2_D2      pins ADDED TO this existing net (pins not previously on any net)
+                                 U10.12                         
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  CAM2_D3      pins ADDED TO this existing net (pins not previously on any net)
+                                 U10.13                         
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  CAM2_D4      pins ADDED TO this existing net (pins not previously on any net)
+                                 U10.31                         
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  CAM2_D5      pins ADDED TO this existing net (pins not previously on any net)
+                                 U10.30                         
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  CAM2_D6      pins ADDED TO this existing net (pins not previously on any net)
+                                 U10.16                         
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  CAM2_D7      pins ADDED TO this existing net (pins not previously on any net)
+                                 U10.15                         
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  CAM2_D8      pins MOVED FROM this net (to net name listed on right)
+                                 J2.34                          
+                                                                        DCMI_D8
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  CAM2_D9      pins MOVED FROM this net (to net name listed on right)
+                                 J2.33                          
+                                                                        DCMI_D9
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  CAM2_D10     pins MOVED FROM this net (to net name listed on right)
+                                 J2.36                          
+                                                                       DCMI_D10
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  CAM2_D11     pins MOVED FROM this net (to net name listed on right)
+                                 J2.35                          
+                                                                       DCMI_D11
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  CAM2_D12     pins MOVED FROM this net (to net name listed on right)
+                                 J2.38                          
+                                                                       DCMI_D12
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  CAM2_D13     pins MOVED FROM this net (to net name listed on right)
+                                 J2.37                          
+                                                                       DCMI_D13
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+|------------------------------------------------------------------------------|
+|                                 ECO   REPORT                                 |
+|                                                                    Page   3  |
+|------------------------------------------------------------------------------|
+|  D:/Work/GitHub/PowerOverFiber/PCB/PoFA1.brd                                 |
+|                                                    Wed Oct 19 10:45:10 2022  |
+|------------------------------------------------------------------------------|
+| NET CHANGES                                                                  |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+|   net  name |  type of change |    pin_id     |   x   |   y   |   to  net    |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+  CAM2_HSYNC   pins ADDED TO this existing net (pins not previously on any net)
+                                 U15.13                         
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  CAM2_PCLK    pins ADDED TO this existing net (pins not previously on any net)
+                                 U15.1                          
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  CAM2_VSYNC   pins ADDED TO this existing net (pins not previously on any net)
+                                 U15.9                          
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  DAY_NIGHT    pins ADDED TO this existing net (pins not previously on any net)
+                                 U9.27                          
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  DCMI_D0      pins ADDED TO this existing net (pins not previously on any net)
+                                 U10.36                         
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  DCMI_D1      pins ADDED TO this existing net (pins not previously on any net)
+                                 U10.2                          
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  DCMI_D2      pins ADDED TO this existing net (pins not previously on any net)
+                                 U10.8                          
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  DCMI_D3      pins ADDED TO this existing net (pins not previously on any net)
+                                 U10.10                         
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  DCMI_D4      pins ADDED TO this existing net (pins not previously on any net)
+                                 U10.28                         
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  DCMI_D5      pins ADDED TO this existing net (pins not previously on any net)
+                                 U10.26                         
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  DCMI_D6      pins ADDED TO this existing net (pins not previously on any net)
+                                 U10.20                         
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  DCMI_D7      pins ADDED TO this existing net (pins not previously on any net)
+                                 U10.18                         
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  DCMI_HSYNC   pins ADDED TO this existing net (pins not previously on any net)
+                                 U15.15                         
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  DCMI_PIXCLK  pins ADDED TO this existing net (pins not previously on any net)
+                                 U15.3                          
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  DCMI_VSYNC   pins ADDED TO this existing net (pins not previously on any net)
+                                 U15.11                         
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+|------------------------------------------------------------------------------|
+|                                 ECO   REPORT                                 |
+|                                                                    Page   4  |
+|------------------------------------------------------------------------------|
+|  D:/Work/GitHub/PowerOverFiber/PCB/PoFA1.brd                                 |
+|                                                    Wed Oct 19 10:45:10 2022  |
+|------------------------------------------------------------------------------|
+| NET CHANGES                                                                  |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+|   net  name |  type of change |    pin_id     |   x   |   y   |   to  net    |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+  GND          pins ADDED TO this existing net (pins not previously on any net)
+                                 D7.2                           
+                                 D8.2                           
+                                 U10.22                         
+                                 U10.23                         
+                                 U10.EPAD                       
+                                 U15.5                          
+                                 U15.8                          
+                                 U15.14                         
+                                 U15.EPAD                       
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  LDO22        pins MOVED FROM this net (to net name listed on right)
+                                 R19.1                          
+                                                                          VDD33
+                                 R20.2                          
+                                                                          VDD33
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  LD_PWR_EN    pins ADDED TO this new net
+                                 Q3.1                           
+                                 R48.2                          
+                                 U9.92                          
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N57182       pins ADDED TO this existing net (pins not previously on any net)
+                                 U10.4                          
+                                 U15.2                          
+                                 U15.10                         
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  N67019       pins ADDED TO this new net
+                                 Q3.3                           
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  NC1          pins ADDED TO this new net
+                                 U10.6                          
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  NC2          pins ADDED TO this new net
+                                 U10.11                         
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  NC3          pins ADDED TO this new net
+                                 U10.14                         
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  NC4          pins ADDED TO this new net
+                                 U10.17                         
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  NC5          pins ADDED TO this new net
+                                 U10.24                         
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+|------------------------------------------------------------------------------|
+|                                 ECO   REPORT                                 |
+|                                                                    Page   5  |
+|------------------------------------------------------------------------------|
+|  D:/Work/GitHub/PowerOverFiber/PCB/PoFA1.brd                                 |
+|                                                    Wed Oct 19 10:45:10 2022  |
+|------------------------------------------------------------------------------|
+| NET CHANGES                                                                  |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+|   net  name |  type of change |    pin_id     |   x   |   y   |   to  net    |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+  NC6          pins ADDED TO this new net
+                                 U10.29                         
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  NC7          pins ADDED TO this new net
+                                 U10.32                         
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  NC8          pins ADDED TO this new net
+                                 U10.35                         
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  SWCLK        pins ADDED TO this existing net (pins not previously on any net)
+                                 D8.1                           
+                                 R46.2                          
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  SWDIO        pins ADDED TO this existing net (pins not previously on any net)
+                                 D7.1                           
+                                 R47.2                          
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  VCAP         pins MOVED FROM this net (to net name listed on right)
+                                 R17.1                          
+                                                                          VDD33
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+  VDD33        pins MOVED FROM this net (to net name listed on right)
+                                 R25.1                          
+                                                                         N67019
+                                 R29.1                          
+                                                                         N67019
+                                 R30.1                          
+                                                                         N67019
+                                 TP3.1                          
+                                                                         N67019
+                - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+               pins ADDED TO this existing net (pins not previously on any net)
+                                 Q3.2                           
+                                 R46.1                          
+                                 R47.1                          
+                                 R48.1                          
+                                 U10.5                          
+                                 U15.6                          
+|------------------------------------------------------------------------------|
+|                                 ECO   REPORT                                 |
+|                                                                    Page   6  |
+|------------------------------------------------------------------------------|
+|  D:/Work/GitHub/PowerOverFiber/PCB/PoFA1.brd                                 |
+|                                                    Wed Oct 19 10:45:10 2022  |
+|------------------------------------------------------------------------------|
+| COMPONENT DEFINITION added to design                                         |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+|    device type                                                               |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+ FH3415A_SOT23-3_FH3415A
+ MAX4754AEBE+T_QFN-16_MAX4754AEBE+T
+ MAX4761EBX+T_TQFN-36_MAX4761ETX+T
+|------------------------------------------------------------------------------|
+|                                 ECO   REPORT                                 |
+|                                                                    Page   7  |
+|------------------------------------------------------------------------------|
+|  D:/Work/GitHub/PowerOverFiber/PCB/PoFA1.brd                                 |
+|                                                    Wed Oct 19 10:45:10 2022  |
+|------------------------------------------------------------------------------|
+| COMPONENTS DELETED from design                                               |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+|    ref des        |    device type      |   x   |   y                        |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+ U12                 MAX4754AEBE+T_0_UCSP-16_MAX4754AEBE+T                
+|------------------------------------------------------------------------------|
+|                                 ECO   REPORT                                 |
+|                                                                    Page   8  |
+|------------------------------------------------------------------------------|
+|  D:/Work/GitHub/PowerOverFiber/PCB/PoFA1.brd                                 |
+|                                                    Wed Oct 19 10:45:10 2022  |
+|------------------------------------------------------------------------------|
+| COMPONENTS ADDED to design                                                   |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+|    ref des        |    device type                                           |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+ D7                  DIODE TVS_SOD123W_PTVS3V3S1UTR 
+ D8                  DIODE TVS_SOD123W_PTVS3V3S1UTR 
+ Q3                  FH3415A_SOT23-3_FH3415A 
+ R46                 R_R0402_10K           
+ R47                 R_R0402_10K           
+ R48                 R_R0402_10K           
+ U15                 MAX4754AEBE+T_QFN-16_MAX4754AEBE+T 
+|------------------------------------------------------------------------------|
+|                                 ECO   REPORT                                 |
+|                                                                    Page   9  |
+|------------------------------------------------------------------------------|
+|  D:/Work/GitHub/PowerOverFiber/PCB/PoFA1.brd                                 |
+|                                                    Wed Oct 19 10:45:10 2022  |
+|------------------------------------------------------------------------------|
+| COMPONENTS CHANGED from one device type to another in design                 |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+|    ref des        | new device type     |   x   |   y   |  old  device type  |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+ U10                 MAX4761EBX+T_TQFN-36_MAX4761ETX+T                 MAX4761EBX+T_UCSP-36_MAX4761EBX+T
+|------------------------------------------------------------------------------|
+|                                 ECO   REPORT                                 |
+|                                                                    Page  10  |
+|------------------------------------------------------------------------------|
+|  D:/Work/GitHub/PowerOverFiber/PCB/PoFA1.brd                                 |
+|                                                    Wed Oct 19 10:45:10 2022  |
+|------------------------------------------------------------------------------|
+| SLOT PROPERTIES added to design                                              |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+|   slot_id    |   x   |   y   |   property   |             value              |
+|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
+ D7.1                           PRIM_FILE      .\pstchip.dat
+ D8.1                           PRIM_FILE      .\pstchip.dat
+ Q3.2                           PRIM_FILE      .\pstchip.dat
+ R46.2                          PRIM_FILE      .\pstchip.dat
+ R47.2                          PRIM_FILE      .\pstchip.dat
+ R48.2                          PRIM_FILE      .\pstchip.dat
+ U10.5                          PRIM_FILE      .\pstchip.dat
+ U15.6                          PRIM_FILE      .\pstchip.dat
+|------------------------------------------------------------------------------|
+|       Nets changed          :      84                                        |
+|       Comp definitions added:       3                                        |
+|       Components added      :       7                                        |
+|       Components deleted    :       1                                        |
+|       Components changed    :       1                                        |
+|       Slot property added   :       8                                        |
+|                                                                              |
+|   Total ECO changes reported:     104                                        |
+|------------------------------------------------------------------------------|

@@ -1,0 +1,14 @@
+#Allegro PCB Router v17-4-0 made 2021/02/21 at 12:48:59
+#Host 
+#ROUTING STATUS <<< D:/Work/GitHub/PowerOverFiber/PCB\PoFA1-1.dsn >>>
+Start  Time: Report Time: Wed Oct 19 15:26:33 2022
+
+Nets         =      166   Connections         =      408
+Current Wire =       47   Reroute wires       =       47
+Completion   =    0.00%   Unconnections       =      408
+| ROUTING HISTORY ================================================================
+|     Pass     |   Conflicts |    |     |     |     |    |Red|      CPU Time     |
+|   Name   |No.| Cross| Clear|Fail|Unrte| Vias|XTalk|Len.| % |  Pass   |  Total  |
+|----------+---+------+------+----+-----+-----+-----+----+---+---------+---------|
+| Fanout   |  1|     0|     0|   0|  408|   47|    0|   0|   |  0:00:00|  0:00:00|
+| Conflicts between polygon wires and fixed objects:   0
