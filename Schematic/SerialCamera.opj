@@ -1,6 +1,6 @@
 (ExpressProject "SerialCamera"
   (ProjectVersion "19981106")
-  (SoftwareVersion "17.4-2019 S017 (3936576)  [4/19/2021]-[10/19/22]")
+  (SoftwareVersion "17.4-2019 S017 (3936576)  [4/19/2021]-[10/20/22]")
   (ProjectType "PCB")
   (Folder "Design Resources"
     (Folder "Library"
@@ -69,6 +69,10 @@
       (Sort User)))
   (Folder "Logs")
   (PartMRUSelector
+    (LaserDiode
+      (FullPartName "LaserDiode.Normal")
+      (LibraryName "D:\WORK\GITHUB\POWEROVERFIBER\SCHEMATIC\LIBRARY1.OLB")
+      (DeviceIndex "0"))
     (MAX4754AEBE+T
       (FullPartName "MAX4754AEBE+T.Normal")
       (LibraryName "D:\WORK\GITHUB\POWEROVERFIBER\SCHEMATIC\LIBRARY1.OLB")
@@ -175,10 +179,6 @@
     (ADA4051-2ARMZ
       (FullPartName "ADA4051-2ARMZ.Normal")
       (LibraryName "D:\WORK\GITHUB\POWEROVERFIBER\SCHEMATIC\LIBRARY1.OLB")
-      (DeviceIndex "0"))
-    (Header2x9
-      (FullPartName "Header2x9.Normal")
-      (LibraryName "D:\WORK\GITHUB\POWEROVERFIBER\SCHEMATIC\LIBRARY1.OLB")
       (DeviceIndex "0")))
   (MPSSessionName "Administrator")
   (LastUsedLibraryBrowseDirectory
@@ -193,22 +193,11 @@
       (Path "Design Resources" "Library")
       (Path "Outputs")
       (Select "Design Resources"
-         "d:\work\github\poweroverfiber\schematic\serialcamera.dsn" "SCHEMATIC1"
-         "PAGE1"))
+         "d:\work\github\poweroverfiber\schematic\serialcamera.dsn"))
     (HierarchyView)
     (Doc
       (Type "COrCapturePMDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 -1 -1 0 138 0 750"))
-      (Tab 0))
-    (Doc
-      (Type "COrSchematicDoc")
-      (Frame
-        (Placement "44 0 1 -1 -1 -1 -1 5 1492 26 770")
-        (Scroll "2129 1169")
-        (Zoom "240")
-        (Occurrence "/"))
-      (Path "D:\WORK\GITHUB\POWEROVERFIBER\SCHEMATIC\SERIALCAMERA.DSN")
-      (Schematic "SCHEMATIC1")
-      (Page "PAGE1")))
+        (Placement "44 0 1 -1 -1 -1 -1 0 200 0 750"))
+      (Tab 0)))
   (ISPCBBASICLICENSE "false"))

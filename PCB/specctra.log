@@ -5,28 +5,30 @@
 # ===============================================================================
 # 
 # Software licensed for sale by Cadence Design Systems, Inc.
-# Current time = Wed Oct 19 15:26:25 2022
+# Current time = Wed Oct 19 20:12:59 2022
 # 
 # Allegro PCB Router v17-4-0 made 2021/02/21 at 12:48:59
 # Running on: thinkpad1, OS Version: WindowsNT 6.2.9200, Architecture: Intel Pentium II, III, or 4
 # Licensing: The program will not obey any unlicensed rules
 # No graphics will be displayed.
-# Design Name D:/Work/GitHub/PowerOverFiber/PCB\PoFA1-1.dsn
+# Design Name D:/Work/GitHub/PowerOverFiber/PCB\PoFA1-4.dsn
 # Batch File Name: pasde.do
 # Did File Name: D:/Work/GitHub/PowerOverFiber/PCB/specctra.did
-# Current time = Wed Oct 19 15:26:25 2022
+# Current time = Wed Oct 19 20:12:59 2022
 # PCB D:/Work/GitHub/PowerOverFiber/PCB
 # Master Unit set up as: MM 100000
 # PCB Limits xlo=-41.8550 ylo=-41.8550 xhi= 41.8550 yhi= 41.8550
 # Total 120 Images Consolidated.
-# Via VIA0D40_0D2 z=1, 4 xlo= -0.2000 ylo= -0.2000 xhi=  0.2000 yhi=  0.2000
+# Via VIA0D3_0D15 z=1, 6 xlo= -0.1500 ylo= -0.1500 xhi=  0.1500 yhi=  0.1500
 # 
-#    VIA       TOP          GND          VCC       BOTTOM   
+#      VIA        TOP      'GND-1'     'SIGNAL'          VCC      'GND-2'       BOTTOM  
 # 
-#    TOP  -----------  VIA0D40_0D2  VIA0D40_0D2  VIA0D40_0D2
-#    GND  VIA0D40_0D2  -----------  VIA0D40_0D2  VIA0D40_0D2
-#    VCC  VIA0D40_0D2  VIA0D40_0D2  -----------  VIA0D40_0D2
-# BOTTOM  VIA0D40_0D2  VIA0D40_0D2  VIA0D40_0D2  -----------
+#      TOP  -----------  VIA0D3_0D15  VIA0D3_0D15  VIA0D3_0D15  VIA0D3_0D15  VIA0D3_0D15
+#  'GND-1'  VIA0D3_0D15  -----------  VIA0D3_0D15  VIA0D3_0D15  VIA0D3_0D15  VIA0D3_0D15
+# 'SIGNAL'  VIA0D3_0D15  VIA0D3_0D15  -----------  VIA0D3_0D15  VIA0D3_0D15  VIA0D3_0D15
+#      VCC  VIA0D3_0D15  VIA0D3_0D15  VIA0D3_0D15  -----------  VIA0D3_0D15  VIA0D3_0D15
+#  'GND-2'  VIA0D3_0D15  VIA0D3_0D15  VIA0D3_0D15  VIA0D3_0D15  -----------  VIA0D3_0D15
+#   BOTTOM  VIA0D3_0D15  VIA0D3_0D15  VIA0D3_0D15  VIA0D3_0D15  VIA0D3_0D15  -----------
 # 
 # <<WARNING:>> Net GND is defined as a signal net and contains 118 pins.
 # This is more pins than most signal nets contain.
@@ -34,8 +36,8 @@
 # Note that a signal net will be routed as starburst or daisy chain.
 # Wires Processed 0, Vias Processed 0
 # Using colormap in design file.
-# Layers Processed: Signal Layers 4
-# Components Placed 147, Images Processed 177, Padstacks Processed 31
+# Layers Processed: Signal Layers 6
+# Components Placed 147, Images Processed 177, Padstacks Processed 32
 # Nets Processed 166, Net Terminals 574
 # PCB Area= 5791.210  EIC=45  Area/EIC=128.694  SMDs=133
 # Total Pin Count: 642
@@ -43,27 +45,29 @@
 # 
 # Design Rules --------------------------------------------
 # Via Grid 0.0001 with offset 0.0000
-# Layer TOP Horz Signal Wire Grid 0.0001 with offset 0.0000, Width= 0.1500, Clearance= 0.2000
-# Layer GND Vert Signal Wire Grid 0.0001 with offset 0.0000, Width= 0.1500, Clearance= 0.2000
-# Layer VCC Horz Signal Wire Grid 0.0001 with offset 0.0000, Width= 0.1500, Clearance= 0.2000
-# Layer BOTTOM Vert Signal Wire Grid 0.0001 with offset 0.0000, Width= 0.1500, Clearance= 0.2000
+# Layer TOP Horz Signal Wire Grid 0.0001 with offset 0.0000, Width= 0.1000, Clearance= 0.1000
+# Layer 'GND-1' Vert Signal Wire Grid 0.0001 with offset 0.0000, Width= 0.1000, Clearance= 0.1000
+# Layer 'SIGNAL' Horz Signal Wire Grid 0.0001 with offset 0.0000, Width= 0.1000, Clearance= 0.1000
+# Layer VCC Vert Signal Wire Grid 0.0001 with offset 0.0000, Width= 0.1000, Clearance= 0.1000
+# Layer 'GND-2' Horz Signal Wire Grid 0.0001 with offset 0.0000, Width= 0.1000, Clearance= 0.1000
+# Layer BOTTOM Vert Signal Wire Grid 0.0001 with offset 0.0000, Width= 0.1000, Clearance= 0.1000
 # Cpu Time = 0:00:00  Elapsed Time = 0:00:00
 # 
-# Wiring Statistics ----------------- D:/Work/GitHub/PowerOverFiber/PCB\PoFA1-1.dsn
+# Wiring Statistics ----------------- D:/Work/GitHub/PowerOverFiber/PCB\PoFA1-4.dsn
 # Nets 166 Connections 408 Unroutes 408
-# Signal Layers 4 Power Layers 0
+# Signal Layers 6 Power Layers 0
 # Wire Junctions 0, at vias 0 Total Vias 0
 # Percent Connected    0.00
-# Manhattan Length 5081.3800 Horizontal 2803.3076 Vertical 2278.0725
+# Manhattan Length 4422.2900 Horizontal 2189.7080 Vertical 2232.5820
 # Routed Length   0.0000 Horizontal   0.0000 Vertical   0.0000
 # Ratio Actual / Manhattan   0.0000
-# Unconnected Length 5081.3800 Horizontal 2752.3323 Vertical 2329.0477
+# Unconnected Length 4422.2900 Horizontal 2127.5023 Vertical 2294.7877
 # Total Conflicts: 0 (Cross: 0, Clear: 0, Xtalk: 0, Length: 0, Polygon Clear: 0 )
 # Cpu Time = 0:00:00  Elapsed Time = 0:00:00
 # Loading Do File pasde.do ...
-# Loading Do File D:/Work/GitHub/PowerOverFiber/PCB\PoFA1-1_rules.do ...
+# Loading Do File D:/Work/GitHub/PowerOverFiber/PCB\PoFA1-4_rules.do ...
 # Colormap Written to File _notify.std
-# Enter command <# Loading Do File C:/Users/ADMINI~1/AppData/Local/Temp/#Taaacpl10016.tmp ...
+# Enter command <# Loading Do File C:/Users/ADMINI~1/AppData/Local/Temp/#Taaaabi01108.tmp ...
 # All Components Unselected.
 # All Nets Unselected.
 # Component U8 Selected.
@@ -78,83 +82,37 @@ direction TOP horizontal
 select layer TOP
 unprotect layer_wires TOP
 # Wires on layer TOP were Unprotected.
-direction GND vertical
-select layer GND
-unprotect layer_wires GND
-# Wires on layer GND were Unprotected.
-direction VCC horizontal
-select layer VCC
-unprotect layer_wires VCC
-# Wires on layer VCC were Unprotected.
-direction BOTTOM vertical
-select layer BOTTOM
-unprotect layer_wires BOTTOM
-# Wires on layer BOTTOM were Unprotected.
-cost via -1
-# System default cost will be used.
-set turbo_stagger off
-limit outside -1
-rule pcb (patterns_allowed  trombone accordion)
-set pattern_stacking on
-rule pcb (sawtooth_amplitude -1 -1)
-rule pcb (sawtooth_gap -1)
-rule pcb (accordion_amplitude -1 -1)
-rule pcb (accordion_gap -1)
-rule pcb (trombone_run_length -1)
-rule pcb (trombone_gap -1)
-unprotect selected
-# All Selected Wires Unprotected.
-fanout 1 (direction In_out) (location Anywhere) (pin_type power) (pin_type signal)
-# Fanout in any direction.
-# Fanout inside and outside component outline.
-# Fanout..Signal Nets.
-# Fanout..Power Nets.
-# Current time = Wed Oct 19 15:26:33 2022
-# 
-#    VIA       TOP          GND          VCC       BOTTOM   
-# 
-#    TOP  -----------  VIA0D40_0D2  VIA0D40_0D2  VIA0D40_0D2
-#    GND  VIA0D40_0D2  -----------  VIA0D40_0D2  VIA0D40_0D2
-#    VCC  VIA0D40_0D2  VIA0D40_0D2  -----------  VIA0D40_0D2
-# BOTTOM  VIA0D40_0D2  VIA0D40_0D2  VIA0D40_0D2  -----------
-# 
-# 
-# Design Rules --------------------------------------------
-# Via Grid 0.0001 with offset 0.0000
-# Layer TOP Horz Signal Wire Grid 0.0001 with offset 0.0000, Width= 0.1500, Clearance= 0.2000
-# Layer GND Vert Signal Wire Grid 0.0001 with offset 0.0000, Width= 0.1500, Clearance= 0.2000
-# Layer VCC Horz Signal Wire Grid 0.0001 with offset 0.0000, Width= 0.1500, Clearance= 0.2000
-# Layer BOTTOM Vert Signal Wire Grid 0.0001 with offset 0.0000, Width= 0.1500, Clearance= 0.2000
-# 
-# Wiring Statistics ----------------- D:/Work/GitHub/PowerOverFiber/PCB\PoFA1-1.dsn
-# Nets 166 Connections 408 Unroutes 408
-# Signal Layers 4 Power Layers 0
-# Wire Junctions 0, at vias 0 Total Vias 0
-# Percent Connected    0.00
-# Manhattan Length 5081.3800 Horizontal 2803.3076 Vertical 2278.0725
-# Routed Length   0.0000 Horizontal   0.0000 Vertical   0.0000
-# Ratio Actual / Manhattan   0.0000
-# Unconnected Length 5081.3800 Horizontal 2752.3323 Vertical 2329.0477
-# Start Fanout Pass 1 of 1
-# Attempts 47 Successes 47 Failures 0 Vias 47
-# 0 bend points have been removed.
-# 0 bend points have been removed.
-# 0 bend points have been removed.
-# 0 bend points have been removed.
-# Total Conflicts: 0 (Cross: 0, Clear: 0, Xtalk: 0, Length: 0, Polygon Clear: 0 )
-# Cpu Time = 0:00:00  Elapsed Time = 0:00:00
-# End Pass 1 of 1
-# Cpu Time = 0:00:00  Elapsed Time = 0:00:00
-# 
-# Wiring Statistics ----------------- D:/Work/GitHub/PowerOverFiber/PCB\PoFA1-1.dsn
-# Nets 166 Connections 408 Unroutes 408
-# Signal Layers 4 Power Layers 0
-# Wire Junctions 4, at vias 4 Total Vias 47
-# Percent Connected    0.00
-# Manhattan Length 5081.3800 Horizontal 2801.8323 Vertical 2279.5477
-# Routed Length  23.5962 Horizontal  16.6850 Vertical  16.6850
-# Ratio Actual / Manhattan   0.0046
-# Unconnected Length 5076.8200 Horizontal 2751.2673 Vertical 2325.5527
-write routes (changed_only) (reset_changed) C:/Users/ADMINI~1/AppData/Local/Temp/#Taaacpm10016.tmp
-# Routing Written to File C:/Users/ADMINI~1/AppData/Local/Temp/#Taaacpm10016.tmp
-quit
+direction 'GND-1' vertical
+select layer 'GND-1'
+unprotect layer_wires 'GND-1'
+# Wires on layer 'GND-1' were Unprotected.
+direction SIGNAL horizontal
+# <<ERROR:>> Unrecognized layer SIGNAL
+# <<ERROR:>> Syntax error in command: token 2 = SIGNAL
+# (content): direction SIGNAL horizontal
+# <<ERROR:>> Bad command not executed!
+# Loading Do File C:/Users/ADMINI~1/AppData/Local/Temp/#Taaaabp01108.tmp ...
+# All Components Unselected.
+# All Nets Unselected.
+# Component U8 Selected.
+set route_diagonal 0
+grid wire 0.000100 (direction x) (offset 0.000000)
+grid wire 0.000100 (direction y) (offset 0.000000)
+grid via 0.000100 (direction x) (offset 0.000000)
+grid via 0.000100 (direction y) (offset 0.000000)
+protect all wires
+# All Wires Protected.
+direction TOP horizontal
+select layer TOP
+unprotect layer_wires TOP
+# Wires on layer TOP were Unprotected.
+direction 'GND-1' vertical
+select layer 'GND-1'
+unprotect layer_wires 'GND-1'
+# Wires on layer 'GND-1' were Unprotected.
+direction SIGNAL horizontal
+# <<ERROR:>> Unrecognized layer SIGNAL
+# <<ERROR:>> Syntax error in command: token 2 = SIGNAL
+# (content): direction SIGNAL horizontal
+# <<ERROR:>> Bad command not executed!
+quit

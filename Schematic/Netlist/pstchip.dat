@@ -1,5 +1,5 @@
 FILE_TYPE=LIBRARY_PARTS;
-{ Using PSTWRITER 17.4.0 d001Oct-19-2022 at 10:00:09}
+{ Using PSTWRITER 17.4.0 d001Oct-20-2022 at 15:34:03}
 primitive 'CAP NP_C0805_10UF';
   pin
     '1':
@@ -477,6 +477,27 @@ primitive 'INDUCTOR_L0603_1UH';
     VALUE='1uH';
   end_body;
 end_primitive;
+primitive 'LASERDIODE_AXIAL_2D0_4P_LASERDIODE';
+  pin
+    'LED+':
+      PIN_NUMBER='(1)';
+      PINUSE='UNSPEC';
+    'LED-':
+      PIN_NUMBER='(2)';
+      PINUSE='UNSPEC';
+    'PD-':
+      PIN_NUMBER='(3)';
+      PINUSE='UNSPEC';
+    'PD+':
+      PIN_NUMBER='(4)';
+      PINUSE='UNSPEC';
+  end_pin;
+  body
+    PART_NAME='LaserDiode';
+    JEDEC_TYPE='AXIAL_2D0_4P';
+    VALUE='LaserDiode';
+  end_body;
+end_primitive;
 primitive '2SC1815_SOT23-3_2SC1815';
   pin
     'B':
@@ -826,30 +847,6 @@ primitive 'T POINT S_TP_SMD_3D0X5D0_SOLDER POINT';
     PART_NAME='T POINT S';
     JEDEC_TYPE='TP_SMD_3D0x5D0';
     VALUE='SOLDER POINT';
-  end_body;
-end_primitive;
-primitive 'T POINT A_TP_THR_ID1D0_LED+';
-  pin
-    'TP':
-      PIN_NUMBER='(1)';
-      PINUSE='UNSPEC';
-  end_pin;
-  body
-    PART_NAME='T POINT A';
-    JEDEC_TYPE='TP_THR_ID1D0';
-    VALUE='LED+';
-  end_body;
-end_primitive;
-primitive 'T POINT A_TP_THR_ID1D0_LED-';
-  pin
-    'TP':
-      PIN_NUMBER='(1)';
-      PINUSE='UNSPEC';
-  end_pin;
-  body
-    PART_NAME='T POINT A';
-    JEDEC_TYPE='TP_THR_ID1D0';
-    VALUE='LED-';
   end_body;
 end_primitive;
 primitive 'LTC3105EDD#PBF_DFN-10_LTC3105EDD#PBF';

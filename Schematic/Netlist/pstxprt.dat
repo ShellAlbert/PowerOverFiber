@@ -1,5 +1,5 @@
 FILE_TYPE = EXPANDEDPARTLIST;
-{ Using PSTWRITER 17.4.0 d001Oct-19-2022 at 10:00:09 }
+{ Using PSTWRITER 17.4.0 d001Oct-20-2022 at 15:34:03 }
 DIRECTIVES
  PST_VERSION='PST_HDL_CENTRIC_VERSION_0';
  ROOT_DRAWING='SERIALCAMERA';
@@ -558,6 +558,16 @@ SECTION_NUMBER 1
  SECTION='';
 
 PART_NAME
+ LD1 'LASERDIODE_AXIAL_2D0_4P_LASERDIODE':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS271287@LIBRARY1.LASERDIODE.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins271287@library1.\laserdiode.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins271287@library1.\laserdiode.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
  Q1 '2SC1815_SOT23-3_2SC1815':;
 
 SECTION_NUMBER 1
@@ -998,6 +1008,16 @@ SECTION_NUMBER 1
  SECTION='';
 
 PART_NAME
+ R49 'R_R0402_1K':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS271684@DISCRETE.R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins271684@discrete.\r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins271684@discrete.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
  R5 'R_R0402_562K':;
 
 SECTION_NUMBER 1
@@ -1204,26 +1224,6 @@ SECTION_NUMBER 1
  '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS207018@DISCRETE.T POINT S.NORMAL(CHIPS)':
  C_PATH='@serialcamera.schematic1(sch_1):ins207018@discrete.\t point s.normal\(chips)',
  P_PATH='@serialcamera.schematic1(sch_1):page2_ins207018@discrete.\t point s.normal\(chips)',
- PRIM_FILE='.\pstchip.dat',
- SECTION='';
-
-PART_NAME
- TP3 'T POINT A_TP_THR_ID1D0_LED+':;
-
-SECTION_NUMBER 1
- '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS67238@DISCRETE.T POINT A.NORMAL(CHIPS)':
- C_PATH='@serialcamera.schematic1(sch_1):ins67238@discrete.\t point a.normal\(chips)',
- P_PATH='@serialcamera.schematic1(sch_1):page2_ins67238@discrete.\t point a.normal\(chips)',
- PRIM_FILE='.\pstchip.dat',
- SECTION='';
-
-PART_NAME
- TP4 'T POINT A_TP_THR_ID1D0_LED-':;
-
-SECTION_NUMBER 1
- '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS67260@DISCRETE.T POINT A.NORMAL(CHIPS)':
- C_PATH='@serialcamera.schematic1(sch_1):ins67260@discrete.\t point a.normal\(chips)',
- P_PATH='@serialcamera.schematic1(sch_1):page2_ins67260@discrete.\t point a.normal\(chips)',
  PRIM_FILE='.\pstchip.dat',
  SECTION='';
 

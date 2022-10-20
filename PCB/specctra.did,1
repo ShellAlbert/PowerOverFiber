@@ -177,4 +177,39 @@ rule layer GND (restricted_layer_length_factor 1)
 rule layer VCC (restricted_layer_length_factor 1)
 rule layer BOTTOM (restricted_layer_length_factor 1)
 write colormap _notify.std
+# do C:/Users/ADMINI~1/AppData/Local/Temp/#Taaacpl10016.tmp
+unselect all routing
+select component U8
+set route_diagonal 0
+grid wire 0.000100 (direction x) (offset 0.000000)
+grid wire 0.000100 (direction y) (offset 0.000000)
+grid via 0.000100 (direction x) (offset 0.000000)
+grid via 0.000100 (direction y) (offset 0.000000)
+protect all wires
+direction TOP horizontal
+select layer TOP
+unprotect layer_wires TOP
+direction GND vertical
+select layer GND
+unprotect layer_wires GND
+direction VCC horizontal
+select layer VCC
+unprotect layer_wires VCC
+direction BOTTOM vertical
+select layer BOTTOM
+unprotect layer_wires BOTTOM
+cost via -1
+set turbo_stagger off
+limit outside -1
+rule pcb (patterns_allowed  trombone accordion)
+set pattern_stacking on
+rule pcb (sawtooth_amplitude -1 -1)
+rule pcb (sawtooth_gap -1)
+rule pcb (accordion_amplitude -1 -1)
+rule pcb (accordion_gap -1)
+rule pcb (trombone_run_length -1)
+rule pcb (trombone_gap -1)
+unprotect selected
+fanout 1 (direction In_out) (location Anywhere) (pin_type power) (pin_type signal)
+write routes (changed_only) (reset_changed) C:/Users/ADMINI~1/AppData/Local/Temp/#Taaacpm10016.tmp
 quit -c

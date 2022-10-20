@@ -5,7 +5,7 @@
 # 
 #            Command Line Parameters
 #            -----------------------
-# Design File Name : D:/Work/GitHub/PowerOverFiber/PCB\PoFA1-1.dsn
+# Design File Name : D:/Work/GitHub/PowerOverFiber/PCB\PoFA1-4.dsn
 # Initialization options:
 #   -do pasde.do
 # Status File Name : D:/Work/GitHub/PowerOverFiber/PCB\monitor.sts
@@ -15,13 +15,13 @@
 #
 #
 #
-# do $/PoFA1-1_rules.do
-rule PCB (width 0.1500)
+# do $/PoFA1-4_rules.do
+rule PCB (width 0.1000)
 rule PCB (clearance 0.1270 (type buried_via_gap))
-rule PCB (clearance 0.2000 (type wire_wire))
-rule PCB (clearance 0.2000 (type wire_smd))
-rule PCB (clearance 0.2000 (type wire_pin))
-rule PCB (clearance 0.2000 (type wire_via))
+rule PCB (clearance 0.1000 (type wire_wire))
+rule PCB (clearance 0.1000 (type wire_smd))
+rule PCB (clearance 0.1000 (type wire_pin))
+rule PCB (clearance 0.1000 (type wire_via))
 rule PCB (clearance 0.1270 (type smd_smd))
 rule PCB (clearance 0.1270 (type smd_pin))
 rule PCB (clearance 0.1270 (type smd_via))
@@ -29,7 +29,7 @@ rule PCB (clearance 0.1270 (type pin_pin))
 rule PCB (clearance 0.1270 (type pin_via))
 rule PCB (clearance 0.1270 (type via_via))
 rule PCB (clearance 0.1270 (type test_test))
-rule PCB (clearance 0.2000 (type test_wire))
+rule PCB (clearance 0.1000 (type test_wire))
 rule PCB (clearance 0.1270 (type test_smd))
 rule PCB (clearance 0.1270 (type test_pin))
 rule PCB (clearance 0.1270 (type test_via))
@@ -67,7 +67,7 @@ rule PCB (clearance 0.1270 (type bbvia_thruvia))
 set bbvia_thruvia on
 rule PCB (clearance 0.1270 (type microvia_area))
 set microvia_area on
-rule PCB (clearance 0.2000 (type bbvia_wire))
+rule PCB (clearance 0.1000 (type bbvia_wire))
 set bbvia_wire on
 rule PCB (clearance 0.2032 (type nhole_pin))
 set nhole_pin off
@@ -75,7 +75,7 @@ rule PCB (clearance 0.2032 (type nhole_via))
 set nhole_via off
 rule PCB (clearance 0.1270 (type bbvia_area))
 set bbvia_area on
-rule PCB (clearance 0.2000 (type nhole_wire))
+rule PCB (clearance 0.1000 (type nhole_wire))
 set nhole_wire off
 rule PCB (clearance 0.2032 (type nhole_area))
 set nhole_area off
@@ -173,11 +173,13 @@ rule pcb (staggered_via on (min_gap 0.1270))
 rule pcb (via_at_smd off)
 rule PCB (turn_under_pad off)
 rule layer TOP (restricted_layer_length_factor 1)
-rule layer GND (restricted_layer_length_factor 1)
+rule layer 'GND-1' (restricted_layer_length_factor 1)
+rule layer 'SIGNAL' (restricted_layer_length_factor 1)
 rule layer VCC (restricted_layer_length_factor 1)
+rule layer 'GND-2' (restricted_layer_length_factor 1)
 rule layer BOTTOM (restricted_layer_length_factor 1)
 write colormap _notify.std
-# do C:/Users/ADMINI~1/AppData/Local/Temp/#Taaacpl10016.tmp
+# do C:/Users/ADMINI~1/AppData/Local/Temp/#Taaaabi01108.tmp
 unselect all routing
 select component U8
 set route_diagonal 0
@@ -189,27 +191,26 @@ protect all wires
 direction TOP horizontal
 select layer TOP
 unprotect layer_wires TOP
-direction GND vertical
-select layer GND
-unprotect layer_wires GND
-direction VCC horizontal
-select layer VCC
-unprotect layer_wires VCC
-direction BOTTOM vertical
-select layer BOTTOM
-unprotect layer_wires BOTTOM
-cost via -1
-set turbo_stagger off
-limit outside -1
-rule pcb (patterns_allowed  trombone accordion)
-set pattern_stacking on
-rule pcb (sawtooth_amplitude -1 -1)
-rule pcb (sawtooth_gap -1)
-rule pcb (accordion_amplitude -1 -1)
-rule pcb (accordion_gap -1)
-rule pcb (trombone_run_length -1)
-rule pcb (trombone_gap -1)
-unprotect selected
-fanout 1 (direction In_out) (location Anywhere) (pin_type power) (pin_type signal)
-write routes (changed_only) (reset_changed) C:/Users/ADMINI~1/AppData/Local/Temp/#Taaacpm10016.tmp
+direction 'GND-1' vertical
+select layer 'GND-1'
+unprotect layer_wires 'GND-1'
+# direction SIGNAL horizontal
+# ERROR: NOT EXECUTED
+# do C:/Users/ADMINI~1/AppData/Local/Temp/#Taaaabp01108.tmp
+unselect all routing
+select component U8
+set route_diagonal 0
+grid wire 0.000100 (direction x) (offset 0.000000)
+grid wire 0.000100 (direction y) (offset 0.000000)
+grid via 0.000100 (direction x) (offset 0.000000)
+grid via 0.000100 (direction y) (offset 0.000000)
+protect all wires
+direction TOP horizontal
+select layer TOP
+unprotect layer_wires TOP
+direction 'GND-1' vertical
+select layer 'GND-1'
+unprotect layer_wires 'GND-1'
+# direction SIGNAL horizontal
+# ERROR: NOT EXECUTED
 quit -c
