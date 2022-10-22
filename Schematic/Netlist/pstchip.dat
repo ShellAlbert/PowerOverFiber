@@ -1,5 +1,5 @@
 FILE_TYPE=LIBRARY_PARTS;
-{ Using PSTWRITER 17.4.0 d001Oct-20-2022 at 15:34:03}
+{ Using PSTWRITER 17.4.0 d001Oct-22-2022 at 11:51:08}
 primitive 'CAP NP_C0805_10UF';
   pin
     '1':
@@ -430,6 +430,33 @@ primitive 'HEADER2X35_DF40HC-70DS_DF40HC(3.0)-70DS-0.4V(51)';
     PART_NAME='Header2x35';
     JEDEC_TYPE='DF40HC-70DS';
     VALUE='DF40HC(3.0)-70DS-0.4V(51)';
+  end_body;
+end_primitive;
+primitive 'CONN_SH1.0MM_4P_CONN_SH1D0MM_4P_CONN_SH1.0MM_4P';
+  pin
+    '1':
+      PIN_NUMBER='(1)';
+      PINUSE='UNSPEC';
+    '2':
+      PIN_NUMBER='(2)';
+      PINUSE='UNSPEC';
+    '3':
+      PIN_NUMBER='(3)';
+      PINUSE='UNSPEC';
+    '4':
+      PIN_NUMBER='(4)';
+      PINUSE='UNSPEC';
+    '5':
+      PIN_NUMBER='(5)';
+      PINUSE='UNSPEC';
+    '6':
+      PIN_NUMBER='(6)';
+      PINUSE='UNSPEC';
+  end_pin;
+  body
+    PART_NAME='CONN_SH1.0mm_4P';
+    JEDEC_TYPE='CONN_SH1D0MM_4P';
+    VALUE='CONN_SH1.0mm_4P';
   end_body;
 end_primitive;
 primitive 'INDUCTOR_L47473_10UH';

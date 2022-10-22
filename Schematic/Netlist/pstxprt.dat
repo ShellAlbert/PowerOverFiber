@@ -1,5 +1,5 @@
 FILE_TYPE = EXPANDEDPARTLIST;
-{ Using PSTWRITER 17.4.0 d001Oct-20-2022 at 15:34:03 }
+{ Using PSTWRITER 17.4.0 d001Oct-22-2022 at 11:51:08 }
 DIRECTIVES
  PST_VERSION='PST_HDL_CENTRIC_VERSION_0';
  ROOT_DRAWING='SERIALCAMERA';
@@ -528,6 +528,16 @@ SECTION_NUMBER 1
  SECTION='';
 
 PART_NAME
+ J3 'CONN_SH1.0MM_4P_CONN_SH1D0MM_4P_CONN_SH1.0MM_4P':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS276894@LIBRARY1.CONN_SH1.0MM_4P.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins276894@library1.\conn_sh1.0mm_4p.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins276894@library1.\conn_sh1.0mm_4p.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
  L1 'INDUCTOR_L47473_10UH':;
 
 SECTION_NUMBER 1
@@ -1024,6 +1034,46 @@ SECTION_NUMBER 1
  '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS2759@DISCRETE.R.NORMAL(CHIPS)':
  C_PATH='@serialcamera.schematic1(sch_1):ins2759@discrete.\r.normal\(chips)',
  P_PATH='@serialcamera.schematic1(sch_1):page2_ins2759@discrete.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R50 'R_R0402_10K':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS285614@DISCRETE.R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins285614@discrete.\r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins285614@discrete.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R51 'R_R0402_10K':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS285640@DISCRETE.R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins285640@discrete.\r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins285640@discrete.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R52 'R_R0402_DNP':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS285676@DISCRETE.R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins285676@discrete.\r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins285676@discrete.\r.normal\(chips)',
+ PRIM_FILE='.\pstchip.dat',
+ SECTION='';
+
+PART_NAME
+ R53 'R_R0402_DNP':;
+
+SECTION_NUMBER 1
+ '@SERIALCAMERA.SCHEMATIC1(SCH_1):INS285692@DISCRETE.R.NORMAL(CHIPS)':
+ C_PATH='@serialcamera.schematic1(sch_1):ins285692@discrete.\r.normal\(chips)',
+ P_PATH='@serialcamera.schematic1(sch_1):page2_ins285692@discrete.\r.normal\(chips)',
  PRIM_FILE='.\pstchip.dat',
  SECTION='';
 

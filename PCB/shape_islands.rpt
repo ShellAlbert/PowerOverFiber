@@ -1,0 +1,21 @@
+(---------------------------------------------------------------------)
+(                                                                     )
+(    Shape Island Report                                              )
+(                                                                     )
+(    Drawing          : PoFA1-9.brd                                   )
+(    Software Version : 17.4S017                                      )
+(    Date/Time        : Sat Oct 22 10:40:04 2022                      )
+(                                                                     )
+(---------------------------------------------------------------------)
+
+
+  Total islands on design: 2
+
+
+  <<<  ETCH  >>>
+
+    Layer = TOP
+	Point on shape: (37.0000 0.0000)  Net: GND
+
+    Layer = BOTTOM
+	Point on shape: (37.0000 0.0000)  Net: GND

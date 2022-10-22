@@ -1,0 +1,7 @@
+INFO: Reading report definition file 'C:/Cadence/Cadence_SPB_17.4-2019/share/pcb/signal/reports.dat'.
+INFO: Finished reading report definition file successfully.
+INFO: Reading report definition file 'C:/Cadence/Cadence_SPB_17.4-2019/share/pcb/signal/custom_rep.dat'.
+INFO: Finished reading report definition file successfully.
+INFO: Loaded existing interconnect file 'D:\Work\GitHub\PowerOverFiber\PCB\interconn.iml'
+INFO: Loaded existing interconnect file 'C:\Cadence\Cadence_SPB_17.4-2019\share\pcb\signal\cds_interconn.iml'
+INFO: Finished loading SigNoise interconnect libraries

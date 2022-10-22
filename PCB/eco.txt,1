@@ -2,59 +2,22 @@
 |                                 ECO   REPORT                                 |
 |                                                                    Page   1  |
 |------------------------------------------------------------------------------|
-|  D:/Work/GitHub/PowerOverFiber/PCB/PoFA1-6.brd                               |
-|                                                    Thu Oct 20 15:34:11 2022  |
+|  D:/Work/GitHub/PowerOverFiber/PCB/PoFA1-7.brd                               |
+|                                                    Fri Oct 21 16:09:27 2022  |
 |------------------------------------------------------------------------------|
 | NET CHANGES                                                                  |
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
 |   net  name |  type of change |    pin_id     |   x   |   y   |   to  net    |
 |- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
-  BUS_SWITCH   pins DELETED FROM this net (pin now not on any net)
-                                 U9.19           -0.3000 -10.600
-                - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-               pins ADDED TO this existing net (pins not previously on any net)
-                                 U9.135          10.6000 -4.2000
+  SWCLK        pins MOVED FROM this net (to net name listed on right)
+                                 J3.2            22.6000 13.3000
+                                                                          SWDIO
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
-  N57182       pins MOVED FROM this net (to net name listed on right)
-                                 U15.2           -19.400 -0.6800
-                                                                         N94378
-                                 U15.10          -23.800 -1.3300
-                                                                         N94378
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
-  N94378       pins ADDED TO this new net
-                                 R49.1                          
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
-  SYNC_SWITCH  pins ADDED TO this new net
-                                 R49.2                          
-                                 U9.47           -10.700 -3.7000
-|------------------------------------------------------------------------------|
-|                                 ECO   REPORT                                 |
-|                                                                    Page   2  |
+  SWDIO        pins MOVED FROM this net (to net name listed on right)
+                                 J3.3            22.6000 12.3000
+                                                                          SWCLK
 |------------------------------------------------------------------------------|
-|  D:/Work/GitHub/PowerOverFiber/PCB/PoFA1-6.brd                               |
-|                                                    Thu Oct 20 15:34:11 2022  |
-|------------------------------------------------------------------------------|
-| COMPONENTS ADDED to design                                                   |
-|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
-|    ref des        |    device type                                           |
-|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
- R49                 R_R0402_1K            
-|------------------------------------------------------------------------------|
-|                                 ECO   REPORT                                 |
-|                                                                    Page   3  |
-|------------------------------------------------------------------------------|
-|  D:/Work/GitHub/PowerOverFiber/PCB/PoFA1-6.brd                               |
-|                                                    Thu Oct 20 15:34:11 2022  |
-|------------------------------------------------------------------------------|
-| SLOT PROPERTIES added to design                                              |
-|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
-|   slot_id    |   x   |   y   |   property   |             value              |
-|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |
- R49.2                          PRIM_FILE      .\pstchip.dat
-|------------------------------------------------------------------------------|
-|       Nets changed          :       7                                        |
-|       Components added      :       1                                        |
-|       Slot property added   :       1                                        |
+|       Nets changed          :       2                                        |
 |                                                                              |
-|   Total ECO changes reported:       9                                        |
+|   Total ECO changes reported:       2                                        |
 |------------------------------------------------------------------------------|
