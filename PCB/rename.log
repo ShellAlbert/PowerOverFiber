@@ -1,0 +1,180 @@
+(---------------------------------------------------------------------)
+(                                                                     )
+(    RENAME REFDES                                                    )
+(                                                                     )
+(    Drawing          : PoFA1-16.brd                                  )
+(    Software Version : 17.4S017                                      )
+(    Date/Time        : Sun Oct 23 18:43:41 2022                      )
+(                                                                     )
+(---------------------------------------------------------------------)
+
+
+Renaming components on BOTH_SIDES on entire BOARD
+    Extents: (-300.0000,-300.0000) (700.0000,700.0000)
+
+Sequencing the reference designators SEQUENTIALLY
+Row processing direction : to the RIGHT, from the top down.
+
+OLD J2    NEW J1
+OLD R17    NEW R1
+OLD C20    NEW C1
+OLD C19    NEW C2
+OLD U8    NEW U1
+OLD C22    NEW C3
+OLD C21    NEW C4
+OLD R34    NEW R2
+OLD R35    NEW R3
+OLD D2    NEW D1
+OLD D1    NEW D2
+OLD R37    NEW R4
+OLD R36    NEW R5
+OLD J1    NEW J2
+Sequencing the reference designators SEQUENTIALLY
+Row processing direction : to the LEFT, from the top down.
+
+OLD TP22    NEW TP1
+OLD TP21    NEW TP2
+OLD TP20    NEW TP3
+OLD TP19    NEW TP4
+OLD TP18    NEW TP5
+OLD TP17    NEW TP6
+Reference designator R1 already exists ... skipping to R2.
+Reference designator R2 already exists ... skipping to R3.
+Reference designator R3 already exists ... skipping to R4.
+Reference designator R4 already exists ... skipping to R5.
+Reference designator R5 already exists ... skipping to R6.
+OLD R32    NEW R6
+Reference designator C1 already exists ... skipping to C2.
+Reference designator C2 already exists ... skipping to C3.
+Reference designator C3 already exists ... skipping to C4.
+Reference designator C4 already exists ... skipping to C5.
+OLD C10    NEW C5
+OLD R33    NEW R7
+Reference designator U1 already exists ... skipping to U2.
+OLD U6    NEW U2
+OLD R21    NEW R8
+OLD C18    NEW C6
+OLD C17    NEW C7
+OLD R19    NEW R9
+OLD R8    NEW R10
+OLD U7    NEW U3
+OLD R20    NEW R11
+OLD R22    NEW R12
+OLD C6    NEW C8
+OLD L2    NEW L1
+OLD R23    NEW R13
+OLD R9    NEW R14
+OLD TP23    NEW TP7
+OLD R3    NEW R15
+OLD R2    NEW R16
+OLD C2    NEW C9
+OLD U4    NEW U4
+OLD R10    NEW R17
+OLD R13    NEW R18
+OLD R12    NEW R19
+OLD R11    NEW R20
+OLD R6    NEW R21
+OLD C7    NEW C10
+OLD R5    NEW R22
+OLD U2    NEW U5
+OLD C4    NEW C11
+OLD TP8    NEW TP8
+OLD R4    NEW R23
+OLD C11    NEW C12
+OLD C12    NEW C13
+OLD U1    NEW U6
+OLD R47    NEW R24
+OLD C3    NEW C14
+OLD C9    NEW C15
+OLD C8    NEW C16
+OLD TP2    NEW TP9
+OLD TP24    NEW TP10
+Reference designator D1 already exists ... skipping to D2.
+Reference designator D2 already exists ... skipping to D3.
+OLD D7    NEW D3
+OLD C38    NEW C17
+OLD C39    NEW C18
+OLD C37    NEW C19
+OLD TP10    NEW TP11
+OLD R1    NEW R25
+OLD C36    NEW C20
+OLD L1    NEW L2
+Reference designator J1 already exists ... skipping to J2.
+Reference designator J2 already exists ... skipping to J3.
+OLD J3    NEW J3
+OLD C1    NEW C21
+OLD TP1    NEW TP12
+OLD TP9    NEW TP13
+OLD D8    NEW D4
+OLD C35    NEW C22
+OLD R46    NEW R26
+OLD R43    NEW R27
+OLD R42    NEW R28
+OLD TP11    NEW TP14
+OLD R50    NEW R29
+OLD U14    NEW U7
+OLD R52    NEW R30
+OLD C13    NEW C23
+OLD R15    NEW R31
+OLD C43    NEW C24
+OLD R41    NEW R32
+OLD C34    NEW C25
+OLD C16    NEW C26
+OLD TP16    NEW TP15
+OLD C31    NEW C27
+OLD U5    NEW U8
+OLD C15    NEW C28
+OLD R14    NEW R33
+OLD C14    NEW C29
+OLD U9    NEW U9
+OLD U15    NEW U10
+OLD C33    NEW C30
+OLD TP15    NEW TP16
+OLD C30    NEW C31
+OLD R49    NEW R34
+OLD R45    NEW R35
+OLD D6    NEW D5
+OLD R24    NEW R36
+OLD C26    NEW C32
+OLD C27    NEW C33
+OLD R53    NEW R37
+OLD R44    NEW R38
+OLD D5    NEW D6
+OLD C24    NEW C34
+OLD R51    NEW R39
+OLD C32    NEW C35
+OLD U10    NEW U11
+OLD C23    NEW C36
+OLD C29    NEW C37
+OLD R25    NEW R40
+OLD TP14    NEW TP17
+OLD R48    NEW R41
+OLD Q3    NEW Q1
+OLD R26    NEW R42
+OLD Q1    NEW Q2
+OLD R30    NEW R43
+OLD R31    NEW R44
+OLD C40    NEW C38
+OLD R40    NEW R45
+OLD L3    NEW L3
+OLD C28    NEW C39
+OLD LD1    NEW LD1
+OLD TP5    NEW TP18
+OLD Y1    NEW Y1
+OLD U13    NEW U12
+OLD R38    NEW R46
+OLD D3    NEW D7
+OLD C42    NEW C40
+OLD C41    NEW C41
+OLD R27    NEW R47
+OLD R28    NEW R48
+OLD R29    NEW R49
+OLD Q2    NEW Q3
+OLD TP12    NEW TP19
+OLD TP13    NEW TP20
+OLD C25    NEW C42
+OLD R39    NEW R50
+OLD U11    NEW U13
+OLD TP6    NEW TP21
+OLD D4    NEW D8
+OLD TP7    NEW TP22

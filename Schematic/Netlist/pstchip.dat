@@ -1,20 +1,5 @@
 FILE_TYPE=LIBRARY_PARTS;
-{ Using PSTWRITER 17.4.0 d001Oct-22-2022 at 11:51:08}
-primitive 'CAP NP_C0805_10UF';
-  pin
-    '1':
-      PIN_NUMBER='(1)';
-      PINUSE='UNSPEC';
-    '2':
-      PIN_NUMBER='(2)';
-      PINUSE='UNSPEC';
-  end_pin;
-  body
-    PART_NAME='CAP NP';
-    JEDEC_TYPE='C0805';
-    VALUE='10uF';
-  end_body;
-end_primitive;
+{ Using PSTWRITER 17.4.0 d001Oct-24-2022 at 16:36:05}
 primitive 'CAP NP_C0402_0.1UF';
   pin
     '1':
@@ -28,66 +13,6 @@ primitive 'CAP NP_C0402_0.1UF';
     PART_NAME='CAP NP';
     JEDEC_TYPE='C0402';
     VALUE='0.1uF';
-  end_body;
-end_primitive;
-primitive 'CAP NP_C0603_2.2UF';
-  pin
-    '1':
-      PIN_NUMBER='(1)';
-      PINUSE='UNSPEC';
-    '2':
-      PIN_NUMBER='(2)';
-      PINUSE='UNSPEC';
-  end_pin;
-  body
-    PART_NAME='CAP NP';
-    JEDEC_TYPE='C0603';
-    VALUE='2.2uF';
-  end_body;
-end_primitive;
-primitive 'CAP NP_C0603_1UF';
-  pin
-    '1':
-      PIN_NUMBER='(1)';
-      PINUSE='UNSPEC';
-    '2':
-      PIN_NUMBER='(2)';
-      PINUSE='UNSPEC';
-  end_pin;
-  body
-    PART_NAME='CAP NP';
-    JEDEC_TYPE='C0603';
-    VALUE='1uF';
-  end_body;
-end_primitive;
-primitive 'CAP NP_C0603_10UF';
-  pin
-    '1':
-      PIN_NUMBER='(1)';
-      PINUSE='UNSPEC';
-    '2':
-      PIN_NUMBER='(2)';
-      PINUSE='UNSPEC';
-  end_pin;
-  body
-    PART_NAME='CAP NP';
-    JEDEC_TYPE='C0603';
-    VALUE='10uF';
-  end_body;
-end_primitive;
-primitive 'CAP NP_C0402_12PF';
-  pin
-    '1':
-      PIN_NUMBER='(1)';
-      PINUSE='UNSPEC';
-    '2':
-      PIN_NUMBER='(2)';
-      PINUSE='UNSPEC';
-  end_pin;
-  body
-    PART_NAME='CAP NP';
-    JEDEC_TYPE='C0402';
-    VALUE='12pF';
   end_body;
 end_primitive;
 primitive 'CAP NP_C0402_33PF';
@@ -105,6 +30,36 @@ primitive 'CAP NP_C0402_33PF';
     VALUE='33pF';
   end_body;
 end_primitive;
+primitive 'CAP NP_C0805_10UF';
+  pin
+    '1':
+      PIN_NUMBER='(1)';
+      PINUSE='UNSPEC';
+    '2':
+      PIN_NUMBER='(2)';
+      PINUSE='UNSPEC';
+  end_pin;
+  body
+    PART_NAME='CAP NP';
+    JEDEC_TYPE='C0805';
+    VALUE='10uF';
+  end_body;
+end_primitive;
+primitive 'CAP NP_C0603_2.2UF';
+  pin
+    '1':
+      PIN_NUMBER='(1)';
+      PINUSE='UNSPEC';
+    '2':
+      PIN_NUMBER='(2)';
+      PINUSE='UNSPEC';
+  end_pin;
+  body
+    PART_NAME='CAP NP';
+    JEDEC_TYPE='C0603';
+    VALUE='2.2uF';
+  end_body;
+end_primitive;
 primitive 'CAP NP_C1206_22UF';
   pin
     '1':
@@ -118,6 +73,51 @@ primitive 'CAP NP_C1206_22UF';
     PART_NAME='CAP NP';
     JEDEC_TYPE='C1206';
     VALUE='22uF';
+  end_body;
+end_primitive;
+primitive 'CAP NP_C0603_10UF';
+  pin
+    '1':
+      PIN_NUMBER='(1)';
+      PINUSE='UNSPEC';
+    '2':
+      PIN_NUMBER='(2)';
+      PINUSE='UNSPEC';
+  end_pin;
+  body
+    PART_NAME='CAP NP';
+    JEDEC_TYPE='C0603';
+    VALUE='10uF';
+  end_body;
+end_primitive;
+primitive 'CAP NP_C0603_1UF';
+  pin
+    '1':
+      PIN_NUMBER='(1)';
+      PINUSE='UNSPEC';
+    '2':
+      PIN_NUMBER='(2)';
+      PINUSE='UNSPEC';
+  end_pin;
+  body
+    PART_NAME='CAP NP';
+    JEDEC_TYPE='C0603';
+    VALUE='1uF';
+  end_body;
+end_primitive;
+primitive 'CAP NP_C0402_12PF';
+  pin
+    '1':
+      PIN_NUMBER='(1)';
+      PINUSE='UNSPEC';
+    '2':
+      PIN_NUMBER='(2)';
+      PINUSE='UNSPEC';
+  end_pin;
+  body
+    PART_NAME='CAP NP';
+    JEDEC_TYPE='C0402';
+    VALUE='12pF';
   end_body;
 end_primitive;
 primitive 'LED_LED0402_LED';
@@ -148,6 +148,225 @@ primitive 'DIODE TVS_SOD123W_PTVS3V3S1UTR';
     PART_NAME='DIODE TVS';
     JEDEC_TYPE='SOD123W';
     VALUE='PTVS3V3S1UTR';
+  end_body;
+end_primitive;
+primitive 'HEADER2X35_DF40HC-70DS_DF40HC(3.0)-70DS-0.4V(51)';
+  pin
+    '2':
+      PIN_NUMBER='(2)';
+      PINUSE='UNSPEC';
+    '4':
+      PIN_NUMBER='(4)';
+      PINUSE='UNSPEC';
+    '6':
+      PIN_NUMBER='(6)';
+      PINUSE='UNSPEC';
+    '8':
+      PIN_NUMBER='(8)';
+      PINUSE='UNSPEC';
+    '10':
+      PIN_NUMBER='(10)';
+      PINUSE='UNSPEC';
+    '12':
+      PIN_NUMBER='(12)';
+      PINUSE='UNSPEC';
+    '14':
+      PIN_NUMBER='(14)';
+      PINUSE='UNSPEC';
+    '16':
+      PIN_NUMBER='(16)';
+      PINUSE='UNSPEC';
+    '18':
+      PIN_NUMBER='(18)';
+      PINUSE='UNSPEC';
+    '20':
+      PIN_NUMBER='(20)';
+      PINUSE='UNSPEC';
+    '22':
+      PIN_NUMBER='(22)';
+      PINUSE='UNSPEC';
+    '24':
+      PIN_NUMBER='(24)';
+      PINUSE='UNSPEC';
+    '26':
+      PIN_NUMBER='(26)';
+      PINUSE='UNSPEC';
+    '28':
+      PIN_NUMBER='(28)';
+      PINUSE='UNSPEC';
+    '30':
+      PIN_NUMBER='(30)';
+      PINUSE='UNSPEC';
+    '32':
+      PIN_NUMBER='(32)';
+      PINUSE='UNSPEC';
+    '34':
+      PIN_NUMBER='(34)';
+      PINUSE='UNSPEC';
+    '36':
+      PIN_NUMBER='(36)';
+      PINUSE='UNSPEC';
+    '38':
+      PIN_NUMBER='(38)';
+      PINUSE='UNSPEC';
+    '40':
+      PIN_NUMBER='(40)';
+      PINUSE='UNSPEC';
+    '42':
+      PIN_NUMBER='(42)';
+      PINUSE='UNSPEC';
+    '44':
+      PIN_NUMBER='(44)';
+      PINUSE='UNSPEC';
+    '46':
+      PIN_NUMBER='(46)';
+      PINUSE='UNSPEC';
+    '48':
+      PIN_NUMBER='(48)';
+      PINUSE='UNSPEC';
+    '50':
+      PIN_NUMBER='(50)';
+      PINUSE='UNSPEC';
+    '52':
+      PIN_NUMBER='(52)';
+      PINUSE='UNSPEC';
+    '54':
+      PIN_NUMBER='(54)';
+      PINUSE='UNSPEC';
+    '56':
+      PIN_NUMBER='(56)';
+      PINUSE='UNSPEC';
+    '58':
+      PIN_NUMBER='(58)';
+      PINUSE='UNSPEC';
+    '60':
+      PIN_NUMBER='(60)';
+      PINUSE='UNSPEC';
+    '62':
+      PIN_NUMBER='(62)';
+      PINUSE='UNSPEC';
+    '64':
+      PIN_NUMBER='(64)';
+      PINUSE='UNSPEC';
+    '66':
+      PIN_NUMBER='(66)';
+      PINUSE='UNSPEC';
+    '68':
+      PIN_NUMBER='(68)';
+      PINUSE='UNSPEC';
+    '70':
+      PIN_NUMBER='(70)';
+      PINUSE='UNSPEC';
+    '1':
+      PIN_NUMBER='(1)';
+      PINUSE='UNSPEC';
+    '3':
+      PIN_NUMBER='(3)';
+      PINUSE='UNSPEC';
+    '5':
+      PIN_NUMBER='(5)';
+      PINUSE='UNSPEC';
+    '7':
+      PIN_NUMBER='(7)';
+      PINUSE='UNSPEC';
+    '9':
+      PIN_NUMBER='(9)';
+      PINUSE='UNSPEC';
+    '11':
+      PIN_NUMBER='(11)';
+      PINUSE='UNSPEC';
+    '13':
+      PIN_NUMBER='(13)';
+      PINUSE='UNSPEC';
+    '15':
+      PIN_NUMBER='(15)';
+      PINUSE='UNSPEC';
+    '17':
+      PIN_NUMBER='(17)';
+      PINUSE='UNSPEC';
+    '19':
+      PIN_NUMBER='(19)';
+      PINUSE='UNSPEC';
+    '21':
+      PIN_NUMBER='(21)';
+      PINUSE='UNSPEC';
+    '23':
+      PIN_NUMBER='(23)';
+      PINUSE='UNSPEC';
+    '25':
+      PIN_NUMBER='(25)';
+      PINUSE='UNSPEC';
+    '27':
+      PIN_NUMBER='(27)';
+      PINUSE='UNSPEC';
+    '29':
+      PIN_NUMBER='(29)';
+      PINUSE='UNSPEC';
+    '31':
+      PIN_NUMBER='(31)';
+      PINUSE='UNSPEC';
+    '33':
+      PIN_NUMBER='(33)';
+      PINUSE='UNSPEC';
+    '35':
+      PIN_NUMBER='(35)';
+      PINUSE='UNSPEC';
+    '37':
+      PIN_NUMBER='(37)';
+      PINUSE='UNSPEC';
+    '39':
+      PIN_NUMBER='(39)';
+      PINUSE='UNSPEC';
+    '41':
+      PIN_NUMBER='(41)';
+      PINUSE='UNSPEC';
+    '43':
+      PIN_NUMBER='(43)';
+      PINUSE='UNSPEC';
+    '45':
+      PIN_NUMBER='(45)';
+      PINUSE='UNSPEC';
+    '47':
+      PIN_NUMBER='(47)';
+      PINUSE='UNSPEC';
+    '49':
+      PIN_NUMBER='(49)';
+      PINUSE='UNSPEC';
+    '51':
+      PIN_NUMBER='(51)';
+      PINUSE='UNSPEC';
+    '53':
+      PIN_NUMBER='(53)';
+      PINUSE='UNSPEC';
+    '55':
+      PIN_NUMBER='(55)';
+      PINUSE='UNSPEC';
+    '57':
+      PIN_NUMBER='(57)';
+      PINUSE='UNSPEC';
+    '59':
+      PIN_NUMBER='(59)';
+      PINUSE='UNSPEC';
+    '61':
+      PIN_NUMBER='(61)';
+      PINUSE='UNSPEC';
+    '63':
+      PIN_NUMBER='(63)';
+      PINUSE='UNSPEC';
+    '65':
+      PIN_NUMBER='(65)';
+      PINUSE='UNSPEC';
+    '67':
+      PIN_NUMBER='(67)';
+      PINUSE='UNSPEC';
+    '69':
+      PIN_NUMBER='(69)';
+      PINUSE='UNSPEC';
+  end_pin;
+  body
+    PART_NAME='Header2x35';
+    JEDEC_TYPE='DF40HC-70DS';
+    VALUE='DF40HC(3.0)-70DS-0.4V(51)';
   end_body;
 end_primitive;
 primitive 'HEADER2X9_HEADER2X9-2D54_HEADER2X9-2.54MM';
@@ -213,225 +432,6 @@ primitive 'HEADER2X9_HEADER2X9-2D54_HEADER2X9-2.54MM';
     VALUE='Header2x9-2.54mm';
   end_body;
 end_primitive;
-primitive 'HEADER2X35_DF40HC-70DS_DF40HC(3.0)-70DS-0.4V(51)';
-  pin
-    '1':
-      PIN_NUMBER='(1)';
-      PINUSE='UNSPEC';
-    '2':
-      PIN_NUMBER='(2)';
-      PINUSE='UNSPEC';
-    '3':
-      PIN_NUMBER='(3)';
-      PINUSE='UNSPEC';
-    '4':
-      PIN_NUMBER='(4)';
-      PINUSE='UNSPEC';
-    '5':
-      PIN_NUMBER='(5)';
-      PINUSE='UNSPEC';
-    '6':
-      PIN_NUMBER='(6)';
-      PINUSE='UNSPEC';
-    '7':
-      PIN_NUMBER='(7)';
-      PINUSE='UNSPEC';
-    '8':
-      PIN_NUMBER='(8)';
-      PINUSE='UNSPEC';
-    '9':
-      PIN_NUMBER='(9)';
-      PINUSE='UNSPEC';
-    '10':
-      PIN_NUMBER='(10)';
-      PINUSE='UNSPEC';
-    '11':
-      PIN_NUMBER='(11)';
-      PINUSE='UNSPEC';
-    '12':
-      PIN_NUMBER='(12)';
-      PINUSE='UNSPEC';
-    '13':
-      PIN_NUMBER='(13)';
-      PINUSE='UNSPEC';
-    '14':
-      PIN_NUMBER='(14)';
-      PINUSE='UNSPEC';
-    '15':
-      PIN_NUMBER='(15)';
-      PINUSE='UNSPEC';
-    '16':
-      PIN_NUMBER='(16)';
-      PINUSE='UNSPEC';
-    '17':
-      PIN_NUMBER='(17)';
-      PINUSE='UNSPEC';
-    '18':
-      PIN_NUMBER='(18)';
-      PINUSE='UNSPEC';
-    '19':
-      PIN_NUMBER='(19)';
-      PINUSE='UNSPEC';
-    '20':
-      PIN_NUMBER='(20)';
-      PINUSE='UNSPEC';
-    '21':
-      PIN_NUMBER='(21)';
-      PINUSE='UNSPEC';
-    '22':
-      PIN_NUMBER='(22)';
-      PINUSE='UNSPEC';
-    '23':
-      PIN_NUMBER='(23)';
-      PINUSE='UNSPEC';
-    '24':
-      PIN_NUMBER='(24)';
-      PINUSE='UNSPEC';
-    '25':
-      PIN_NUMBER='(25)';
-      PINUSE='UNSPEC';
-    '26':
-      PIN_NUMBER='(26)';
-      PINUSE='UNSPEC';
-    '27':
-      PIN_NUMBER='(27)';
-      PINUSE='UNSPEC';
-    '28':
-      PIN_NUMBER='(28)';
-      PINUSE='UNSPEC';
-    '29':
-      PIN_NUMBER='(29)';
-      PINUSE='UNSPEC';
-    '30':
-      PIN_NUMBER='(30)';
-      PINUSE='UNSPEC';
-    '31':
-      PIN_NUMBER='(31)';
-      PINUSE='UNSPEC';
-    '32':
-      PIN_NUMBER='(32)';
-      PINUSE='UNSPEC';
-    '33':
-      PIN_NUMBER='(33)';
-      PINUSE='UNSPEC';
-    '34':
-      PIN_NUMBER='(34)';
-      PINUSE='UNSPEC';
-    '35':
-      PIN_NUMBER='(35)';
-      PINUSE='UNSPEC';
-    '70':
-      PIN_NUMBER='(70)';
-      PINUSE='UNSPEC';
-    '69':
-      PIN_NUMBER='(69)';
-      PINUSE='UNSPEC';
-    '68':
-      PIN_NUMBER='(68)';
-      PINUSE='UNSPEC';
-    '67':
-      PIN_NUMBER='(67)';
-      PINUSE='UNSPEC';
-    '66':
-      PIN_NUMBER='(66)';
-      PINUSE='UNSPEC';
-    '65':
-      PIN_NUMBER='(65)';
-      PINUSE='UNSPEC';
-    '64':
-      PIN_NUMBER='(64)';
-      PINUSE='UNSPEC';
-    '63':
-      PIN_NUMBER='(63)';
-      PINUSE='UNSPEC';
-    '62':
-      PIN_NUMBER='(62)';
-      PINUSE='UNSPEC';
-    '61':
-      PIN_NUMBER='(61)';
-      PINUSE='UNSPEC';
-    '60':
-      PIN_NUMBER='(60)';
-      PINUSE='UNSPEC';
-    '59':
-      PIN_NUMBER='(59)';
-      PINUSE='UNSPEC';
-    '58':
-      PIN_NUMBER='(58)';
-      PINUSE='UNSPEC';
-    '57':
-      PIN_NUMBER='(57)';
-      PINUSE='UNSPEC';
-    '56':
-      PIN_NUMBER='(56)';
-      PINUSE='UNSPEC';
-    '55':
-      PIN_NUMBER='(55)';
-      PINUSE='UNSPEC';
-    '54':
-      PIN_NUMBER='(54)';
-      PINUSE='UNSPEC';
-    '53':
-      PIN_NUMBER='(53)';
-      PINUSE='UNSPEC';
-    '52':
-      PIN_NUMBER='(52)';
-      PINUSE='UNSPEC';
-    '51':
-      PIN_NUMBER='(51)';
-      PINUSE='UNSPEC';
-    '50':
-      PIN_NUMBER='(50)';
-      PINUSE='UNSPEC';
-    '49':
-      PIN_NUMBER='(49)';
-      PINUSE='UNSPEC';
-    '48':
-      PIN_NUMBER='(48)';
-      PINUSE='UNSPEC';
-    '47':
-      PIN_NUMBER='(47)';
-      PINUSE='UNSPEC';
-    '46':
-      PIN_NUMBER='(46)';
-      PINUSE='UNSPEC';
-    '45':
-      PIN_NUMBER='(45)';
-      PINUSE='UNSPEC';
-    '44':
-      PIN_NUMBER='(44)';
-      PINUSE='UNSPEC';
-    '43':
-      PIN_NUMBER='(43)';
-      PINUSE='UNSPEC';
-    '42':
-      PIN_NUMBER='(42)';
-      PINUSE='UNSPEC';
-    '41':
-      PIN_NUMBER='(41)';
-      PINUSE='UNSPEC';
-    '40':
-      PIN_NUMBER='(40)';
-      PINUSE='UNSPEC';
-    '39':
-      PIN_NUMBER='(39)';
-      PINUSE='UNSPEC';
-    '38':
-      PIN_NUMBER='(38)';
-      PINUSE='UNSPEC';
-    '37':
-      PIN_NUMBER='(37)';
-      PINUSE='UNSPEC';
-    '36':
-      PIN_NUMBER='(36)';
-      PINUSE='UNSPEC';
-  end_pin;
-  body
-    PART_NAME='Header2x35';
-    JEDEC_TYPE='DF40HC-70DS';
-    VALUE='DF40HC(3.0)-70DS-0.4V(51)';
-  end_body;
-end_primitive;
 primitive 'CONN_SH1.0MM_4P_CONN_SH1D0MM_4P_CONN_SH1.0MM_4P';
   pin
     '1':
@@ -459,21 +459,6 @@ primitive 'CONN_SH1.0MM_4P_CONN_SH1D0MM_4P_CONN_SH1.0MM_4P';
     VALUE='CONN_SH1.0mm_4P';
   end_body;
 end_primitive;
-primitive 'INDUCTOR_L47473_10UH';
-  pin
-    '1':
-      PIN_NUMBER='(1)';
-      PINUSE='UNSPEC';
-    '2':
-      PIN_NUMBER='(2)';
-      PINUSE='UNSPEC';
-  end_pin;
-  body
-    PART_NAME='INDUCTOR';
-    JEDEC_TYPE='L47473';
-    VALUE='10uH';
-  end_body;
-end_primitive;
 primitive 'INDUCTOR_L3015_4.7UH';
   pin
     '1':
@@ -487,6 +472,21 @@ primitive 'INDUCTOR_L3015_4.7UH';
     PART_NAME='INDUCTOR';
     JEDEC_TYPE='L3015';
     VALUE='4.7uH';
+  end_body;
+end_primitive;
+primitive 'INDUCTOR_L47473_10UH';
+  pin
+    '1':
+      PIN_NUMBER='(1)';
+      PINUSE='UNSPEC';
+    '2':
+      PIN_NUMBER='(2)';
+      PINUSE='UNSPEC';
+  end_pin;
+  body
+    PART_NAME='INDUCTOR';
+    JEDEC_TYPE='L47473';
+    VALUE='10uH';
   end_body;
 end_primitive;
 primitive 'INDUCTOR_L0603_1UH';
@@ -525,24 +525,6 @@ primitive 'LASERDIODE_AXIAL_2D0_4P_LASERDIODE';
     VALUE='LaserDiode';
   end_body;
 end_primitive;
-primitive '2SC1815_SOT23-3_2SC1815';
-  pin
-    'B':
-      PIN_NUMBER='(1)';
-      PINUSE='UNSPEC';
-    'C':
-      PIN_NUMBER='(3)';
-      PINUSE='UNSPEC';
-    'E':
-      PIN_NUMBER='(2)';
-      PINUSE='UNSPEC';
-  end_pin;
-  body
-    PART_NAME='2SC1815';
-    JEDEC_TYPE='SOT23-3';
-    VALUE='2SC1815';
-  end_body;
-end_primitive;
 primitive 'FH3415A_SOT23-3_FH3415A';
   pin
     'D':
@@ -561,22 +543,40 @@ primitive 'FH3415A_SOT23-3_FH3415A';
     VALUE='FH3415A';
   end_body;
 end_primitive;
-primitive 'R_R0402_200K';
+primitive '2SC1815_SOT23-3_2SC1815';
   pin
-    '1':
+    'B':
       PIN_NUMBER='(1)';
       PINUSE='UNSPEC';
-    '2':
+    'C':
+      PIN_NUMBER='(3)';
+      PINUSE='UNSPEC';
+    'E':
       PIN_NUMBER='(2)';
       PINUSE='UNSPEC';
   end_pin;
   body
-    PART_NAME='R';
-    JEDEC_TYPE='R0402';
-    VALUE='200K';
+    PART_NAME='2SC1815';
+    JEDEC_TYPE='SOT23-3';
+    VALUE='2SC1815';
   end_body;
 end_primitive;
-primitive 'R_R0402_36K';
+primitive 'RESISTOR VAR 2_AXIAL-5D0_GL7549';
+  pin
+    '1':
+      PIN_NUMBER='(1)';
+      PINUSE='UNSPEC';
+    '2':
+      PIN_NUMBER='(2)';
+      PINUSE='UNSPEC';
+  end_pin;
+  body
+    PART_NAME='RESISTOR VAR 2';
+    JEDEC_TYPE='AXIAL-5D0';
+    VALUE='GL7549';
+  end_body;
+end_primitive;
+primitive 'R_R0402_1M';
   pin
     '1':
       PIN_NUMBER='(1)';
@@ -588,7 +588,7 @@ primitive 'R_R0402_36K';
   body
     PART_NAME='R';
     JEDEC_TYPE='R0402';
-    VALUE='36K';
+    VALUE='1M';
   end_body;
 end_primitive;
 primitive 'R_R0402_10K';
@@ -621,6 +621,36 @@ primitive 'R_R0402_147K';
     VALUE='147K';
   end_body;
 end_primitive;
+primitive 'R_R0402_2.26M';
+  pin
+    '1':
+      PIN_NUMBER='(1)';
+      PINUSE='UNSPEC';
+    '2':
+      PIN_NUMBER='(2)';
+      PINUSE='UNSPEC';
+  end_pin;
+  body
+    PART_NAME='R';
+    JEDEC_TYPE='R0402';
+    VALUE='2.26M';
+  end_body;
+end_primitive;
+primitive 'R_R0402_36K';
+  pin
+    '1':
+      PIN_NUMBER='(1)';
+      PINUSE='UNSPEC';
+    '2':
+      PIN_NUMBER='(2)';
+      PINUSE='UNSPEC';
+  end_pin;
+  body
+    PART_NAME='R';
+    JEDEC_TYPE='R0402';
+    VALUE='36K';
+  end_body;
+end_primitive;
 primitive 'R_R0402_3.3K';
   pin
     '1':
@@ -634,6 +664,66 @@ primitive 'R_R0402_3.3K';
     PART_NAME='R';
     JEDEC_TYPE='R0402';
     VALUE='3.3K';
+  end_body;
+end_primitive;
+primitive 'R_R0402_0';
+  pin
+    '1':
+      PIN_NUMBER='(1)';
+      PINUSE='UNSPEC';
+    '2':
+      PIN_NUMBER='(2)';
+      PINUSE='UNSPEC';
+  end_pin;
+  body
+    PART_NAME='R';
+    JEDEC_TYPE='R0402';
+    VALUE='0';
+  end_body;
+end_primitive;
+primitive 'R_R0402_562K';
+  pin
+    '1':
+      PIN_NUMBER='(1)';
+      PINUSE='UNSPEC';
+    '2':
+      PIN_NUMBER='(2)';
+      PINUSE='UNSPEC';
+  end_pin;
+  body
+    PART_NAME='R';
+    JEDEC_TYPE='R0402';
+    VALUE='562K';
+  end_body;
+end_primitive;
+primitive 'R_R0402_200K';
+  pin
+    '1':
+      PIN_NUMBER='(1)';
+      PINUSE='UNSPEC';
+    '2':
+      PIN_NUMBER='(2)';
+      PINUSE='UNSPEC';
+  end_pin;
+  body
+    PART_NAME='R';
+    JEDEC_TYPE='R0402';
+    VALUE='200K';
+  end_body;
+end_primitive;
+primitive 'R_R0402_DNP';
+  pin
+    '1':
+      PIN_NUMBER='(1)';
+      PINUSE='UNSPEC';
+    '2':
+      PIN_NUMBER='(2)';
+      PINUSE='UNSPEC';
+  end_pin;
+  body
+    PART_NAME='R';
+    JEDEC_TYPE='R0402';
+    VALUE='DNP';
   end_body;
 end_primitive;
 primitive 'R_R0402_100K';
@@ -651,36 +741,6 @@ primitive 'R_R0402_100K';
     VALUE='100K';
   end_body;
 end_primitive;
-primitive 'RESISTOR VAR 2_AXIAL-5D0_GL7549';
-  pin
-    '1':
-      PIN_NUMBER='(1)';
-      PINUSE='UNSPEC';
-    '2':
-      PIN_NUMBER='(2)';
-      PINUSE='UNSPEC';
-  end_pin;
-  body
-    PART_NAME='RESISTOR VAR 2';
-    JEDEC_TYPE='AXIAL-5D0';
-    VALUE='GL7549';
-  end_body;
-end_primitive;
-primitive 'R_R0402_2.26M';
-  pin
-    '1':
-      PIN_NUMBER='(1)';
-      PINUSE='UNSPEC';
-    '2':
-      PIN_NUMBER='(2)';
-      PINUSE='UNSPEC';
-  end_pin;
-  body
-    PART_NAME='R';
-    JEDEC_TYPE='R0402';
-    VALUE='2.26M';
-  end_body;
-end_primitive;
 primitive 'R_R0402_1K';
   pin
     '1':
@@ -694,6 +754,21 @@ primitive 'R_R0402_1K';
     PART_NAME='R';
     JEDEC_TYPE='R0402';
     VALUE='1K';
+  end_body;
+end_primitive;
+primitive 'R_R0402_2K';
+  pin
+    '1':
+      PIN_NUMBER='(1)';
+      PINUSE='UNSPEC';
+    '2':
+      PIN_NUMBER='(2)';
+      PINUSE='UNSPEC';
+  end_pin;
+  body
+    PART_NAME='R';
+    JEDEC_TYPE='R0402';
+    VALUE='2K';
   end_body;
 end_primitive;
 primitive 'R_R0402_510';
@@ -726,21 +801,6 @@ primitive 'R_R0402_40';
     VALUE='40';
   end_body;
 end_primitive;
-primitive 'R_R0402_1M';
-  pin
-    '1':
-      PIN_NUMBER='(1)';
-      PINUSE='UNSPEC';
-    '2':
-      PIN_NUMBER='(2)';
-      PINUSE='UNSPEC';
-  end_pin;
-  body
-    PART_NAME='R';
-    JEDEC_TYPE='R0402';
-    VALUE='1M';
-  end_body;
-end_primitive;
 primitive 'R_R0402_68K';
   pin
     '1':
@@ -756,90 +816,6 @@ primitive 'R_R0402_68K';
     VALUE='68K';
   end_body;
 end_primitive;
-primitive 'R_R0402_0';
-  pin
-    '1':
-      PIN_NUMBER='(1)';
-      PINUSE='UNSPEC';
-    '2':
-      PIN_NUMBER='(2)';
-      PINUSE='UNSPEC';
-  end_pin;
-  body
-    PART_NAME='R';
-    JEDEC_TYPE='R0402';
-    VALUE='0';
-  end_body;
-end_primitive;
-primitive 'R_R0402_DNP';
-  pin
-    '1':
-      PIN_NUMBER='(1)';
-      PINUSE='UNSPEC';
-    '2':
-      PIN_NUMBER='(2)';
-      PINUSE='UNSPEC';
-  end_pin;
-  body
-    PART_NAME='R';
-    JEDEC_TYPE='R0402';
-    VALUE='DNP';
-  end_body;
-end_primitive;
-primitive 'R_R0402_2K';
-  pin
-    '1':
-      PIN_NUMBER='(1)';
-      PINUSE='UNSPEC';
-    '2':
-      PIN_NUMBER='(2)';
-      PINUSE='UNSPEC';
-  end_pin;
-  body
-    PART_NAME='R';
-    JEDEC_TYPE='R0402';
-    VALUE='2K';
-  end_body;
-end_primitive;
-primitive 'R_R0402_562K';
-  pin
-    '1':
-      PIN_NUMBER='(1)';
-      PINUSE='UNSPEC';
-    '2':
-      PIN_NUMBER='(2)';
-      PINUSE='UNSPEC';
-  end_pin;
-  body
-    PART_NAME='R';
-    JEDEC_TYPE='R0402';
-    VALUE='562K';
-  end_body;
-end_primitive;
-primitive 'T POINT A_TP_SMD_OD2D0_SOLAR CELL V+';
-  pin
-    'TP':
-      PIN_NUMBER='(1)';
-      PINUSE='UNSPEC';
-  end_pin;
-  body
-    PART_NAME='T POINT A';
-    JEDEC_TYPE='TP_SMD_OD2D0';
-    VALUE='Solar Cell V+';
-  end_body;
-end_primitive;
-primitive 'T POINT R_TP_THR_ID1D0_SMD TP';
-  pin
-    'TP':
-      PIN_NUMBER='(1)';
-      PINUSE='UNSPEC';
-  end_pin;
-  body
-    PART_NAME='T POINT R';
-    JEDEC_TYPE='TP_THR_ID1D0';
-    VALUE='SMD TP';
-  end_body;
-end_primitive;
 primitive 'T POINT R_TP_SMD_OD1D5_SMD TP';
   pin
     'TP':
@@ -850,18 +826,6 @@ primitive 'T POINT R_TP_SMD_OD1D5_SMD TP';
     PART_NAME='T POINT R';
     JEDEC_TYPE='TP_SMD_OD1D5';
     VALUE='SMD TP';
-  end_body;
-end_primitive;
-primitive 'T POINT A_TP_SMD_OD2D0_SOLAR CELL V-';
-  pin
-    'TP':
-      PIN_NUMBER='(1)';
-      PINUSE='UNSPEC';
-  end_pin;
-  body
-    PART_NAME='T POINT A';
-    JEDEC_TYPE='TP_SMD_OD2D0';
-    VALUE='Solar Cell V-';
   end_body;
 end_primitive;
 primitive 'T POINT S_TP_SMD_3D0X5D0_SOLDER POINT';
@@ -876,451 +840,40 @@ primitive 'T POINT S_TP_SMD_3D0X5D0_SOLDER POINT';
     VALUE='SOLDER POINT';
   end_body;
 end_primitive;
-primitive 'LTC3105EDD#PBF_DFN-10_LTC3105EDD#PBF';
+primitive 'T POINT R_TP_THR_ID1D0_SMD TP';
   pin
-    'FB':
+    'TP':
       PIN_NUMBER='(1)';
       PINUSE='UNSPEC';
-    'LDO':
-      PIN_NUMBER='(2)';
-      PINUSE='UNSPEC';
-    'FBLDO':
-      PIN_NUMBER='(3)';
-      PINUSE='UNSPEC';
-    'S\H\D\N':
-      PIN_NUMBER='(4)';
-      PINUSE='UNSPEC';
-    'MPPC':
-      PIN_NUMBER='(5)';
-      PINUSE='UNSPEC';
-    'VIN':
-      PIN_NUMBER='(6)';
-      PINUSE='UNSPEC';
-    'SW':
-      PIN_NUMBER='(7)';
-      PINUSE='UNSPEC';
-    'PGOOD':
-      PIN_NUMBER='(8)';
-      PINUSE='UNSPEC';
-    'VOUT':
-      PIN_NUMBER='(9)';
-      PINUSE='UNSPEC';
-    'AUX':
-      PIN_NUMBER='(10)';
-      PINUSE='UNSPEC';
-    'GND':
-      PIN_NUMBER='(11)';
-      PINUSE='UNSPEC';
   end_pin;
   body
-    PART_NAME='LTC3105EDD#PBF';
-    JEDEC_TYPE='DFN-10';
-    VALUE='LTC3105EDD#PBF';
+    PART_NAME='T POINT R';
+    JEDEC_TYPE='TP_THR_ID1D0';
+    VALUE='SMD TP';
   end_body;
 end_primitive;
-primitive 'MAX4761EBX+T_TQFN-36_MAX4761ETX+T';
+primitive 'T POINT A_TP_SMD_OD2D0_SOLAR CELL V+';
   pin
-    'INA':
-      PIN_NUMBER='(4)';
-      PINUSE='UNSPEC';
-    'NO1':
-      PIN_NUMBER='(33)';
-      PINUSE='UNSPEC';
-    'NC1':
+    'TP':
       PIN_NUMBER='(1)';
       PINUSE='UNSPEC';
-    'NO2':
-      PIN_NUMBER='(34)';
-      PINUSE='UNSPEC';
-    'NC2':
-      PIN_NUMBER='(3)';
-      PINUSE='UNSPEC';
-    'NO3':
-      PIN_NUMBER='(12)';
-      PINUSE='UNSPEC';
-    'NC3':
-      PIN_NUMBER='(7)';
-      PINUSE='UNSPEC';
-    'NO4':
-      PIN_NUMBER='(13)';
-      PINUSE='UNSPEC';
-    'NC4':
-      PIN_NUMBER='(9)';
-      PINUSE='UNSPEC';
-    'NO5':
-      PIN_NUMBER='(31)';
-      PINUSE='UNSPEC';
-    'NC5':
-      PIN_NUMBER='(27)';
-      PINUSE='UNSPEC';
-    'NO6':
-      PIN_NUMBER='(30)';
-      PINUSE='UNSPEC';
-    'NC6':
-      PIN_NUMBER='(25)';
-      PINUSE='UNSPEC';
-    'NO7':
-      PIN_NUMBER='(16)';
-      PINUSE='UNSPEC';
-    'NC7':
-      PIN_NUMBER='(21)';
-      PINUSE='UNSPEC';
-    'NO8':
-      PIN_NUMBER='(15)';
-      PINUSE='UNSPEC';
-    'NC8':
-      PIN_NUMBER='(19)';
-      PINUSE='UNSPEC';
-    'E\N\':
-      PIN_NUMBER='(22)';
-      PINUSE='UNSPEC';
-    'COM1':
-      PIN_NUMBER='(36)';
-      PINUSE='UNSPEC';
-    'COM2':
-      PIN_NUMBER='(2)';
-      PINUSE='UNSPEC';
-    'COM3':
-      PIN_NUMBER='(8)';
-      PINUSE='UNSPEC';
-    'COM4':
-      PIN_NUMBER='(10)';
-      PINUSE='UNSPEC';
-    'COM5':
-      PIN_NUMBER='(28)';
-      PINUSE='UNSPEC';
-    'COM6':
-      PIN_NUMBER='(26)';
-      PINUSE='UNSPEC';
-    'COM7':
-      PIN_NUMBER='(20)';
-      PINUSE='UNSPEC';
-    'COM8':
-      PIN_NUMBER='(18)';
-      PINUSE='UNSPEC';
-    'V+':
-      PIN_NUMBER='(5)';
-      PINUSE='POWER';
-    'GND':
-      PIN_NUMBER='(23)';
-      PINUSE='POWER';
-    'NC1#6':
-      PIN_NUMBER='(6)';
-      PINUSE='POWER';
-    'NC2#11':
-      PIN_NUMBER='(11)';
-      PINUSE='POWER';
-    'EPAD':
-      PIN_NUMBER='(EPAD)';
-      PINUSE='UNSPEC';
-    'NC3#14':
-      PIN_NUMBER='(14)';
-      PINUSE='POWER';
-    'NC4#17':
-      PIN_NUMBER='(17)';
-      PINUSE='POWER';
-    'NC5#24':
-      PIN_NUMBER='(24)';
-      PINUSE='POWER';
-    'NC6#29':
-      PIN_NUMBER='(29)';
-      PINUSE='POWER';
-    'NC7#32':
-      PIN_NUMBER='(32)';
-      PINUSE='POWER';
-    'NC8#35':
-      PIN_NUMBER='(35)';
-      PINUSE='POWER';
   end_pin;
   body
-    PART_NAME='MAX4761EBX+T';
-    JEDEC_TYPE='TQFN-36';
-    VALUE='MAX4761ETX+T';
+    PART_NAME='T POINT A';
+    JEDEC_TYPE='TP_SMD_OD2D0';
+    VALUE='Solar Cell V+';
   end_body;
 end_primitive;
-primitive 'SN74LVC1G08QDBVRQ1_SOT-23-5_SN74LVC1G08QDBVRQ1';
+primitive 'T POINT A_TP_SMD_OD2D0_SOLAR CELL V-';
   pin
-    'A':
+    'TP':
       PIN_NUMBER='(1)';
       PINUSE='UNSPEC';
-    'B':
-      PIN_NUMBER='(2)';
-      PINUSE='UNSPEC';
-    'GND':
-      PIN_NUMBER='(3)';
-      PINUSE='UNSPEC';
-    'Y':
-      PIN_NUMBER='(4)';
-      PINUSE='UNSPEC';
-    'VCC':
-      PIN_NUMBER='(5)';
-      PINUSE='UNSPEC';
   end_pin;
   body
-    PART_NAME='SN74LVC1G08QDBVRQ1';
-    JEDEC_TYPE='SOT-23-5';
-    VALUE='SN74LVC1G08QDBVRQ1';
-  end_body;
-end_primitive;
-primitive 'BAT754C_SOT23-3_BAT754C';
-  pin
-    '1':
-      PIN_NUMBER='(1)';
-      PINUSE='UNSPEC';
-    '2':
-      PIN_NUMBER='(2)';
-      PINUSE='UNSPEC';
-    '3':
-      PIN_NUMBER='(3)';
-      PINUSE='UNSPEC';
-  end_pin;
-  body
-    PART_NAME='BAT754C';
-    JEDEC_TYPE='SOT23-3';
-    VALUE='BAT754C';
-  end_body;
-end_primitive;
-primitive 'HDC1010YPAR_DSBGA-8_HDC1010YPAR';
-  pin
-    'SCL':
-      PIN_NUMBER='(A1)';
-      PINUSE='UNSPEC';
-    'VDD':
-      PIN_NUMBER='(B1)';
-      PINUSE='UNSPEC';
-    'ADR0':
-      PIN_NUMBER='(C1)';
-      PINUSE='UNSPEC';
-    'ADR1':
-      PIN_NUMBER='(D1)';
-      PINUSE='UNSPEC';
-    'SDA':
-      PIN_NUMBER='(A2)';
-      PINUSE='UNSPEC';
-    'GND':
-      PIN_NUMBER='(B2)';
-      PINUSE='UNSPEC';
-    'DNC':
-      PIN_NUMBER='(C2)';
-      PINUSE='UNSPEC';
-    'DRDYN':
-      PIN_NUMBER='(D2)';
-      PINUSE='UNSPEC';
-  end_pin;
-  body
-    PART_NAME='HDC1010YPAR';
-    JEDEC_TYPE='DSBGA-8';
-    VALUE='HDC1010YPAR';
-  end_body;
-end_primitive;
-primitive 'MAX4754AEBE+T_QFN-16_MAX4754AEBE+T';
-  pin
-    'COM1':
-      PIN_NUMBER='(3)';
-      PINUSE='UNSPEC';
-    'COM2':
-      PIN_NUMBER='(11)';
-      PINUSE='UNSPEC';
-    'COM3':
-      PIN_NUMBER='(15)';
-      PINUSE='UNSPEC';
-    'COM4':
-      PIN_NUMBER='(7)';
-      PINUSE='UNSPEC';
-    'INA':
-      PIN_NUMBER='(2)';
-      PINUSE='UNSPEC';
-    'NC1':
-      PIN_NUMBER='(4)';
-      PINUSE='UNSPEC';
-    'NC2':
-      PIN_NUMBER='(12)';
-      PINUSE='UNSPEC';
-    'NC3':
-      PIN_NUMBER='(16)';
-      PINUSE='UNSPEC';
-    'NC4':
-      PIN_NUMBER='(8)';
-      PINUSE='UNSPEC';
-    'NO1':
-      PIN_NUMBER='(1)';
-      PINUSE='UNSPEC';
-    'NO2':
-      PIN_NUMBER='(9)';
-      PINUSE='UNSPEC';
-    'NO3':
-      PIN_NUMBER='(13)';
-      PINUSE='UNSPEC';
-    'NO4':
-      PIN_NUMBER='(5)';
-      PINUSE='UNSPEC';
-    'INB':
-      PIN_NUMBER='(10)';
-      PINUSE='UNSPEC';
-    'V+':
-      PIN_NUMBER='(6)';
-      PINUSE='POWER';
-    'EPAD':
-      PIN_NUMBER='(EPAD)';
-      PINUSE='UNSPEC';
-    'GND':
-      PIN_NUMBER='(14)';
-      PINUSE='UNSPEC';
-  end_pin;
-  body
-    PART_NAME='MAX4754AEBE+T';
-    JEDEC_TYPE='QFN-16';
-    VALUE='MAX4754AEBE+T';
-  end_body;
-end_primitive;
-primitive 'LTC3539EDCB#PBF_DFN-8_LTC3539EDCB#PBF';
-  pin
-    'SW':
-      PIN_NUMBER='(1)';
-      PINUSE='UNSPEC';
-    'PGND':
-      PIN_NUMBER='(2)';
-      PINUSE='UNSPEC';
-    'GND':
-      PIN_NUMBER='(3)';
-      PINUSE='UNSPEC';
-    'VIN':
-      PIN_NUMBER='(4)';
-      PINUSE='UNSPEC';
-    'S\H\D\N\':
-      PIN_NUMBER='(5)';
-      PINUSE='UNSPEC';
-    'FB':
-      PIN_NUMBER='(6)';
-      PINUSE='UNSPEC';
-    'MODE':
-      PIN_NUMBER='(7)';
-      PINUSE='UNSPEC';
-    'VOUT':
-      PIN_NUMBER='(8)';
-      PINUSE='UNSPEC';
-    'EPAD':
-      PIN_NUMBER='(9)';
-      PINUSE='UNSPEC';
-  end_pin;
-  body
-    PART_NAME='LTC3539EDCB#PBF';
-    JEDEC_TYPE='DFN-8';
-    VALUE='LTC3539EDCB#PBF';
-  end_body;
-end_primitive;
-primitive 'ADCMP380-1ACBZ-RL7_WLCSP-6_ADCMP380-1ACBZ-RL7';
-  pin
-    'VCC':
-      PIN_NUMBER='(A1)';
-      PINUSE='POWER';
-    'GND#A2':
-      PIN_NUMBER='(A2)';
-      PINUSE='POWER';
-    'EN':
-      PIN_NUMBER='(B1)';
-      PINUSE='UNSPEC';
-    'GND#B2':
-      PIN_NUMBER='(B2)';
-      PINUSE='POWER';
-    'IN':
-      PIN_NUMBER='(C1)';
-      PINUSE='UNSPEC';
-    'OUT':
-      PIN_NUMBER='(C2)';
-      PINUSE='UNSPEC';
-  end_pin;
-  body
-    PART_NAME='ADCMP380-1ACBZ-RL7';
-    JEDEC_TYPE='WLCSP-6';
-    VALUE='ADCMP380-1ACBZ-RL7';
-  end_body;
-end_primitive;
-primitive 'TPS22976ADPUR_WSON-14_TPS22976ADPUR';
-  pin
-    'VIN1#1':
-      PIN_NUMBER='(1)';
-      PINUSE='POWER';
-    'VIN1#2':
-      PIN_NUMBER='(2)';
-      PINUSE='POWER';
-    'ON1':
-      PIN_NUMBER='(3)';
-      PINUSE='UNSPEC';
-    'VBIAS':
-      PIN_NUMBER='(4)';
-      PINUSE='UNSPEC';
-    'ON2':
-      PIN_NUMBER='(5)';
-      PINUSE='UNSPEC';
-    'VIN2#6':
-      PIN_NUMBER='(6)';
-      PINUSE='POWER';
-    'VIN2#7':
-      PIN_NUMBER='(7)';
-      PINUSE='POWER';
-    'VOUT1#14':
-      PIN_NUMBER='(14)';
-      PINUSE='POWER';
-    'VOUT1#13':
-      PIN_NUMBER='(13)';
-      PINUSE='POWER';
-    'CT1':
-      PIN_NUMBER='(12)';
-      PINUSE='UNSPEC';
-    'GND':
-      PIN_NUMBER='(11)';
-      PINUSE='UNSPEC';
-    'CT2':
-      PIN_NUMBER='(10)';
-      PINUSE='UNSPEC';
-    'VOUT2#9':
-      PIN_NUMBER='(9)';
-      PINUSE='POWER';
-    'VOUT2#8':
-      PIN_NUMBER='(8)';
-      PINUSE='POWER';
-    'EPAD':
-      PIN_NUMBER='(EPAD)';
-      PINUSE='UNSPEC';
-  end_pin;
-  body
-    PART_NAME='TPS22976ADPUR';
-    JEDEC_TYPE='WSON-14';
-    VALUE='TPS22976ADPUR';
-  end_body;
-end_primitive;
-primitive 'ADA4051-2ARMZ_RM-8_ADA4051-2ARMZ';
-  pin
-    'OUT A':
-      PIN_NUMBER='(1)';
-      PINUSE='UNSPEC';
-    '-IN A':
-      PIN_NUMBER='(2)';
-      PINUSE='UNSPEC';
-    '+IN A':
-      PIN_NUMBER='(3)';
-      PINUSE='UNSPEC';
-    'V-':
-      PIN_NUMBER='(4)';
-      PINUSE='UNSPEC';
-    'V+':
-      PIN_NUMBER='(8)';
-      PINUSE='UNSPEC';
-    'OUT B':
-      PIN_NUMBER='(7)';
-      PINUSE='UNSPEC';
-    '-IN B':
-      PIN_NUMBER='(6)';
-      PINUSE='UNSPEC';
-    '+IN B':
-      PIN_NUMBER='(5)';
-      PINUSE='UNSPEC';
-  end_pin;
-  body
-    PART_NAME='ADA4051-2ARMZ';
-    JEDEC_TYPE='RM-8';
-    VALUE='ADA4051-2ARMZ';
+    PART_NAME='T POINT A';
+    JEDEC_TYPE='TP_SMD_OD2D0';
+    VALUE='Solar Cell V-';
   end_body;
 end_primitive;
 primitive 'IS66WVE2M16EBLL-70BLI-TR_TFBGA-48_IS66WVE2M16EBLL-70BLI-TR';
@@ -1474,6 +1027,453 @@ primitive 'IS66WVE2M16EBLL-70BLI-TR_TFBGA-48_IS66WVE2M16EBLL-70BLI-TR';
     PART_NAME='IS66WVE2M16EBLL-70BLI-TR';
     JEDEC_TYPE='TFBGA-48';
     VALUE='IS66WVE2M16EBLL-70BLI-TR';
+  end_body;
+end_primitive;
+primitive 'MAX4754AEBE+T_QFN-16_MAX4754AEBE+T';
+  pin
+    'COM1':
+      PIN_NUMBER='(3)';
+      PINUSE='UNSPEC';
+    'COM2':
+      PIN_NUMBER='(11)';
+      PINUSE='UNSPEC';
+    'COM3':
+      PIN_NUMBER='(15)';
+      PINUSE='UNSPEC';
+    'COM4':
+      PIN_NUMBER='(7)';
+      PINUSE='UNSPEC';
+    'INA':
+      PIN_NUMBER='(2)';
+      PINUSE='UNSPEC';
+    'NC1':
+      PIN_NUMBER='(4)';
+      PINUSE='UNSPEC';
+    'NC2':
+      PIN_NUMBER='(12)';
+      PINUSE='UNSPEC';
+    'NC3':
+      PIN_NUMBER='(16)';
+      PINUSE='UNSPEC';
+    'NC4':
+      PIN_NUMBER='(8)';
+      PINUSE='UNSPEC';
+    'NO1':
+      PIN_NUMBER='(1)';
+      PINUSE='UNSPEC';
+    'NO2':
+      PIN_NUMBER='(9)';
+      PINUSE='UNSPEC';
+    'NO3':
+      PIN_NUMBER='(13)';
+      PINUSE='UNSPEC';
+    'NO4':
+      PIN_NUMBER='(5)';
+      PINUSE='UNSPEC';
+    'INB':
+      PIN_NUMBER='(10)';
+      PINUSE='UNSPEC';
+    'V+':
+      PIN_NUMBER='(6)';
+      PINUSE='POWER';
+    'EPAD':
+      PIN_NUMBER='(EPAD)';
+      PINUSE='UNSPEC';
+    'GND':
+      PIN_NUMBER='(14)';
+      PINUSE='UNSPEC';
+  end_pin;
+  body
+    PART_NAME='MAX4754AEBE+T';
+    JEDEC_TYPE='QFN-16';
+    VALUE='MAX4754AEBE+T';
+  end_body;
+end_primitive;
+primitive 'MAX4761EBX+T_TQFN-36_MAX4761ETX+T';
+  pin
+    'INA':
+      PIN_NUMBER='(4)';
+      PINUSE='UNSPEC';
+    'NO1':
+      PIN_NUMBER='(33)';
+      PINUSE='UNSPEC';
+    'NC1':
+      PIN_NUMBER='(1)';
+      PINUSE='UNSPEC';
+    'NO2':
+      PIN_NUMBER='(34)';
+      PINUSE='UNSPEC';
+    'NC2':
+      PIN_NUMBER='(3)';
+      PINUSE='UNSPEC';
+    'NO3':
+      PIN_NUMBER='(12)';
+      PINUSE='UNSPEC';
+    'NC3':
+      PIN_NUMBER='(7)';
+      PINUSE='UNSPEC';
+    'NO4':
+      PIN_NUMBER='(13)';
+      PINUSE='UNSPEC';
+    'NC4':
+      PIN_NUMBER='(9)';
+      PINUSE='UNSPEC';
+    'NO5':
+      PIN_NUMBER='(31)';
+      PINUSE='UNSPEC';
+    'NC5':
+      PIN_NUMBER='(27)';
+      PINUSE='UNSPEC';
+    'NO6':
+      PIN_NUMBER='(30)';
+      PINUSE='UNSPEC';
+    'NC6':
+      PIN_NUMBER='(25)';
+      PINUSE='UNSPEC';
+    'NO7':
+      PIN_NUMBER='(16)';
+      PINUSE='UNSPEC';
+    'NC7':
+      PIN_NUMBER='(21)';
+      PINUSE='UNSPEC';
+    'NO8':
+      PIN_NUMBER='(15)';
+      PINUSE='UNSPEC';
+    'NC8':
+      PIN_NUMBER='(19)';
+      PINUSE='UNSPEC';
+    'E\N\':
+      PIN_NUMBER='(22)';
+      PINUSE='UNSPEC';
+    'COM1':
+      PIN_NUMBER='(36)';
+      PINUSE='UNSPEC';
+    'COM2':
+      PIN_NUMBER='(2)';
+      PINUSE='UNSPEC';
+    'COM3':
+      PIN_NUMBER='(8)';
+      PINUSE='UNSPEC';
+    'COM4':
+      PIN_NUMBER='(10)';
+      PINUSE='UNSPEC';
+    'COM5':
+      PIN_NUMBER='(28)';
+      PINUSE='UNSPEC';
+    'COM6':
+      PIN_NUMBER='(26)';
+      PINUSE='UNSPEC';
+    'COM7':
+      PIN_NUMBER='(20)';
+      PINUSE='UNSPEC';
+    'COM8':
+      PIN_NUMBER='(18)';
+      PINUSE='UNSPEC';
+    'V+':
+      PIN_NUMBER='(5)';
+      PINUSE='POWER';
+    'GND':
+      PIN_NUMBER='(23)';
+      PINUSE='POWER';
+    'NC1#6':
+      PIN_NUMBER='(6)';
+      PINUSE='POWER';
+    'NC2#11':
+      PIN_NUMBER='(11)';
+      PINUSE='POWER';
+    'EPAD':
+      PIN_NUMBER='(EPAD)';
+      PINUSE='UNSPEC';
+    'NC3#14':
+      PIN_NUMBER='(14)';
+      PINUSE='POWER';
+    'NC4#17':
+      PIN_NUMBER='(17)';
+      PINUSE='POWER';
+    'NC5#24':
+      PIN_NUMBER='(24)';
+      PINUSE='POWER';
+    'NC6#29':
+      PIN_NUMBER='(29)';
+      PINUSE='POWER';
+    'NC7#32':
+      PIN_NUMBER='(32)';
+      PINUSE='POWER';
+    'NC8#35':
+      PIN_NUMBER='(35)';
+      PINUSE='POWER';
+  end_pin;
+  body
+    PART_NAME='MAX4761EBX+T';
+    JEDEC_TYPE='TQFN-36';
+    VALUE='MAX4761ETX+T';
+  end_body;
+end_primitive;
+primitive 'BAT754C_SOT23-3_BAT754C';
+  pin
+    '1':
+      PIN_NUMBER='(1)';
+      PINUSE='UNSPEC';
+    '2':
+      PIN_NUMBER='(2)';
+      PINUSE='UNSPEC';
+    '3':
+      PIN_NUMBER='(3)';
+      PINUSE='UNSPEC';
+  end_pin;
+  body
+    PART_NAME='BAT754C';
+    JEDEC_TYPE='SOT23-3';
+    VALUE='BAT754C';
+  end_body;
+end_primitive;
+primitive 'SN74LVC1G08QDBVRQ1_SOT-23-5_SN74LVC1G08QDBVRQ1';
+  pin
+    'A':
+      PIN_NUMBER='(1)';
+      PINUSE='UNSPEC';
+    'B':
+      PIN_NUMBER='(2)';
+      PINUSE='UNSPEC';
+    'GND':
+      PIN_NUMBER='(3)';
+      PINUSE='UNSPEC';
+    'Y':
+      PIN_NUMBER='(4)';
+      PINUSE='UNSPEC';
+    'VCC':
+      PIN_NUMBER='(5)';
+      PINUSE='UNSPEC';
+  end_pin;
+  body
+    PART_NAME='SN74LVC1G08QDBVRQ1';
+    JEDEC_TYPE='SOT-23-5';
+    VALUE='SN74LVC1G08QDBVRQ1';
+  end_body;
+end_primitive;
+primitive 'LTC3539EDCB#PBF_DFN-8_LTC3539EDCB#PBF';
+  pin
+    'SW':
+      PIN_NUMBER='(1)';
+      PINUSE='UNSPEC';
+    'PGND':
+      PIN_NUMBER='(2)';
+      PINUSE='UNSPEC';
+    'GND':
+      PIN_NUMBER='(3)';
+      PINUSE='UNSPEC';
+    'VIN':
+      PIN_NUMBER='(4)';
+      PINUSE='UNSPEC';
+    'S\H\D\N\':
+      PIN_NUMBER='(5)';
+      PINUSE='UNSPEC';
+    'FB':
+      PIN_NUMBER='(6)';
+      PINUSE='UNSPEC';
+    'MODE':
+      PIN_NUMBER='(7)';
+      PINUSE='UNSPEC';
+    'VOUT':
+      PIN_NUMBER='(8)';
+      PINUSE='UNSPEC';
+    'EPAD':
+      PIN_NUMBER='(9)';
+      PINUSE='UNSPEC';
+  end_pin;
+  body
+    PART_NAME='LTC3539EDCB#PBF';
+    JEDEC_TYPE='DFN-8';
+    VALUE='LTC3539EDCB#PBF';
+  end_body;
+end_primitive;
+primitive 'ADA4051-2ARMZ_RM-8_ADA4051-2ARMZ';
+  pin
+    'OUT A':
+      PIN_NUMBER='(1)';
+      PINUSE='UNSPEC';
+    '-IN A':
+      PIN_NUMBER='(2)';
+      PINUSE='UNSPEC';
+    '+IN A':
+      PIN_NUMBER='(3)';
+      PINUSE='UNSPEC';
+    'V-':
+      PIN_NUMBER='(4)';
+      PINUSE='UNSPEC';
+    'V+':
+      PIN_NUMBER='(8)';
+      PINUSE='UNSPEC';
+    'OUT B':
+      PIN_NUMBER='(7)';
+      PINUSE='UNSPEC';
+    '-IN B':
+      PIN_NUMBER='(6)';
+      PINUSE='UNSPEC';
+    '+IN B':
+      PIN_NUMBER='(5)';
+      PINUSE='UNSPEC';
+  end_pin;
+  body
+    PART_NAME='ADA4051-2ARMZ';
+    JEDEC_TYPE='RM-8';
+    VALUE='ADA4051-2ARMZ';
+  end_body;
+end_primitive;
+primitive 'ADCMP380-1ACBZ-RL7_WLCSP-6_ADCMP380-1ACBZ-RL7';
+  pin
+    'VCC':
+      PIN_NUMBER='(A1)';
+      PINUSE='POWER';
+    'GND#A2':
+      PIN_NUMBER='(A2)';
+      PINUSE='POWER';
+    'EN':
+      PIN_NUMBER='(B1)';
+      PINUSE='UNSPEC';
+    'GND#B2':
+      PIN_NUMBER='(B2)';
+      PINUSE='POWER';
+    'IN':
+      PIN_NUMBER='(C1)';
+      PINUSE='UNSPEC';
+    'OUT':
+      PIN_NUMBER='(C2)';
+      PINUSE='UNSPEC';
+  end_pin;
+  body
+    PART_NAME='ADCMP380-1ACBZ-RL7';
+    JEDEC_TYPE='WLCSP-6';
+    VALUE='ADCMP380-1ACBZ-RL7';
+  end_body;
+end_primitive;
+primitive 'LTC3105EDD#PBF_DFN-10_LTC3105EDD#PBF';
+  pin
+    'FB':
+      PIN_NUMBER='(1)';
+      PINUSE='UNSPEC';
+    'LDO':
+      PIN_NUMBER='(2)';
+      PINUSE='UNSPEC';
+    'FBLDO':
+      PIN_NUMBER='(3)';
+      PINUSE='UNSPEC';
+    'S\H\D\N':
+      PIN_NUMBER='(4)';
+      PINUSE='UNSPEC';
+    'MPPC':
+      PIN_NUMBER='(5)';
+      PINUSE='UNSPEC';
+    'VIN':
+      PIN_NUMBER='(6)';
+      PINUSE='UNSPEC';
+    'SW':
+      PIN_NUMBER='(7)';
+      PINUSE='UNSPEC';
+    'PGOOD':
+      PIN_NUMBER='(8)';
+      PINUSE='UNSPEC';
+    'VOUT':
+      PIN_NUMBER='(9)';
+      PINUSE='UNSPEC';
+    'AUX':
+      PIN_NUMBER='(10)';
+      PINUSE='UNSPEC';
+    'GND':
+      PIN_NUMBER='(11)';
+      PINUSE='UNSPEC';
+  end_pin;
+  body
+    PART_NAME='LTC3105EDD#PBF';
+    JEDEC_TYPE='DFN-10';
+    VALUE='LTC3105EDD#PBF';
+  end_body;
+end_primitive;
+primitive 'HDC1010YPAR_DSBGA-8_HDC1010YPAR';
+  pin
+    'SCL':
+      PIN_NUMBER='(A1)';
+      PINUSE='UNSPEC';
+    'VDD':
+      PIN_NUMBER='(B1)';
+      PINUSE='UNSPEC';
+    'ADR0':
+      PIN_NUMBER='(C1)';
+      PINUSE='UNSPEC';
+    'ADR1':
+      PIN_NUMBER='(D1)';
+      PINUSE='UNSPEC';
+    'SDA':
+      PIN_NUMBER='(A2)';
+      PINUSE='UNSPEC';
+    'GND':
+      PIN_NUMBER='(B2)';
+      PINUSE='UNSPEC';
+    'DNC':
+      PIN_NUMBER='(C2)';
+      PINUSE='UNSPEC';
+    'DRDYN':
+      PIN_NUMBER='(D2)';
+      PINUSE='UNSPEC';
+  end_pin;
+  body
+    PART_NAME='HDC1010YPAR';
+    JEDEC_TYPE='DSBGA-8';
+    VALUE='HDC1010YPAR';
+  end_body;
+end_primitive;
+primitive 'TPS22976ADPUR_WSON-14_TPS22976ADPUR';
+  pin
+    'VIN1#1':
+      PIN_NUMBER='(1)';
+      PINUSE='POWER';
+    'VIN1#2':
+      PIN_NUMBER='(2)';
+      PINUSE='POWER';
+    'ON1':
+      PIN_NUMBER='(3)';
+      PINUSE='UNSPEC';
+    'VBIAS':
+      PIN_NUMBER='(4)';
+      PINUSE='UNSPEC';
+    'ON2':
+      PIN_NUMBER='(5)';
+      PINUSE='UNSPEC';
+    'VIN2#6':
+      PIN_NUMBER='(6)';
+      PINUSE='POWER';
+    'VIN2#7':
+      PIN_NUMBER='(7)';
+      PINUSE='POWER';
+    'VOUT1#14':
+      PIN_NUMBER='(14)';
+      PINUSE='POWER';
+    'VOUT1#13':
+      PIN_NUMBER='(13)';
+      PINUSE='POWER';
+    'CT1':
+      PIN_NUMBER='(12)';
+      PINUSE='UNSPEC';
+    'GND':
+      PIN_NUMBER='(11)';
+      PINUSE='UNSPEC';
+    'CT2':
+      PIN_NUMBER='(10)';
+      PINUSE='UNSPEC';
+    'VOUT2#9':
+      PIN_NUMBER='(9)';
+      PINUSE='POWER';
+    'VOUT2#8':
+      PIN_NUMBER='(8)';
+      PINUSE='POWER';
+    'EPAD':
+      PIN_NUMBER='(EPAD)';
+      PINUSE='UNSPEC';
+  end_pin;
+  body
+    PART_NAME='TPS22976ADPUR';
+    JEDEC_TYPE='WSON-14';
+    VALUE='TPS22976ADPUR';
   end_body;
 end_primitive;
 primitive 'STM32L496ZGT6_LQFP-144_STM32L496ZGT6';

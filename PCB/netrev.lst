@@ -2,9 +2,9 @@
 (                                                                     )
 (    Allegro Netrev Import Logic                                      )
 (                                                                     )
-(    Drawing          : PoFA1-9.brd                                   )
+(    Drawing          : PoFA1-18.brd                                  )
 (    Software Version : 17.4S017                                      )
-(    Date/Time        : Sat Oct 22 11:51:16 2022                      )
+(    Date/Time        : Mon Oct 24 16:36:13 2022                      )
 (                                                                     )
 (---------------------------------------------------------------------)
 
@@ -19,15 +19,15 @@ Missing symbol has error:    No
 DRC update:                  Yes
 Schematic directory:         'D:/Work/GitHub/PowerOverFiber/Schematic/Netlist'
 Design Directory:            'D:/Work/GitHub/PowerOverFiber/PCB'
-Old design name:             'D:/Work/GitHub/PowerOverFiber/PCB/PoFA1-9.brd'
-New design name:             'D:/Work/GitHub/PowerOverFiber/PCB/PoFA1-9.brd'
+Old design name:             'D:/Work/GitHub/PowerOverFiber/PCB/PoFA1-18.brd'
+New design name:             'D:/Work/GitHub/PowerOverFiber/PCB/PoFA1-18.brd'
 
-CmdLine: netrev -$ -i D:/Work/GitHub/PowerOverFiber/Schematic/Netlist -y 1 -h -q netrev_constraint_report.xml D:/Work/GitHub/PowerOverFiber/PCB/#Taaaazo06136.tmp
+CmdLine: netrev -$ -i D:/Work/GitHub/PowerOverFiber/Schematic/Netlist -y 1 -h -q netrev_constraint_report.xml D:/Work/GitHub/PowerOverFiber/PCB/#Taaaayp08420.tmp
 
 ------ Preparing to read pst files ------
 
 Starting to read D:/Work/GitHub/PowerOverFiber/Schematic/Netlist/pstchip.dat 
-   Finished reading D:/Work/GitHub/PowerOverFiber/Schematic/Netlist/pstchip.dat (00:00:00.04)
+   Finished reading D:/Work/GitHub/PowerOverFiber/Schematic/Netlist/pstchip.dat (00:00:00.01)
 Starting to read D:/Work/GitHub/PowerOverFiber/Schematic/Netlist/pstxprt.dat 
    Finished reading D:/Work/GitHub/PowerOverFiber/Schematic/Netlist/pstxprt.dat (00:00:00.00)
 Starting to read D:/Work/GitHub/PowerOverFiber/Schematic/Netlist/pstxnet.dat 
@@ -66,7 +66,7 @@ PADPATH =  .
 ------ Summary Statistics ------
 
 
-netrev run on Oct 22 11:51:16 2022
+netrev run on Oct 24 16:36:13 2022
    DESIGN NAME : 'SERIALCAMERA'
    PACKAGING ON Apr 19 2021 16:22:31
 
@@ -91,6 +91,6 @@ netrev run on Oct 22 11:51:16 2022
  No oversight detected
  No warning detected
 
-cpu time      0:01:02
+cpu time      0:00:47
 elapsed time  0:00:00
 

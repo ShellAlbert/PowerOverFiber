@@ -1,0 +1,21 @@
+(---------------------------------------------------------------------)
+(                                                                     )
+(    Shape Island Report                                              )
+(                                                                     )
+(    Drawing          : PoFA1-21.brd                                  )
+(    Software Version : 17.4S017                                      )
+(    Date/Time        : Tue Oct 25 10:58:34 2022                      )
+(                                                                     )
+(---------------------------------------------------------------------)
+
+
+  Total islands on design: 4
+
+
+  <<<  ETCH  >>>
+
+    Layer = VCC
+	Point on shape: (0.7742 0.3278)  Net: VDD33
+	Point on shape: (-3.9654 -2.2010)  Net: VDD33
+	Point on shape: (5.0653 -3.5653)  Net: VDD33
+	Point on shape: (1.8354 -7.0452)  Net: VDD33

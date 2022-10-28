@@ -1,0 +1,148 @@
+A!FUNC_LOGICAL_PATH!COMP_DEVICE_TYPE!REFDES!FUNC_PRIM_FILE!COMP_PARENT_PPT!COMP_PARENT_PPT_PART!COMP_PARENT_PART_TYPE!FUNC_SCH_SIZE!FUNC_HAS_FIXED_SIZE!FUNC_DES!FUNC_GROUP!FUNC_ROOM!FUNC_CDS_FSP_UID!FUNC_NO_SWAP_PIN!FUNC_HARD_LOCATION!FUNC_NO_SWAP_GATE_EXT!FUNC_CDS_FSP_MAPPED_CELL!FUNC_CDS_FSP_FPGA_SYMBOL!FUNC_CDS_FSP_TERM_TYPE!FUNC_CDS_FSP_TERM_NAME!FUNC_ROOM!FUNC_GROUP!FUNC_CDS_FSP_TERM_INDEX!FUNC_CDS_FSP_INSTANCE_ID!FUNC_NO_SWAP_GATE!FUNC_NO_XNET_CONNECTION!FUNC_CDS_FSP_IS_FPGA!
+J!D:/Work/GitHub/PowerOverFiber/PCB/PoFA1-16.brd!Sun Oct 23 18:45:47 2022!-300.0000!-300.0000!700.0000!700.0000!0.0001!millimeters!SERIALCAMERA!38.559685 mil!4!UP TO DATE!
+S!@serialcamera.schematic1(sch_1):ins276894@library1.\conn_sh1.0mm_4p.normal\(chips)!CONN_SH1.0MM_4P_CONN_SH1D0MM_4P_CONN_SH1.0MM_4P!J3!.\pstchip.dat!!!!!!F93!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins271287@library1.\laserdiode.normal\(chips)!LASERDIODE_AXIAL_2D0_4P_LASERDIODE!LD1!.\pstchip.dat!!!!!!F89!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins226387@library1.\fh3415a.normal\(chips)!FH3415A_SOT23-3_FH3415A!Q1!.\pstchip.dat!!!!!!F86!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins44689@library1.\max4761ebx+t.normal\(chips)!MAX4761EBX+T_TQFN-36_MAX4761ETX+T!U11!.\pstchip.dat!!!!!!F12!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins260299@library1.\max4754aebe+t.normal\(chips)!MAX4754AEBE+T_QFN-16_MAX4754AEBE+T!U10!.\pstchip.dat!!!!!!F8!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins157@discrete.\cap np.normal\(chips)!CAP NP_C0805_10UF!C21!.\pstchip.dat!!!!!!F145!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins311@discrete.\cap np.normal\(chips)!CAP NP_C0805_10UF!C14!.\pstchip.dat!!!!!!F144!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins788@discrete.\cap np.normal\(chips)!CAP NP_C0805_10UF!C11!.\pstchip.dat!!!!!!F143!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins1863@discrete.\cap np.normal\(chips)!CAP NP_C0805_10UF!C8!.\pstchip.dat!!!!!!F142!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins5566@discrete.\cap np.normal\(chips)!CAP NP_C0402_0.1UF!C5!.\pstchip.dat!!!!!!F141!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins7637@discrete.\cap np.normal\(chips)!CAP NP_C0402_0.1UF!C13!.\pstchip.dat!!!!!!F140!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins16538@discrete.\cap np.normal\(chips)!CAP NP_C0402_0.1UF!C6!.\pstchip.dat!!!!!!F139!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins91675@discrete.\cap np.normal\(chips)!CAP NP_C0402_0.1UF!C1!.\pstchip.dat!!!!!!F138!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins91803@discrete.\cap np.normal\(chips)!CAP NP_C0402_0.1UF!C4!.\pstchip.dat!!!!!!F137!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins56688@discrete.\cap np.normal\(chips)!CAP NP_C0402_0.1UF!C36!.\pstchip.dat!!!!!!F136!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins70930@discrete.\cap np.normal\(chips)!CAP NP_C0402_0.1UF!C42!.\pstchip.dat!!!!!!F135!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins95062@discrete.\cap np.normal\(chips)!CAP NP_C0402_0.1UF!C32!.\pstchip.dat!!!!!!F134!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins98250@discrete.\cap np.normal\(chips)!CAP NP_C0402_0.1UF!C39!.\pstchip.dat!!!!!!F133!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins98276@discrete.\cap np.normal\(chips)!CAP NP_C0402_0.1UF!C37!.\pstchip.dat!!!!!!F132!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins98302@discrete.\cap np.normal\(chips)!CAP NP_C0402_0.1UF!C31!.\pstchip.dat!!!!!!F131!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins98328@discrete.\cap np.normal\(chips)!CAP NP_C0402_0.1UF!C27!.\pstchip.dat!!!!!!F130!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins98354@discrete.\cap np.normal\(chips)!CAP NP_C0402_0.1UF!C35!.\pstchip.dat!!!!!!F129!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins98380@discrete.\cap np.normal\(chips)!CAP NP_C0402_0.1UF!C30!.\pstchip.dat!!!!!!F128!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins98516@discrete.\cap np.normal\(chips)!CAP NP_C0402_0.1UF!C25!.\pstchip.dat!!!!!!F127!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins98532@discrete.\cap np.normal\(chips)!CAP NP_C0402_0.1UF!C22!.\pstchip.dat!!!!!!F126!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins98548@discrete.\cap np.normal\(chips)!CAP NP_C0402_0.1UF!C20!.\pstchip.dat!!!!!!F125!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins98564@discrete.\cap np.normal\(chips)!CAP NP_C0402_0.1UF!C19!.\pstchip.dat!!!!!!F124!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins98580@discrete.\cap np.normal\(chips)!CAP NP_C0402_0.1UF!C17!.\pstchip.dat!!!!!!F123!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins98596@discrete.\cap np.normal\(chips)!CAP NP_C0402_0.1UF!C18!.\pstchip.dat!!!!!!F122!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins120201@discrete.\cap np.normal\(chips)!CAP NP_C0402_0.1UF!C38!.\pstchip.dat!!!!!!F121!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins139071@discrete.\cap np.normal\(chips)!CAP NP_C0402_0.1UF!C24!.\pstchip.dat!!!!!!F120!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins6681@discrete.\cap np.normal\(chips)!CAP NP_C0603_2.2UF!C12!.\pstchip.dat!!!!!!F119!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins16402@discrete.\cap np.normal\(chips)!CAP NP_C0603_2.2UF!C7!.\pstchip.dat!!!!!!F118!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins8358@discrete.\cap np.normal\(chips)!CAP NP_C0603_1UF!C23!.\pstchip.dat!!!!!!F117!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins8582@discrete.\cap np.normal\(chips)!CAP NP_C0603_1UF!C29!.\pstchip.dat!!!!!!F116!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins11051@discrete.\cap np.normal\(chips)!CAP NP_C0603_1UF!C28!.\pstchip.dat!!!!!!F115!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins11077@discrete.\cap np.normal\(chips)!CAP NP_C0603_1UF!C26!.\pstchip.dat!!!!!!F114!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins173@discrete.\cap np.normal\(chips)!CAP NP_C0603_1UF!C9!.\pstchip.dat!!!!!!F113!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins91747@discrete.\cap np.normal\(chips)!CAP NP_C0603_10UF!C2!.\pstchip.dat!!!!!!F112!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins91855@discrete.\cap np.normal\(chips)!CAP NP_C0603_10UF!C3!.\pstchip.dat!!!!!!F111!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins56704@discrete.\cap np.normal\(chips)!CAP NP_C0603_10UF!C34!.\pstchip.dat!!!!!!F110!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins95078@discrete.\cap np.normal\(chips)!CAP NP_C0603_10UF!C33!.\pstchip.dat!!!!!!F109!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins130298@discrete.\cap np.normal\(chips)!CAP NP_C0402_12PF!C41!.\pstchip.dat!!!!!!F108!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins130324@discrete.\cap np.normal\(chips)!CAP NP_C0402_12PF!C40!.\pstchip.dat!!!!!!F107!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins3974@discrete.\cap np.normal\(chips)!CAP NP_C0402_33PF!C10!.\pstchip.dat!!!!!!F106!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins4134@discrete.\cap np.normal\(chips)!CAP NP_C1206_22UF!C16!.\pstchip.dat!!!!!!F105!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins4160@discrete.\cap np.normal\(chips)!CAP NP_C1206_22UF!C15!.\pstchip.dat!!!!!!F104!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins107822@discrete.\led.normal\(chips)!LED_LED0402_LED!D2!.\pstchip.dat!!!!!!F103!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins107838@discrete.\led.normal\(chips)!LED_LED0402_LED!D1!.\pstchip.dat!!!!!!F102!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins223380@discrete.\diode tvs.normal\(chips)!DIODE TVS_SOD123W_PTVS3V3S1UTR!D3!.\pstchip.dat!!!!!!F97!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins225469@discrete.\diode tvs.normal\(chips)!DIODE TVS_SOD123W_PTVS3V3S1UTR!D4!.\pstchip.dat!!!!!!F96!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins112329@discrete.\diode tvs.normal\(chips)!DIODE TVS_SOD123W_PTVS3V3S1UTR!D7!.\pstchip.dat!!!!!!F101!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins112345@discrete.\diode tvs.normal\(chips)!DIODE TVS_SOD123W_PTVS3V3S1UTR!D8!.\pstchip.dat!!!!!!F100!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins169870@discrete.\diode tvs.normal\(chips)!DIODE TVS_SOD123W_PTVS3V3S1UTR!D6!.\pstchip.dat!!!!!!F99!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins170402@discrete.\diode tvs.normal\(chips)!DIODE TVS_SOD123W_PTVS3V3S1UTR!D5!.\pstchip.dat!!!!!!F98!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins11680@library1.\header2x9.normal\(chips)!HEADER2X9_HEADER2X9-2D54_HEADER2X9-2.54MM!J2!.\pstchip.dat!!!!!!F95!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins18896@library1.\header2x35.normal\(chips)!HEADER2X35_DF40HC-70DS_DF40HC(3.0)-70DS-0.4V(51)!J1!.\pstchip.dat!!!!!!F94!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins99@discrete.\inductor.normal\(chips)!INDUCTOR_L47473_10UH!L2!.\pstchip.dat!!!!!!F92!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins2372@discrete.\inductor.normal\(chips)!INDUCTOR_L3015_4.7UH!L1!.\pstchip.dat!!!!!!F91!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins118979@discrete.\inductor.normal\(chips)!INDUCTOR_L0603_1UH!L3!.\pstchip.dat!!!!!!F90!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins66975@library1.\2sc1815.normal\(chips)!2SC1815_SOT23-3_2SC1815!Q2!.\pstchip.dat!!!!!!F88!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins67096@library1.\2sc1815.normal\(chips)!2SC1815_SOT23-3_2SC1815!Q3!.\pstchip.dat!!!!!!F87!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins248@discrete.\r.normal\(chips)!R_R0402_200K!R25!.\pstchip.dat!!!!!!F85!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins6040@discrete.\r.normal\(chips)!R_R0402_36K!R17!.\pstchip.dat!!!!!!F84!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins16566@discrete.\r.normal\(chips)!R_R0402_36K!R8!.\pstchip.dat!!!!!!F83!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins285614@discrete.\r.normal\(chips)!R_R0402_10K!R29!.\pstchip.dat!!!!!!F67!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins285640@discrete.\r.normal\(chips)!R_R0402_10K!R39!.\pstchip.dat!!!!!!F66!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins222526@discrete.\r.normal\(chips)!R_R0402_10K!R26!.\pstchip.dat!!!!!!F70!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins222552@discrete.\r.normal\(chips)!R_R0402_10K!R24!.\pstchip.dat!!!!!!F69!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins226841@discrete.\r.normal\(chips)!R_R0402_10K!R41!.\pstchip.dat!!!!!!F68!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins6577@discrete.\r.normal\(chips)!R_R0402_10K!R20!.\pstchip.dat!!!!!!F82!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins16470@discrete.\r.normal\(chips)!R_R0402_10K!R11!.\pstchip.dat!!!!!!F81!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins17659@discrete.\r.normal\(chips)!R_R0402_10K!R13!.\pstchip.dat!!!!!!F80!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins113654@discrete.\r.normal\(chips)!R_R0402_10K!R46!.\pstchip.dat!!!!!!F79!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins115274@discrete.\r.normal\(chips)!R_R0402_10K!R50!.\pstchip.dat!!!!!!F78!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins1901@discrete.\r.normal\(chips)!R_R0402_10K!R23!.\pstchip.dat!!!!!!F77!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins120227@discrete.\r.normal\(chips)!R_R0402_10K!R45!.\pstchip.dat!!!!!!F76!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins142968@discrete.\r.normal\(chips)!R_R0402_10K!R32!.\pstchip.dat!!!!!!F75!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins142994@discrete.\r.normal\(chips)!R_R0402_10K!R28!.\pstchip.dat!!!!!!F74!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins143020@discrete.\r.normal\(chips)!R_R0402_10K!R27!.\pstchip.dat!!!!!!F73!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins169808@discrete.\r.normal\(chips)!R_R0402_10K!R38!.\pstchip.dat!!!!!!F72!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins170428@discrete.\r.normal\(chips)!R_R0402_10K!R35!.\pstchip.dat!!!!!!F71!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins6904@discrete.\r.normal\(chips)!R_R0402_147K!R19!.\pstchip.dat!!!!!!F65!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins16616@discrete.\r.normal\(chips)!R_R0402_147K!R12!.\pstchip.dat!!!!!!F64!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins7842@discrete.\r.normal\(chips)!R_R0402_3.3K!R18!.\pstchip.dat!!!!!!F63!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins16418@discrete.\r.normal\(chips)!R_R0402_3.3K!R9!.\pstchip.dat!!!!!!F62!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins10684@discrete.\r.normal\(chips)!R_R0402_100K!R33!.\pstchip.dat!!!!!!F61!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins10710@discrete.\r.normal\(chips)!R_R0402_100K!R31!.\pstchip.dat!!!!!!F60!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins82953@discrete.\resistor var 2.normal\(chips)!RESISTOR VAR 2_AXIAL-5D0_GL7549!R1!.\pstchip.dat!!!!!!F59!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins488@discrete.\r.normal\(chips)!R_R0402_2.26M!R16!.\pstchip.dat!!!!!!F58!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins271684@discrete.\r.normal\(chips)!R_R0402_1K!R34!.\pstchip.dat!!!!!!F56!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins94429@discrete.\r.normal\(chips)!R_R0402_1K!R36!.\pstchip.dat!!!!!!F57!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins66887@discrete.\r.normal\(chips)!R_R0402_510!R40!.\pstchip.dat!!!!!!F55!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins66903@discrete.\r.normal\(chips)!R_R0402_510!R42!.\pstchip.dat!!!!!!F54!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins67344@discrete.\r.normal\(chips)!R_R0402_510!R48!.\pstchip.dat!!!!!!F53!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins67377@discrete.\r.normal\(chips)!R_R0402_510!R49!.\pstchip.dat!!!!!!F52!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins70705@discrete.\r.normal\(chips)!R_R0402_510!R44!.\pstchip.dat!!!!!!F51!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins67040@discrete.\r.normal\(chips)!R_R0402_40!R47!.\pstchip.dat!!!!!!F50!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins69222@discrete.\r.normal\(chips)!R_R0402_40!R43!.\pstchip.dat!!!!!!F49!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins514@discrete.\r.normal\(chips)!R_R0402_1M!R15!.\pstchip.dat!!!!!!F48!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins2785@discrete.\r.normal\(chips)!R_R0402_1M!R21!.\pstchip.dat!!!!!!F47!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins4834@discrete.\r.normal\(chips)!R_R0402_1M!R10!.\pstchip.dat!!!!!!F46!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins4860@discrete.\r.normal\(chips)!R_R0402_1M!R14!.\pstchip.dat!!!!!!F45!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins82590@discrete.\r.normal\(chips)!R_R0402_68K!R6!.\pstchip.dat!!!!!!F44!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins74173@discrete.\r.normal\(chips)!R_R0402_0!R7!.\pstchip.dat!!!!!!F43!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins103977@discrete.\r.normal\(chips)!R_R0402_0!R2!.\pstchip.dat!!!!!!F42!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins285676@discrete.\r.normal\(chips)!R_R0402_DNP!R30!.\pstchip.dat!!!!!!F40!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins285692@discrete.\r.normal\(chips)!R_R0402_DNP!R37!.\pstchip.dat!!!!!!F39!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins104003@discrete.\r.normal\(chips)!R_R0402_DNP!R3!.\pstchip.dat!!!!!!F41!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins107864@discrete.\r.normal\(chips)!R_R0402_2K!R5!.\pstchip.dat!!!!!!F38!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins107890@discrete.\r.normal\(chips)!R_R0402_2K!R4!.\pstchip.dat!!!!!!F37!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins2759@discrete.\r.normal\(chips)!R_R0402_562K!R22!.\pstchip.dat!!!!!!F36!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins1023@discrete.\t point a.normal\(chips)!T POINT A_TP_SMD_OD2D0_SOLAR CELL V+!TP12!.\pstchip.dat!!!!!!F35!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins121417@discrete.\t point r.normal\(chips)!T POINT R_TP_THR_ID1D0_SMD TP!TP11!.\pstchip.dat!!!!!!F34!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins121439@discrete.\t point r.normal\(chips)!T POINT R_TP_THR_ID1D0_SMD TP!TP14!.\pstchip.dat!!!!!!F33!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins121389@discrete.\t point r.normal\(chips)!T POINT R_TP_THR_ID1D0_SMD TP!TP8!.\pstchip.dat!!!!!!F32!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins121403@discrete.\t point r.normal\(chips)!T POINT R_TP_THR_ID1D0_SMD TP!TP13!.\pstchip.dat!!!!!!F31!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins127657@discrete.\t point r.normal\(chips)!T POINT R_TP_SMD_OD1D5_SMD TP!TP19!.\pstchip.dat!!!!!!F30!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins127691@discrete.\t point r.normal\(chips)!T POINT R_TP_SMD_OD1D5_SMD TP!TP20!.\pstchip.dat!!!!!!F29!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins169836@discrete.\t point r.normal\(chips)!T POINT R_TP_SMD_OD1D5_SMD TP!TP17!.\pstchip.dat!!!!!!F28!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins170709@discrete.\t point r.normal\(chips)!T POINT R_TP_SMD_OD1D5_SMD TP!TP16!.\pstchip.dat!!!!!!F27!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins172905@discrete.\t point r.normal\(chips)!T POINT R_TP_SMD_OD1D5_SMD TP!TP15!.\pstchip.dat!!!!!!F26!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins174965@discrete.\t point r.normal\(chips)!T POINT R_TP_SMD_OD1D5_SMD TP!TP6!.\pstchip.dat!!!!!!F25!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins174983@discrete.\t point r.normal\(chips)!T POINT R_TP_SMD_OD1D5_SMD TP!TP5!.\pstchip.dat!!!!!!F24!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins175270@discrete.\t point r.normal\(chips)!T POINT R_TP_SMD_OD1D5_SMD TP!TP4!.\pstchip.dat!!!!!!F23!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins175288@discrete.\t point r.normal\(chips)!T POINT R_TP_SMD_OD1D5_SMD TP!TP3!.\pstchip.dat!!!!!!F22!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins175306@discrete.\t point r.normal\(chips)!T POINT R_TP_SMD_OD1D5_SMD TP!TP2!.\pstchip.dat!!!!!!F21!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins175324@discrete.\t point r.normal\(chips)!T POINT R_TP_SMD_OD1D5_SMD TP!TP1!.\pstchip.dat!!!!!!F20!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins111105@discrete.\t point r.normal\(chips)!T POINT R_TP_SMD_OD1D5_SMD TP!TP18!.\pstchip.dat!!!!!!F19!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins111127@discrete.\t point r.normal\(chips)!T POINT R_TP_SMD_OD1D5_SMD TP!TP21!.\pstchip.dat!!!!!!F18!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins114163@discrete.\t point r.normal\(chips)!T POINT R_TP_SMD_OD1D5_SMD TP!TP22!.\pstchip.dat!!!!!!F17!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins1057@discrete.\t point a.normal\(chips)!T POINT A_TP_SMD_OD2D0_SOLAR CELL V-!TP9!.\pstchip.dat!!!!!!F16!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins206998@discrete.\t point s.normal\(chips)!T POINT S_TP_SMD_3D0X5D0_SOLDER POINT!TP7!.\pstchip.dat!!!!!!F15!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins207018@discrete.\t point s.normal\(chips)!T POINT S_TP_SMD_3D0X5D0_SOLDER POINT!TP10!.\pstchip.dat!!!!!!F14!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins46@library1.\ltc3105edd#pbf.normal\(chips)!LTC3105EDD#PBF_DFN-10_LTC3105EDD#PBF!U6!.\pstchip.dat!!!!!!F13!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins70745@library1.\sn74lvc1g08qdbvrq1.normal\(chips)!SN74LVC1G08QDBVRQ1_SOT-23-5_SN74LVC1G08QDBVRQ1!U13!.\pstchip.dat!!!!!!F11!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins125939@library1.\bat754c.normal\(chips)!BAT754C_SOT23-3_BAT754C!U12!.\pstchip.dat!!!!!!F10!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins137438@library1.\hdc1010ypar.normal\(chips)!HDC1010YPAR_DSBGA-8_HDC1010YPAR!U7!.\pstchip.dat!!!!!!F9!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins1768@library1.\ltc3539edcb#pbf.normal\(chips)!LTC3539EDCB#PBF_DFN-8_LTC3539EDCB#PBF!U5!.\pstchip.dat!!!!!!F7!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins5800@library1.\adcmp380-1acbz-rl7.normal\(chips)!ADCMP380-1ACBZ-RL7_WLCSP-6_ADCMP380-1ACBZ-RL7!U4!.\pstchip.dat!!!!!!F6!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins16486@library1.\adcmp380-1acbz-rl7.normal\(chips)!ADCMP380-1ACBZ-RL7_WLCSP-6_ADCMP380-1ACBZ-RL7!U3!.\pstchip.dat!!!!!!F5!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins8039@library1.\tps22976adpur.normal\(chips)!TPS22976ADPUR_WSON-14_TPS22976ADPUR!U8!.\pstchip.dat!!!!!!F4!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins12467@library1.\ada4051-2armz.normal\(chips)!ADA4051-2ARMZ_RM-8_ADA4051-2ARMZ!U2!.\pstchip.dat!!!!!!F3!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins91155@library1.\is66wve2m16ebll-70bli-tr.normal\(chips)!IS66WVE2M16EBLL-70BLI-TR_TFBGA-48_IS66WVE2M16EBLL-70BLI-TR!U1!.\pstchip.dat!!!!!!F2!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins31350@library1.\stm32l496zgt6.normal\(chips)!STM32L496ZGT6_LQFP-144_STM32L496ZGT6!U9!.\pstchip.dat!!!!!!F1!!!!!!!!!!!!!!!!!!
+S!@serialcamera.schematic1(sch_1):ins129828@discrete.\crystal.normal\(chips)!CRYSTAL_CRYSTAL_3215_32.768KHZ!Y1!.\pstchip.dat!!!!!!F0!!!!!!!!!!!!!!!!!!

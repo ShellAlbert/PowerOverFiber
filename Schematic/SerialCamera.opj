@@ -1,6 +1,6 @@
 (ExpressProject "SerialCamera"
   (ProjectVersion "19981106")
-  (SoftwareVersion "17.4-2019 S017 (3936576)  [4/19/2021]-[10/22/22]")
+  (SoftwareVersion "17.4-2019 S017 (3936576)  [4/19/2021]-[10/27/22]")
   (ProjectType "PCB")
   (Folder "Design Resources"
     (Folder "Library"
@@ -44,7 +44,18 @@
     ("Allegro Netlist Combine Property String" "PCB Footprint")
     ("Allegro Netlist Ignore Fixed Property" "FALSE")
     ("Allegro Netlist User Defined Property" "FALSE")
-    (Board_sim_option "VHDL_flow"))
+    (Board_sim_option "VHDL_flow")
+    ("Allegro Backannotation Run Genfeed" "TRUE")
+    ("Allegro Backannotation Board File"
+       "D:\Work\GitHub\PowerOverFiber\PCB\PoFA1-16.brd")
+    ("Allegro Backannotation Netlist Directory"
+       "D:\Work\GitHub\PowerOverFiber\Schematic\Netlist")
+    ("Allegro Backannotation Output File"
+       "D:\Work\GitHub\PowerOverFiber\PCB\PowerOverFiber.swp")
+    ("Allegro Backannotation Update Schematic" "TRUE")
+    ("Allegro Backannotation View Output" "FALSE")
+    ("Allegro Setup Output Warnings" "FALSE")
+    (Backannotation_TAB "0"))
   (Folder "Layout")
   (Folder "Outputs"
     (File ".\serialcamera.bom"
@@ -57,7 +68,22 @@
       (DisplayName "pstxprt.dat"))
     (File ".\netlist\pstchip.dat"
       (Type "Report")
-      (DisplayName "pstchip.dat")))
+      (DisplayName "pstchip.dat"))
+    (File ".\netlist\pinview.dat"
+      (Type "Report")
+      (DisplayName "pinView.dat"))
+    (File ".\netlist\netview.dat"
+      (Type "Report")
+      (DisplayName "netView.dat"))
+    (File ".\netlist\funcview.dat"
+      (Type "Report")
+      (DisplayName "funcView.dat"))
+    (File ".\netlist\compview.dat"
+      (Type "Report")
+      (DisplayName "compView.dat"))
+    (File "..\pcb\poweroverfiber.swp"
+      (Type "Report")
+      (DisplayName "PowerOverFiber.swp")))
   (Folder "Referenced Projects")
   (Folder "PSpice Resources"
     (Folder "Simulation Profiles")
@@ -67,8 +93,19 @@
       (Sort User))
     (Folder "Include Files"
       (Sort User)))
-  (Folder "Logs")
+  (Folder "Logs"
+    (File ".\netlist\swp.log"
+      (Type "Log File")
+      (LogFile "D:\Work\GitHub\PowerOverFiber\Schematic\Netlist\swp.log")))
   (PartMRUSelector
+    (OFFPAGELEFT-L
+      (LibraryName
+         "C:\CADENCE\CADENCE_SPB_17.4-2019\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    (OFFPAGELEFT-R
+      (LibraryName
+         "C:\CADENCE\CADENCE_SPB_17.4-2019\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
     (GND
       (LibraryName
          "C:\CADENCE\CADENCE_SPB_17.4-2019\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
@@ -169,16 +206,6 @@
     (Header2x35
       (FullPartName "Header2x35.Normal")
       (LibraryName "D:\WORK\GITHUB\POWEROVERFIBER\SCHEMATIC\LIBRARY1.OLB")
-      (DeviceIndex "0"))
-    ("RESISTOR VAR"
-      (FullPartName "RESISTOR VAR.Normal")
-      (LibraryName
-         "C:\CADENCE\CADENCE_SPB_17.4-2019\TOOLS\CAPTURE\LIBRARY\DISCRETE.OLB")
-      (DeviceIndex "0"))
-    ("RESISTOR VAR 2"
-      (FullPartName "RESISTOR VAR 2.Normal")
-      (LibraryName
-         "C:\CADENCE\CADENCE_SPB_17.4-2019\TOOLS\CAPTURE\LIBRARY\DISCRETE.OLB")
       (DeviceIndex "0")))
   (MPSSessionName "Administrator")
   (LastUsedLibraryBrowseDirectory "D:\Work\SPAPD\SCH")
@@ -186,24 +213,22 @@
     (FileView
       (Path "Design Resources")
       (Path "Design Resources"
-         "D:\WORK\GITHUB\POWEROVERFIBER\SCHEMATIC\serialcamera.dsn")
+         "d:\work\github\poweroverfiber\schematic\serialcamera.dsn")
       (Path "Design Resources"
-         "D:\WORK\GITHUB\POWEROVERFIBER\SCHEMATIC\serialcamera.dsn" "SCHEMATIC1")
-      (Path "Design Resources" "Library")
+         "d:\work\github\poweroverfiber\schematic\serialcamera.dsn" "SCHEMATIC1")
       (Path "Outputs")
-      (Select "Design Resources"
-         "D:\WORK\GITHUB\POWEROVERFIBER\SCHEMATIC\serialcamera.dsn"))
+      (Path "Logs"))
     (HierarchyView)
     (Doc
       (Type "COrCapturePMDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 -1 -1 0 119 0 465"))
+        (Placement "44 0 1 -1 -1 -1 -1 0 200 0 460"))
       (Tab 0))
     (Doc
       (Type "COrSchematicDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 5 26 5 1115 26 485")
-        (Scroll "541 1212")
+        (Placement "44 0 1 -1 -1 -1 -1 5 1034 26 480")
+        (Scroll "1374 645")
         (Zoom "144")
         (Occurrence "/"))
       (Path "D:\WORK\GITHUB\POWEROVERFIBER\SCHEMATIC\SERIALCAMERA.DSN")

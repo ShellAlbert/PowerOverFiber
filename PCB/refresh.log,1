@@ -1,9 +1,9 @@
-Wed Oct 19 11:30:43 2022				Page     1
+Mon Oct 24 11:27:08 2022				Page     1
 
 
  
 Update Symbols/Modules Logfile
-	Wed Oct 19 11:30:43 2022
+	Mon Oct 24 11:27:08 2022
 
 ------ Module Refresh Messages ------
 
@@ -17,19 +17,19 @@ SUMMARY:    Updated 0 out of 0 modules
 (                                                                     )
 (    Refresh Symbol                                                   )
 (                                                                     )
-(    Drawing          : PoFA1.brd                                     )
+(    Drawing          : PoFA1-18.brd                                  )
 (    Software Version : 17.4S017                                      )
-(    Date/Time        : Wed Oct 19 11:30:43 2022                      )
+(    Date/Time        : Mon Oct 24 11:27:08 2022                      )
 (                                                                     )
 (---------------------------------------------------------------------)
 
 
-Wed Oct 19 11:30:43 2022				Page     1
+Mon Oct 24 11:27:08 2022				Page     1
 
 
 ------ Symbol Refresh Directives ------
 
-Input design  = 'D:/Work/GitHub/PowerOverFiber/PCB/PoFA1.brd'
+Input design  = 'D:/Work/GitHub/PowerOverFiber/PCB/PoFA1-18.brd'
 Output design = ''
 
 Update mechanical symbols              = 'NO'
@@ -42,7 +42,7 @@ Reset symbol text and size locations   = 'NO'
 Reset Pin Escapes (fanouts)            = 'NO'
 Ripup Etch                             = 'NO'
 Reset custom drill data                = 'NO'
-Symbol list file                       = 'C:/Users/ADMINI~1/AppData/Local/Temp/#Taaaapb10016.tmp'
+Symbol list file                       = 'C:/Users/ADMINI~1/AppData/Local/Temp/#Taaaaeo07380.tmp'
 
 
 ------ Library Paths ------
@@ -71,7 +71,7 @@ PADPATH =  .
 
 ------ Symbol Refresh Messages ------
 
-'HEADER2X9-2D54'  symbol refreshed successfully.
+'WLCSP-6'  symbol refreshed successfully.
 
 
 ----- Symbol Update Summary ----
