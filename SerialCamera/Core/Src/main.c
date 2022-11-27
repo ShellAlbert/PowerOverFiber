@@ -84,6 +84,14 @@ static void MX_FMC_Init(void);
 /* USER CODE BEGIN 0 */
 /* USER CODE END PFP */
 
+/* Private user code ---------------------------------------------------------*/
+/* USER CODE BEGIN 0 */
+/* USER CODE END PFP */
+
+/* Private user code ---------------------------------------------------------*/
+/* USER CODE BEGIN 0 */
+/* USER CODE END PFP */
+
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
@@ -95,13 +103,29 @@ static void MX_FMC_Init(void);
 
 //the maximum linear address space is 65535 in word unit (32bits) for DMA.
 //If the image size in words does not exceed 65535, the stream can be configured in normal mode.
-#define JPEG_BUFFER_SIZE  (1024*31)  //31kB buffer size.
-uint32_t iJpegBufferSize = JPEG_BUFFER_SIZE;
+//In general, one frame of JPEG compressed image can be 50KBytes~80KBytes.
+//So here we use a 128KByte buffer.
+#define JPEG_BUFFER_SIZE  (1024*128/4)  //128KB buffer size= 1024*31 INT bytes.
+uint32_t iJpegBufferSize = JPEG_BUFFER_SIZE; //1024*128.
+//SoC RAM.
+//if we define this array as uint8_t, it will be failed. why?
 uint32_t iJpegBuffer[JPEG_BUFFER_SIZE];
+
+//External RAM.
+//Since DMA DONOT support write External RAM directly,
+//so we must use DMA interrupt to copy data from SoC RAM to External RAM.
+//uint32_t iJpegBuffer[JPEG_BUFFER_SIZE] __attribute__ ((section(".ExtRAM")));
+
 uint32_t iVsyncCnt = 0;
 uint32_t iFps = 0;
 
 uint8_t g_iVSYNCFlag = 0;
+
+/* frame buffer for infrared image buffer */
+/* Yantai AiRui Infrared Camera : 14-bit one pixel, resolution is 614*512 */
+/* So 614*152*16bit = 5029888 bits, /8bits= 628736 bytes, /4bytes=157184 INT(32bits)*/
+uint32_t frameBufferInfrared[614*512*16/8/4] __attribute__ ((section(".ExtRAM")));
+
 void
 vprint (const char *fmt, va_list argp)
 {
@@ -165,6 +189,11 @@ int main(void)
   MX_FMC_Init();
   /* USER CODE BEGIN 2 */
 
+  //0 = Laser Diode Power ON.
+  //1 = Laser Diode Power OFF.
+  //HAL_GPIO_WritePin(LD_PWR_EN_GPIO_Port, LD_PWR_EN_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(LD_PWR_EN_GPIO_Port, LD_PWR_EN_Pin, GPIO_PIN_SET);
+
   //LED1 & LED2 OFF.
   HAL_GPIO_WritePin(GPIOF, LED1_Pin|LED2_Pin, GPIO_PIN_SET);
 
@@ -173,6 +202,7 @@ int main(void)
   //SYNC_SWITCH=0, CAM1 Signal Pass.
   //BUS_SWITCH=0, CAM1 Signal Pass.
   HAL_GPIO_WritePin(GPIOB, SYNC_SWITCH_Pin|BUS_SWITCH_Pin, GPIO_PIN_RESET);
+  HAL_Delay (1000);
 
   //2. Initial OV2640 registers via I2C.
   OV2640_Init (&hi2c1, &hdcmi);
@@ -183,6 +213,14 @@ int main(void)
   /* Disable unwanted HSYNC (IT_LINE) / VSYNC (IT_VSYNC) interrupts */
   __HAL_DCMI_DISABLE_IT(&hdcmi, DCMI_IT_LINE | DCMI_IT_VSYNC);
 
+  for(i=0;i<255;i++)
+    {
+      *(frameBufferInfrared+i)=i;
+    }
+  for(i=0;i<10;i++)
+    {
+      HAL_UART_Transmit (&huart2, (uint8_t*) &frameBufferInfrared[i], 2, 0xffffff);
+    }
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -213,20 +251,20 @@ int main(void)
 	  recv_len = iJpegBufferSize - __HAL_DMA_GET_COUNTER(hdcmi.DMA_Handle);
 	  uart_printf ("get VSYNC %d,Frame:%d DMA:%d\r\n", iVsyncCnt, iFps, recv_len);
 	  //LED1 on.
-	  HAL_GPIO_WritePin(GPIOF, LED1_Pin, GPIO_PIN_SET);
+	  HAL_GPIO_WritePin(GPIOF, LED1_Pin, GPIO_PIN_RESET);
 	  //dump first 10 bytes data to uart.
 	  for (i = 0; i < recv_len; i++)
 	    {
 	      HAL_UART_Transmit (&huart2, (uint8_t*) &iJpegBuffer[i], 4, 0xffffff);
 	    }
 	  //LED1 off.
-	  HAL_GPIO_WritePin(GPIOF, LED1_Pin, GPIO_PIN_RESET);
+	  HAL_GPIO_WritePin(GPIOF, LED1_Pin, GPIO_PIN_SET);
 	  g_iVSYNCFlag = 4;
 	  break;
 
 	case 4:
 	  //uart_printf ("Stop\r\n");
-	  HAL_Delay (1000);
+	  HAL_Delay (100);
 	  g_iVSYNCFlag = 0;
 	  break;
 
@@ -520,13 +558,13 @@ static void MX_USART2_UART_Init(void)
 
   /* USER CODE END USART2_Init 1 */
   huart2.Instance = USART2;
-  huart2.Init.BaudRate = 115200;
+  huart2.Init.BaudRate = 2000000;
   huart2.Init.WordLength = UART_WORDLENGTH_8B;
   huart2.Init.StopBits = UART_STOPBITS_1;
   huart2.Init.Parity = UART_PARITY_NONE;
   huart2.Init.Mode = UART_MODE_TX_RX;
   huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;
-  huart2.Init.OverSampling = UART_OVERSAMPLING_16;
+  huart2.Init.OverSampling = UART_OVERSAMPLING_8;
   huart2.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
   huart2.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
   if (HAL_UART_Init(&huart2) != HAL_OK)
@@ -616,7 +654,7 @@ static void MX_FMC_Init(void)
   hsram1.Init.BurstAccessMode = FMC_BURST_ACCESS_MODE_DISABLE;
   hsram1.Init.WaitSignalPolarity = FMC_WAIT_SIGNAL_POLARITY_LOW;
   hsram1.Init.WaitSignalActive = FMC_WAIT_TIMING_BEFORE_WS;
-  hsram1.Init.WriteOperation = FMC_WRITE_OPERATION_DISABLE;
+  hsram1.Init.WriteOperation = FMC_WRITE_OPERATION_ENABLE;
   hsram1.Init.WaitSignal = FMC_WAIT_SIGNAL_DISABLE;
   hsram1.Init.ExtendedMode = FMC_EXTENDED_MODE_DISABLE;
   hsram1.Init.AsynchronousWait = FMC_ASYNCHRONOUS_WAIT_DISABLE;

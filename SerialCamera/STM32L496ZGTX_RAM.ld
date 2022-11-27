@@ -43,10 +43,12 @@ _Min_Heap_Size = 0x200; /* required amount of heap */
 _Min_Stack_Size = 0x400; /* required amount of stack */
 
 /* Memories definition */
+/*Added by zhangshaoyan Nov 27, 2022*/
 MEMORY
 {
   RAM    (xrw)    : ORIGIN = 0x20000000,   LENGTH = 320K
   RAM2    (xrw)    : ORIGIN = 0x10000000,   LENGTH = 64K
+  ExternalPSRAM	(xrw)	: ORIGIN = 0x60000000,	LENGTH = 4096K  
   FLASH    (rx)    : ORIGIN = 0x8000000,   LENGTH = 1024K
 }
 
@@ -174,7 +176,15 @@ SECTIONS
     . = . + _Min_Stack_Size;
     . = ALIGN(8);
   } >RAM
-
+  
+  /*Added by zhangshaoyan Nov 27, 2022*/
+  .ExtRAM (NOLOAD) :
+  {
+  	. = ALIGN(4);
+  	*(.ExtRAM)
+  	. = ALIGN(4);
+  } >ExternalPSRAM
+  
   /* Remove information from the compiler libraries */
   /DISCARD/ :
   {
