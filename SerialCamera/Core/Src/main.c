@@ -92,6 +92,14 @@ static void MX_FMC_Init(void);
 /* USER CODE BEGIN 0 */
 /* USER CODE END PFP */
 
+/* Private user code ---------------------------------------------------------*/
+/* USER CODE BEGIN 0 */
+/* USER CODE END PFP */
+
+/* Private user code ---------------------------------------------------------*/
+/* USER CODE BEGIN 0 */
+/* USER CODE END PFP */
+
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
@@ -105,16 +113,16 @@ static void MX_FMC_Init(void);
 //If the image size in words does not exceed 65535, the stream can be configured in normal mode.
 //In general, one frame of JPEG compressed image can be 50KBytes~80KBytes.
 //So here we use a 128KByte buffer.
-#define JPEG_BUFFER_SIZE  (1024*128/4)  //128KB buffer size= 1024*31 INT bytes.
+#define JPEG_BUFFER_SIZE  (1024*31)  //128KB buffer size= 1024*31 INT bytes.
 uint32_t iJpegBufferSize = JPEG_BUFFER_SIZE; //1024*128.
 //SoC RAM.
 //if we define this array as uint8_t, it will be failed. why?
-uint32_t iJpegBuffer[JPEG_BUFFER_SIZE];
+//uint32_t iJpegBuffer[JPEG_BUFFER_SIZE];
 
 //External RAM.
 //Since DMA DONOT support write External RAM directly,
 //so we must use DMA interrupt to copy data from SoC RAM to External RAM.
-//uint32_t iJpegBuffer[JPEG_BUFFER_SIZE] __attribute__ ((section(".ExtRAM")));
+uint32_t iJpegBuffer[JPEG_BUFFER_SIZE] __attribute__ ((section(".ExtRAM")));
 
 uint32_t iVsyncCnt = 0;
 uint32_t iFps = 0;
@@ -122,9 +130,11 @@ uint32_t iFps = 0;
 uint8_t g_iVSYNCFlag = 0;
 
 /* frame buffer for infrared image buffer */
-/* Yantai AiRui Infrared Camera : 14-bit one pixel, resolution is 614*512 */
+/* Yantai iRay Infrared Camera : 14-bit one pixel, resolution is 614*512 */
 /* So 614*152*16bit = 5029888 bits, /8bits= 628736 bytes, /4bytes=157184 INT(32bits)*/
-uint32_t frameBufferInfrared[614*512*16/8/4] __attribute__ ((section(".ExtRAM")));
+/* 157184 Exceed 65535 !!!!!*/
+#define INFRARED_IMGBUF_INT		(614*512*16/8/4)
+uint32_t frameBufferInfrared[INFRARED_IMGBUF_INT] __attribute__ ((section(".ExtRAM")));
 
 void
 vprint (const char *fmt, va_list argp)
@@ -156,7 +166,7 @@ uart_printf (const char *fmt, ...) // custom printf() function
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-  uint16_t i;
+  uint32_t i;
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -210,17 +220,27 @@ int main(void)
   //OV2640_ResolutionOptions (imgRes);
   HAL_Delay (100);
 
+  //Enable CAM2 Power.
+  HAL_GPIO_WritePin(GPIOG, CAM2_PWR_EN_Pin, GPIO_PIN_SET);
+
   /* Disable unwanted HSYNC (IT_LINE) / VSYNC (IT_VSYNC) interrupts */
   __HAL_DCMI_DISABLE_IT(&hdcmi, DCMI_IT_LINE | DCMI_IT_VSYNC);
 
-  for(i=0;i<255;i++)
+  /* External SRAM write-read test successfully!*/
+#if 0
+  for(i=0;i<INFRARED_IMGBUF_INT;i++)
     {
-      *(frameBufferInfrared+i)=i;
+      *(frameBufferInfrared+i)=i+5;
     }
-  for(i=0;i<10;i++)
+  for(i=0;i<INFRARED_IMGBUF_INT;i++)
     {
-      HAL_UART_Transmit (&huart2, (uint8_t*) &frameBufferInfrared[i], 2, 0xffffff);
+      if((i+5)!=frameBufferInfrared[i])
+	{
+	  HAL_UART_Transmit (&huart2, (uint8_t*) &frameBufferInfrared[i], 4, 0xffffff);
+	}
     }
+#endif
+
   /* USER CODE END 2 */
 
   /* Infinite loop */

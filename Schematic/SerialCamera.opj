@@ -216,21 +216,21 @@
       (Path "Design Resources" ".\serialcamera.dsn" "SCHEMATIC1")
       (Path "Outputs")
       (Path "Logs")
-      (Select "Design Resources" ".\serialcamera.dsn" "SCHEMATIC1" "PAGE1"))
+      (Select "Design Resources" ".\serialcamera.dsn" "SCHEMATIC1" "PAGE2"))
     (HierarchyView)
     (Doc
       (Type "COrCapturePMDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 -1 -1 0 200 0 547"))
+        (Placement "44 0 1 -1 -1 -1 -1 0 200 0 541"))
       (Tab 0))
     (Doc
       (Type "COrSchematicDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 -1 -1 5 1034 26 567")
-        (Scroll "-143 -3")
+        (Placement "44 0 1 -1 -1 -1 -1 5 1028 26 561")
+        (Scroll "-140 0")
         (Zoom "43")
         (Occurrence "/"))
       (Path "D:\WORK\GITHUB\POWEROVERFIBER\SCHEMATIC\SERIALCAMERA.DSN")
       (Schematic "SCHEMATIC1")
-      (Page "PAGE1")))
+      (Page "PAGE2")))
   (ISPCBBASICLICENSE "false"))
