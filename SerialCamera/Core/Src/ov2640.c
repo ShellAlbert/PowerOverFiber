@@ -1053,14 +1053,14 @@ OV2640_Init (I2C_HandleTypeDef *p_hi2c, DCMI_HandleTypeDef *p_hdcmi)
   // Hardware reset
   //PWDN: Power down mode enable, active high.
   //Note: There is an internal pull-down resistor.
-  HAL_GPIO_WritePin (CAM_PWDN_GPIO_Port, CAM_PWDN_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin (CAM1_PWDN_GPIO_Port, CAM1_PWDN_Pin, GPIO_PIN_RESET);
   HAL_Delay (100);
 
   //RESETB: Reset mode, active low.
   //Note: There is an internal pull-up resistor.
-  HAL_GPIO_WritePin (CAM_RST_GPIO_Port, CAM_RST_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin (CAM1_RST_GPIO_Port, CAM1_RST_Pin, GPIO_PIN_RESET);
   HAL_Delay (100);
-  HAL_GPIO_WritePin (CAM_RST_GPIO_Port, CAM_RST_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin (CAM1_RST_GPIO_Port, CAM1_RST_Pin, GPIO_PIN_SET);
   HAL_Delay (100);
 
   // Software reset: reset all registers to default values.

@@ -57,12 +57,30 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define CAM_RST_Pin GPIO_PIN_5
-#define CAM_RST_GPIO_Port GPIOA
-#define CAM_PWDN_Pin GPIO_PIN_7
-#define CAM_PWDN_GPIO_Port GPIOA
-#define LED_Pin GPIO_PIN_0
-#define LED_GPIO_Port GPIOE
+#define CAM1_PWDN_Pin GPIO_PIN_6
+#define CAM1_PWDN_GPIO_Port GPIOF
+#define LED1_Pin GPIO_PIN_8
+#define LED1_GPIO_Port GPIOF
+#define LED2_Pin GPIO_PIN_9
+#define LED2_GPIO_Port GPIOF
+#define CAM1_RST_Pin GPIO_PIN_1
+#define CAM1_RST_GPIO_Port GPIOC
+#define LD_PWR_EN_Pin GPIO_PIN_5
+#define LD_PWR_EN_GPIO_Port GPIOA
+#define SYNC_SWITCH_Pin GPIO_PIN_1
+#define SYNC_SWITCH_GPIO_Port GPIOB
+#define DAY_NIGHT_Pin GPIO_PIN_8
+#define DAY_NIGHT_GPIO_Port GPIOA
+#define VER1_Pin GPIO_PIN_15
+#define VER1_GPIO_Port GPIOA
+#define CAM2_PWR_EN_Pin GPIO_PIN_9
+#define CAM2_PWR_EN_GPIO_Port GPIOG
+#define CAM1_PWR_EN_Pin GPIO_PIN_10
+#define CAM1_PWR_EN_GPIO_Port GPIOG
+#define BUS_SWITCH_Pin GPIO_PIN_5
+#define BUS_SWITCH_GPIO_Port GPIOB
+#define VER2_Pin GPIO_PIN_8
+#define VER2_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
 extern int gTimer1OverflowFlag;
 

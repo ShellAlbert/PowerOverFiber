@@ -54,6 +54,8 @@ UART_HandleTypeDef huart1;
 UART_HandleTypeDef huart2;
 UART_HandleTypeDef huart3;
 
+SRAM_HandleTypeDef hsram1;
+
 /* USER CODE BEGIN PV */
 
 /* USER CODE END PV */
@@ -69,6 +71,7 @@ static void MX_TIM1_Init(void);
 static void MX_USART1_UART_Init(void);
 static void MX_USART2_UART_Init(void);
 static void MX_USART3_UART_Init(void);
+static void MX_FMC_Init(void);
 /* USER CODE BEGIN PFP */
 /* USER CODE BEGIN 0 */
 /* USER CODE END PFP */
@@ -81,141 +84,6 @@ static void MX_USART3_UART_Init(void);
 /* USER CODE BEGIN 0 */
 /* USER CODE END PFP */
 
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
-/* USER CODE END PFP */
-
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
-/* USER CODE END PFP */
-
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
-/* USER CODE END PFP */
-
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
-/* USER CODE END PFP */
-
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
-/* USER CODE END PFP */
-
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
-/* USER CODE END PFP */
-
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
-/* USER CODE END PFP */
-
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
-/* USER CODE END PFP */
-
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
-/* USER CODE END PFP */
-
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
-/* USER CODE END PFP */
-
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
-/* USER CODE END PFP */
-
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
-/* USER CODE END PFP */
-
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
-/* USER CODE END PFP */
-
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
-/* USER CODE END PFP */
-
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
-/* USER CODE END PFP */
-
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
-/* USER CODE END PFP */
-
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
-/* USER CODE END PFP */
-
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
-/* USER CODE END PFP */
-
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
-/* USER CODE END PFP */
-
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
-/* USER CODE END PFP */
-
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
-/* USER CODE END PFP */
-
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
-/* USER CODE END PFP */
-
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
-/* USER CODE END PFP */
-
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
-/* USER CODE END PFP */
-
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
-/* USER CODE END PFP */
-
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
-/* USER CODE END PFP */
-
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
-/* USER CODE END PFP */
-
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
-/* USER CODE END PFP */
-
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
-/* USER CODE END PFP */
-
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
-/* USER CODE END PFP */
-
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
-/* USER CODE END PFP */
-
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
-/* USER CODE END PFP */
-
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
-/* USER CODE END PFP */
-
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
-/* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
@@ -240,14 +108,15 @@ vprint (const char *fmt, va_list argp)
   char string[200];
   if (0 < vsprintf (string, fmt, argp)) // build string
     {
-      HAL_UART_Transmit (&huart1, (uint8_t*) string, strlen (string), 0xffffff); // send message via UART
+      HAL_UART_Transmit (&huart2, (uint8_t*) string, strlen (string), 0xffffff); // send message via UART
     }
 }
 
 void
 uart_printf (const char *fmt, ...) // custom printf() function
 {
-#ifdef UART_DEBUG
+//#ifdef UART_DEBUG
+#if 0
   va_list argp;
   va_start(argp, fmt);
   vprint (fmt, argp);
@@ -293,7 +162,17 @@ int main(void)
   MX_USART1_UART_Init();
   MX_USART2_UART_Init();
   MX_USART3_UART_Init();
+  MX_FMC_Init();
   /* USER CODE BEGIN 2 */
+
+  //LED1 & LED2 OFF.
+  HAL_GPIO_WritePin(GPIOF, LED1_Pin|LED2_Pin, GPIO_PIN_SET);
+
+  //Enable CAM1 power.
+  HAL_GPIO_WritePin(GPIOG, CAM1_PWR_EN_Pin, GPIO_PIN_SET);
+  //SYNC_SWITCH=0, CAM1 Signal Pass.
+  //BUS_SWITCH=0, CAM1 Signal Pass.
+  HAL_GPIO_WritePin(GPIOB, SYNC_SWITCH_Pin|BUS_SWITCH_Pin, GPIO_PIN_RESET);
 
   //2. Initial OV2640 registers via I2C.
   OV2640_Init (&hi2c1, &hdcmi);
@@ -333,12 +212,15 @@ int main(void)
 	case 3:
 	  recv_len = iJpegBufferSize - __HAL_DMA_GET_COUNTER(hdcmi.DMA_Handle);
 	  uart_printf ("get VSYNC %d,Frame:%d DMA:%d\r\n", iVsyncCnt, iFps, recv_len);
+	  //LED1 on.
+	  HAL_GPIO_WritePin(GPIOF, LED1_Pin, GPIO_PIN_SET);
 	  //dump first 10 bytes data to uart.
 	  for (i = 0; i < recv_len; i++)
 	    {
-	      HAL_UART_Transmit (&huart1, (uint8_t*) &iJpegBuffer[i], 4, 0xffffff);
+	      HAL_UART_Transmit (&huart2, (uint8_t*) &iJpegBuffer[i], 4, 0xffffff);
 	    }
-
+	  //LED1 off.
+	  HAL_GPIO_WritePin(GPIOF, LED1_Pin, GPIO_PIN_RESET);
 	  g_iVSYNCFlag = 4;
 	  break;
 
@@ -708,6 +590,60 @@ static void MX_DMA_Init(void)
 
 }
 
+/* FMC initialization function */
+static void MX_FMC_Init(void)
+{
+
+  /* USER CODE BEGIN FMC_Init 0 */
+
+  /* USER CODE END FMC_Init 0 */
+
+  FMC_NORSRAM_TimingTypeDef Timing = {0};
+
+  /* USER CODE BEGIN FMC_Init 1 */
+
+  /* USER CODE END FMC_Init 1 */
+
+  /** Perform the SRAM1 memory initialization sequence
+  */
+  hsram1.Instance = FMC_NORSRAM_DEVICE;
+  hsram1.Extended = FMC_NORSRAM_EXTENDED_DEVICE;
+  /* hsram1.Init */
+  hsram1.Init.NSBank = FMC_NORSRAM_BANK1;
+  hsram1.Init.DataAddressMux = FMC_DATA_ADDRESS_MUX_DISABLE;
+  hsram1.Init.MemoryType = FMC_MEMORY_TYPE_PSRAM;
+  hsram1.Init.MemoryDataWidth = FMC_NORSRAM_MEM_BUS_WIDTH_16;
+  hsram1.Init.BurstAccessMode = FMC_BURST_ACCESS_MODE_DISABLE;
+  hsram1.Init.WaitSignalPolarity = FMC_WAIT_SIGNAL_POLARITY_LOW;
+  hsram1.Init.WaitSignalActive = FMC_WAIT_TIMING_BEFORE_WS;
+  hsram1.Init.WriteOperation = FMC_WRITE_OPERATION_DISABLE;
+  hsram1.Init.WaitSignal = FMC_WAIT_SIGNAL_DISABLE;
+  hsram1.Init.ExtendedMode = FMC_EXTENDED_MODE_DISABLE;
+  hsram1.Init.AsynchronousWait = FMC_ASYNCHRONOUS_WAIT_DISABLE;
+  hsram1.Init.WriteBurst = FMC_WRITE_BURST_DISABLE;
+  hsram1.Init.ContinuousClock = FMC_CONTINUOUS_CLOCK_SYNC_ONLY;
+  hsram1.Init.WriteFifo = FMC_WRITE_FIFO_ENABLE;
+  hsram1.Init.PageSize = FMC_PAGE_SIZE_NONE;
+  /* Timing */
+  Timing.AddressSetupTime = 15;
+  Timing.AddressHoldTime = 15;
+  Timing.DataSetupTime = 255;
+  Timing.BusTurnAroundDuration = 15;
+  Timing.CLKDivision = 16;
+  Timing.DataLatency = 17;
+  Timing.AccessMode = FMC_ACCESS_MODE_A;
+  /* ExtTiming */
+
+  if (HAL_SRAM_Init(&hsram1, &Timing, NULL) != HAL_OK)
+  {
+    Error_Handler( );
+  }
+
+  /* USER CODE BEGIN FMC_Init 2 */
+
+  /* USER CODE END FMC_Init 2 */
+}
+
 /**
   * @brief GPIO Initialization Function
   * @param None
@@ -720,32 +656,82 @@ static void MX_GPIO_Init(void)
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOE_CLK_ENABLE();
   __HAL_RCC_GPIOF_CLK_ENABLE();
-  __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOC_CLK_ENABLE();
-  __HAL_RCC_GPIOD_CLK_ENABLE();
-  __HAL_RCC_GPIOG_CLK_ENABLE();
-  HAL_PWREx_EnableVddIO2();
+  __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
+  __HAL_RCC_GPIOG_CLK_ENABLE();
+  __HAL_RCC_GPIOD_CLK_ENABLE();
+  HAL_PWREx_EnableVddIO2();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, CAM_RST_Pin|CAM_PWDN_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOF, CAM1_PWDN_Pin|LED1_Pin|LED2_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(CAM1_RST_GPIO_Port, CAM1_RST_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : CAM_RST_Pin CAM_PWDN_Pin */
-  GPIO_InitStruct.Pin = CAM_RST_Pin|CAM_PWDN_Pin;
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(LD_PWR_EN_GPIO_Port, LD_PWR_EN_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOB, SYNC_SWITCH_Pin|BUS_SWITCH_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOG, CAM2_PWR_EN_Pin|CAM1_PWR_EN_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pins : CAM1_PWDN_Pin LED1_Pin LED2_Pin */
+  GPIO_InitStruct.Pin = CAM1_PWDN_Pin|LED1_Pin|LED2_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOF, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : CAM1_RST_Pin */
+  GPIO_InitStruct.Pin = CAM1_RST_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(CAM1_RST_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : LD_PWR_EN_Pin */
+  GPIO_InitStruct.Pin = LD_PWR_EN_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(LD_PWR_EN_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : PA7 */
+  GPIO_InitStruct.Pin = GPIO_PIN_7;
+  GPIO_InitStruct.Mode = GPIO_MODE_AF_OD;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+  GPIO_InitStruct.Alternate = GPIO_AF4_I2C3;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : LED_Pin */
-  GPIO_InitStruct.Pin = LED_Pin;
+  /*Configure GPIO pins : SYNC_SWITCH_Pin BUS_SWITCH_Pin */
+  GPIO_InitStruct.Pin = SYNC_SWITCH_Pin|BUS_SWITCH_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(LED_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : DAY_NIGHT_Pin VER1_Pin */
+  GPIO_InitStruct.Pin = DAY_NIGHT_Pin|VER1_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : CAM2_PWR_EN_Pin CAM1_PWR_EN_Pin */
+  GPIO_InitStruct.Pin = CAM2_PWR_EN_Pin|CAM1_PWR_EN_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOG, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : VER2_Pin */
+  GPIO_InitStruct.Pin = VER2_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(VER2_GPIO_Port, &GPIO_InitStruct);
 
 }
 
