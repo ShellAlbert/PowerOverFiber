@@ -100,6 +100,30 @@ static void MX_FMC_Init(void);
 /* USER CODE BEGIN 0 */
 /* USER CODE END PFP */
 
+/* Private user code ---------------------------------------------------------*/
+/* USER CODE BEGIN 0 */
+/* USER CODE END PFP */
+
+/* Private user code ---------------------------------------------------------*/
+/* USER CODE BEGIN 0 */
+/* USER CODE END PFP */
+
+/* Private user code ---------------------------------------------------------*/
+/* USER CODE BEGIN 0 */
+/* USER CODE END PFP */
+
+/* Private user code ---------------------------------------------------------*/
+/* USER CODE BEGIN 0 */
+/* USER CODE END PFP */
+
+/* Private user code ---------------------------------------------------------*/
+/* USER CODE BEGIN 0 */
+/* USER CODE END PFP */
+
+/* Private user code ---------------------------------------------------------*/
+/* USER CODE BEGIN 0 */
+/* USER CODE END PFP */
+
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
@@ -230,11 +254,15 @@ int main(void)
 #if 0
   for(i=0;i<INFRARED_IMGBUF_INT;i++)
     {
-      *(frameBufferInfrared+i)=i+5;
+      *(frameBufferInfrared+i)=0;
     }
   for(i=0;i<INFRARED_IMGBUF_INT;i++)
     {
-      if((i+5)!=frameBufferInfrared[i])
+      *(frameBufferInfrared+i)=i+3;
+    }
+  for(i=0;i<INFRARED_IMGBUF_INT;i++)
+    {
+      if((i+3)!=frameBufferInfrared[i])
 	{
 	  HAL_UART_Transmit (&huart2, (uint8_t*) &frameBufferInfrared[i], 4, 0xffffff);
 	}
@@ -284,7 +312,7 @@ int main(void)
 
 	case 4:
 	  //uart_printf ("Stop\r\n");
-	  HAL_Delay (100);
+	  HAL_Delay (10000);
 	  g_iVSYNCFlag = 0;
 	  break;
 
@@ -683,10 +711,10 @@ static void MX_FMC_Init(void)
   hsram1.Init.WriteFifo = FMC_WRITE_FIFO_ENABLE;
   hsram1.Init.PageSize = FMC_PAGE_SIZE_NONE;
   /* Timing */
-  Timing.AddressSetupTime = 15;
+  Timing.AddressSetupTime = 6;
   Timing.AddressHoldTime = 15;
-  Timing.DataSetupTime = 255;
-  Timing.BusTurnAroundDuration = 15;
+  Timing.DataSetupTime = 3;
+  Timing.BusTurnAroundDuration = 4;
   Timing.CLKDivision = 16;
   Timing.DataLatency = 17;
   Timing.AccessMode = FMC_ACCESS_MODE_A;
