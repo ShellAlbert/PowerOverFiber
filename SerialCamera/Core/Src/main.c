@@ -58,7 +58,8 @@ UART_HandleTypeDef huart3;
 SRAM_HandleTypeDef hsram1;
 
 /* USER CODE BEGIN PV */
-
+static void
+MX_DCMI_Init_OV2640 (void);
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -74,6 +75,14 @@ static void MX_USART2_UART_Init(void);
 static void MX_USART3_UART_Init(void);
 static void MX_FMC_Init(void);
 /* USER CODE BEGIN PFP */
+/* USER CODE BEGIN 0 */
+/* USER CODE END PFP */
+
+/* Private user code ---------------------------------------------------------*/
+/* USER CODE BEGIN 0 */
+/* USER CODE END PFP */
+
+/* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 /* USER CODE END PFP */
 
@@ -177,6 +186,8 @@ int main(void)
   MX_USART3_UART_Init();
   MX_FMC_Init();
   /* USER CODE BEGIN 2 */
+  sprintf (msg_buffer, "SerialCAM built on %s %s\r\n", __DATE__, __TIME__);
+  HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 2000);
 
   /* External SRAM write-read test successfully!*/
 #if 1
@@ -224,6 +235,8 @@ int main(void)
   //if (HAL_GPIO_ReadPin (DAY_NIGHT_GPIO_Port, DAY_NIGHT_Pin))
   if (0)
     {
+      MX_DCMI_Init_OV2640 ();
+
       sprintf (msg_buffer, "%s\r\n", "Day - Visible");
       HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 2000);
 
@@ -233,13 +246,13 @@ int main(void)
       //SYNC_SWITCH=0, CAM1 Signal Pass.
       //BUS_SWITCH=0, CAM1 Signal Pass.
       HAL_GPIO_WritePin (GPIOB, SYNC_SWITCH_Pin | BUS_SWITCH_Pin, GPIO_PIN_RESET);
-      HAL_Delay (100);
+      HAL_Delay (500);
 
       //Initial OV2640 registers via I2C.
       OV2640_Init (&hi2c1, &hdcmi);
-      HAL_Delay (100);
+      HAL_Delay (500);
       //OV2640_ResolutionOptions (imgRes);
-      HAL_Delay (100);
+      HAL_Delay (500);
 
       /* Disable unwanted HSYNC (IT_LINE) / VSYNC (IT_VSYNC) interrupts */
       __HAL_DCMI_DISABLE_IT(&hdcmi, DCMI_IT_LINE | DCMI_IT_VSYNC);
@@ -301,37 +314,156 @@ int main(void)
     }
   else
     {
+      uint8_t i;
       sprintf (msg_buffer, "%s\r\n", "Night - Infrared");
       HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 2000);
 
       //Enable CAM2 Power.
       HAL_GPIO_WritePin (GPIOG, CAM2_PWR_EN_Pin, GPIO_PIN_SET);
-      HAL_Delay (2000);
+      HAL_Delay (6000);
+
+      //SYNC_SWITCH=1, CAM2 Signal Pass.
+      //BUS_SWITCH=1, CAM2 Signal Pass.
+      HAL_GPIO_WritePin (GPIOB, SYNC_SWITCH_Pin | BUS_SWITCH_Pin, GPIO_PIN_SET);
+      HAL_Delay (500);
+
+      //Set more than Once to ensure command was received successfully by Infrared Sensor.
+      for (i = 0; i < 2; i++)
+	{
+	  uint8_t rxData[32];
+
+	  //read FPA temperature.
+	  uint8_t cmd_FPA_Temperature[] =
+	    { 0xAA, 0x04, 0x01, 0xC3, 0x00, 0x72, 0xEB, 0xAA };
+
+	  //read Chip Temperature.
+	  uint8_t cmd_Chip_Temperature[] =
+	    { 0xAA, 0x04, 0x01, 0x7C, 0x00, 0x2B, 0xEB, 0xAA };
+
+	  //set LVCMOS interface.
+	  uint8_t cmd_LVCMOS[] =
+	    { 0xAA, 0x06, 0x01, 0x5D, 0x02, 0x02, 0x00, 0x12, 0xEB, 0xAA };
+
+	  //Digital Video Source Selection.
+	  uint8_t cmd_dvSource[] =
+	    { 0xAA, 0x05, 0x01, 0x5C, 0x01, 0x01, 0x0E, 0xEB, 0xAA };
+
+	  //LED2 on.
+	  HAL_GPIO_WritePin (GPIOF, LED2_Pin, GPIO_PIN_RESET);
+	  //read FPA Temperature.
+	  if (HAL_UART_Transmit (&huart1, (uint8_t*) cmd_FPA_Temperature, sizeof(cmd_FPA_Temperature), 200) == HAL_OK)
+	    {
+	      memset (rxData, 0, sizeof(rxData));
+	      //block rx with 200ms.
+	      HAL_UART_Receive (&huart1, rxData, sizeof(rxData), 200);
+	      sprintf (msg_buffer, "FPA_Temperature: %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x \r\n", rxData[0], rxData[1], rxData[2], rxData[3],
+		       rxData[4], rxData[5], rxData[6], rxData[7], rxData[8], rxData[9]);
+	      HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 100);
+	      HAL_Delay (100);
+	    }
+
+	  //read Chip Temperature.
+	  if (HAL_UART_Transmit (&huart1, (uint8_t*) cmd_Chip_Temperature, sizeof(cmd_Chip_Temperature), 200) == HAL_OK)
+	    {
+	      memset (rxData, 0, sizeof(rxData));
+	      //block rx with 200ms.
+	      HAL_UART_Receive (&huart1, rxData, sizeof(rxData), 200);
+	      sprintf (msg_buffer, "Chip_Temperature: %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x \r\n", rxData[0], rxData[1], rxData[2], rxData[3],
+		       rxData[4], rxData[5], rxData[6], rxData[7], rxData[8], rxData[9]);
+	      HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 100);
+	      HAL_Delay (100);
+	    }
+
+	  //select NUC as Digital Video Source.
+	  if (HAL_UART_Transmit (&huart1, (uint8_t*) cmd_dvSource, sizeof(cmd_dvSource), 200) == HAL_OK)
+	    {
+	      memset (rxData, 0, sizeof(rxData));
+	      //block rx with 200ms.
+	      HAL_UART_Receive (&huart1, rxData, sizeof(rxData), 200);
+	      sprintf (msg_buffer, "dvSource: %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x \r\n", rxData[0], rxData[1], rxData[2], rxData[3], rxData[4],
+		       rxData[5], rxData[6], rxData[7], rxData[8], rxData[9]);
+	      HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 100);
+	      HAL_Delay (100);
+	    }
+
+	  //set LVCMOS interface.
+	  if (HAL_UART_Transmit (&huart1, (uint8_t*) cmd_LVCMOS, sizeof(cmd_LVCMOS), 200) == HAL_OK)
+	    {
+	      memset (rxData, 0, sizeof(rxData));
+	      //block rx with 200ms.
+	      HAL_UART_Receive (&huart1, rxData, sizeof(rxData), 200);
+	      sprintf (msg_buffer, "LVCMOS: %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x \r\n", rxData[0], rxData[1], rxData[2], rxData[3], rxData[4],
+		       rxData[5], rxData[6], rxData[7], rxData[8], rxData[9]);
+	      HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 100);
+	      HAL_Delay (100);
+	    }
+
+	  //LED2 off.
+	  HAL_GPIO_WritePin (GPIOF, LED2_Pin, GPIO_PIN_SET);
+	  HAL_Delay (200);
+	}
+      /* Disable unwanted HSYNC (IT_LINE) / VSYNC (IT_VSYNC) interrupts */
+      __HAL_DCMI_DISABLE_IT(&hdcmi, DCMI_IT_LINE | DCMI_IT_VSYNC);
+      __HAL_DCMI_ENABLE_IT(&hdcmi, DCMI_IT_FRAME|DCMI_IT_VSYNC);
 
       while (1)
 	{
-	  uint8_t rxData[32];
-	  //read FPA temperature.
-	  uint8_t cmd_FPA_Temperature[] =
-	    { 0xaa, 0x04, 0x01, 0xc3, 0x00, 0x72, 0xeb, 0xaa };
-	  uint8_t cmdSize = sizeof(cmd_FPA_Temperature);
-	  //block tx with 5000ms.
-	  if (HAL_UART_Transmit (&huart1, (uint8_t*) cmd_FPA_Temperature, cmdSize, 2000) == HAL_OK)
+	  int recv_len;
+	  switch (g_iVSYNCFlag)
 	    {
-
-	      memset (rxData, 0, sizeof(rxData));
-	      //block rx with 2000ms.
-	      HAL_UART_Receive (&huart1, rxData, sizeof(rxData), 2000);
-	      sprintf (msg_buffer, "%02x %02x %02x %02x %02x \r\n", rxData[0], rxData[1], rxData[2], rxData[3], rxData[4]);
+	    case 0:
+	      sprintf (msg_buffer, "%s\r\n", "1-Start DMA");
 	      HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 2000);
-	      if (rxData[0] == 0x55 && rxData[8] == 0xAA)
-		{
+	      memset (frameBufferInfrared, 0, sizeof(frameBufferInfrared));
+	      // 65535 (0xFFFF is the DMA maximum transfer length).
+	      //(640*512*16bits)/8bits/4bytes(int)=163840(int)
+	      //163840/4=40960 << 65535
+	      //Since DMA is in Circle mode, so it can not generate Complete Interrupt.
+	      //But we can use Frame Interrupt.
+	      HAL_DCMI_Start_DMA (&hdcmi, DCMI_MODE_SNAPSHOT, (uint32_t) frameBufferInfrared, 100/*INFRARED_IMGBUF_INT*/);
+	      g_iVSYNCFlag = 1;
+	      break;
 
+	    case 1:
+	      sprintf (msg_buffer, "%s\r\n", "2-Waiting IT_FRAME...");
+	      HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 2000);
+	      HAL_Delay (100);
+	      break;
+
+	    case 2:
+	      sprintf (msg_buffer, "%s\r\n", "3-Get FRAME");
+	      HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 2000);
+	      g_iVSYNCFlag = 3;
+	      break;
+
+	    case 3:
+	      recv_len = 65535 - __HAL_DMA_GET_COUNTER(hdcmi.DMA_Handle);
+	      sprintf (msg_buffer, "4-Get VSYNC %d,DMA %d\r\n", iVsyncCnt, recv_len);
+	      HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 2000);
+	      //LED2 on.
+	      HAL_GPIO_WritePin (GPIOF, LED2_Pin, GPIO_PIN_RESET);
+	      //dump first 10 bytes data to UART3.
+	      sprintf (msg_buffer, "DATA-%08x-%08x\r\n", frameBufferInfrared[0], frameBufferInfrared[1]);
+	      HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 2000);
+	      //dump all data to UART2, transmit via Laser Diode.
+	      for (i = 0; i < recv_len; i++)
+		{
+		  HAL_UART_Transmit (&huart2, (uint8_t*) &frameBufferInfrared[i], 4, 0xffffff);
 		}
+	      //LED2 off.
+	      HAL_GPIO_WritePin (GPIOF, LED2_Pin, GPIO_PIN_SET);
+	      g_iVSYNCFlag = 4;
+	      break;
+
+	    case 4:
+	      sprintf (msg_buffer, "%s\r\n", "5-Done");
+	      HAL_Delay (100);
+	      g_iVSYNCFlag = 0;
+	      break;
+
+	    default:
+	      break;
 	    }
-	  HAL_Delay (1000);
-	  sprintf (msg_buffer, "%s\r\n", "cmd_FPA_Temperature!");
-	  HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 2000);
 	}
     }
   /* USER CODE END 2 */
@@ -420,8 +552,8 @@ static void MX_DCMI_Init(void)
   hdcmi.Init.VSPolarity = DCMI_VSPOLARITY_LOW;
   hdcmi.Init.HSPolarity = DCMI_HSPOLARITY_LOW;
   hdcmi.Init.CaptureRate = DCMI_CR_ALL_FRAME;
-  hdcmi.Init.ExtendedDataMode = DCMI_EXTEND_DATA_8B;
-  hdcmi.Init.JPEGMode = DCMI_JPEG_ENABLE;
+  hdcmi.Init.ExtendedDataMode = DCMI_EXTEND_DATA_14B;
+  hdcmi.Init.JPEGMode = DCMI_JPEG_DISABLE;
   hdcmi.Init.ByteSelectMode = DCMI_BSM_ALL;
   hdcmi.Init.ByteSelectStart = DCMI_OEBS_ODD;
   hdcmi.Init.LineSelectMode = DCMI_LSM_ALL;
@@ -697,7 +829,7 @@ static void MX_DMA_Init(void)
 
   /* DMA interrupt init */
   /* DMA2_Channel5_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(DMA2_Channel5_IRQn, 0, 0);
+  HAL_NVIC_SetPriority(DMA2_Channel5_IRQn, 14, 0);
   HAL_NVIC_EnableIRQ(DMA2_Channel5_IRQn);
 
 }
@@ -858,6 +990,54 @@ HAL_DCMI_FrameEventCallback (DCMI_HandleTypeDef *hdcmi)
       iVsyncCnt++;
       g_iVSYNCFlag = 2;
     }
+}
+void
+HAL_DCMI_VsyncEventCallback(DCMI_HandleTypeDef *hdcmi)
+{
+//  if (hdcmi->Instance == DCMI)
+//    {
+//      HAL_DCMI_Suspend (hdcmi);
+//      HAL_DCMI_Stop (hdcmi);
+//      iVsyncCnt++;
+//      g_iVSYNCFlag = 2;
+//    }
+}
+/**
+ * @brief DCMI Initialization Function
+ * @param None
+ * @retval None
+ */
+static void
+MX_DCMI_Init_OV2640 (void)
+{
+
+  /* USER CODE BEGIN DCMI_Init 0 */
+
+  /* USER CODE END DCMI_Init 0 */
+
+  /* USER CODE BEGIN DCMI_Init 1 */
+
+  /* USER CODE END DCMI_Init 1 */
+  hdcmi.Instance = DCMI;
+  hdcmi.Init.SynchroMode = DCMI_SYNCHRO_HARDWARE;
+  hdcmi.Init.PCKPolarity = DCMI_PCKPOLARITY_RISING;
+  hdcmi.Init.VSPolarity = DCMI_VSPOLARITY_LOW;
+  hdcmi.Init.HSPolarity = DCMI_HSPOLARITY_LOW;
+  hdcmi.Init.CaptureRate = DCMI_CR_ALL_FRAME;
+  hdcmi.Init.ExtendedDataMode = DCMI_EXTEND_DATA_8B;
+  hdcmi.Init.JPEGMode = DCMI_JPEG_ENABLE;
+  hdcmi.Init.ByteSelectMode = DCMI_BSM_ALL;
+  hdcmi.Init.ByteSelectStart = DCMI_OEBS_ODD;
+  hdcmi.Init.LineSelectMode = DCMI_LSM_ALL;
+  hdcmi.Init.LineSelectStart = DCMI_OELS_ODD;
+  if (HAL_DCMI_Init (&hdcmi) != HAL_OK)
+    {
+      Error_Handler ();
+    }
+  /* USER CODE BEGIN DCMI_Init 2 */
+
+  /* USER CODE END DCMI_Init 2 */
+
 }
 /* USER CODE END 4 */
 
