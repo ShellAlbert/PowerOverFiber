@@ -1,6 +1,6 @@
 (ExpressProject "SerialCamera"
   (ProjectVersion "19981106")
-  (SoftwareVersion "17.4-2019 S017 (3936576)  [4/19/2021]-[11/16/22]")
+  (SoftwareVersion "17.4-2019 S017 (3936576)  [4/19/2021]-[01/04/23]")
   (ProjectType "PCB")
   (Folder "Design Resources"
     (Folder "Library"
@@ -212,25 +212,29 @@
   (GlobalState
     (FileView
       (Path "Design Resources")
-      (Path "Design Resources" ".\serialcamera.dsn")
-      (Path "Design Resources" ".\serialcamera.dsn" "SCHEMATIC1")
+      (Path "Design Resources"
+         "d:\work\github\poweroverfiber\schematic\serialcamera.dsn")
+      (Path "Design Resources"
+         "d:\work\github\poweroverfiber\schematic\serialcamera.dsn" "SCHEMATIC1")
       (Path "Outputs")
       (Path "Logs")
-      (Select "Design Resources" ".\serialcamera.dsn" "SCHEMATIC1" "PAGE2"))
+      (Select "Design Resources"
+         "d:\work\github\poweroverfiber\schematic\serialcamera.dsn" "SCHEMATIC1"
+         "PAGE1"))
     (HierarchyView)
     (Doc
       (Type "COrCapturePMDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 -1 -1 0 200 0 541"))
+        (Placement "44 0 1 -1 -1 -1 -1 0 200 0 947"))
       (Tab 0))
     (Doc
       (Type "COrSchematicDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 -1 -1 5 1028 26 561")
-        (Scroll "-140 0")
-        (Zoom "43")
+        (Placement "44 0 1 -1 -1 -1 -1 5 1564 26 967")
+        (Scroll "3556 1343")
+        (Zoom "308")
         (Occurrence "/"))
       (Path "D:\WORK\GITHUB\POWEROVERFIBER\SCHEMATIC\SERIALCAMERA.DSN")
       (Schematic "SCHEMATIC1")
-      (Page "PAGE2")))
+      (Page "PAGE1")))
   (ISPCBBASICLICENSE "false"))
