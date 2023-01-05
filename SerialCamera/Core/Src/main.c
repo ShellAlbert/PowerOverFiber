@@ -96,6 +96,14 @@ static void MX_FMC_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+/* USER CODE END PFP */
+
+/* Private user code ---------------------------------------------------------*/
+/* USER CODE BEGIN 0 */
+/* USER CODE END PFP */
+
+/* Private user code ---------------------------------------------------------*/
+/* USER CODE BEGIN 0 */
 
 //the maximum linear address space is 65535 in word unit (32bits) for DMA.
 //If the image size in words does not exceed 65535, the stream can be configured in normal mode.
@@ -122,6 +130,9 @@ uint8_t g_iVSYNCFlag = 0;
 /* 157184 Exceed 65535 !!!!!*/
 #define INFRARED_IMGBUF_INT		(614*512*16/8/4)
 uint32_t frameBufferInfrared[INFRARED_IMGBUF_INT] __attribute__ ((section(".ExtRAM")));
+
+//64K SoC RAM Frame Buffer.
+uint32_t frameBufferSoC[1024*64];
 
 void
 vprint (const char *fmt, va_list argp)
@@ -187,7 +198,7 @@ int main(void)
   MX_FMC_Init();
   /* USER CODE BEGIN 2 */
   sprintf (msg_buffer, "SerialCAM built on %s %s\r\n", __DATE__, __TIME__);
-  HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 2000);
+  HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 200);
 
   /* External SRAM write-read test successfully!*/
 #if 1
@@ -207,7 +218,7 @@ int main(void)
       if ((i + 3) != frameBufferInfrared[i])
 	{
 	  sprintf (msg_buffer, "External RAM Test Error, %d!=%d, Code break down!\r\n", i + 3, frameBufferInfrared[i]);
-	  HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 2000);
+	  HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 200);
 	  while (1)
 	    {
 	      //LED1 & LED2 OFF.
@@ -221,7 +232,7 @@ int main(void)
 	}
     }
   sprintf (msg_buffer, "External RAM Test Passed!\r\n");
-  HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 2000);
+  HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 200);
 #endif
 
   //Laser Diode Power up before Transmitting.
@@ -233,7 +244,7 @@ int main(void)
   //read DAY_NIGHT signal.
   HAL_Delay (100);
   //if (HAL_GPIO_ReadPin (DAY_NIGHT_GPIO_Port, DAY_NIGHT_Pin))
-  if (0)
+  if (1)
     {
       MX_DCMI_Init_OV2640 ();
 
@@ -303,11 +314,13 @@ int main(void)
 
 	    case 4:
 	      sprintf (msg_buffer, "%s\r\n", "5-Done");
+	      HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 2000);
 	      HAL_Delay (100);
 	      g_iVSYNCFlag = 0;
 	      break;
 
 	    default:
+	      g_iVSYNCFlag = 0;
 	      break;
 	    }
 	}
@@ -315,8 +328,9 @@ int main(void)
   else
     {
       uint8_t i;
+
       sprintf (msg_buffer, "%s\r\n", "Night - Infrared");
-      HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 2000);
+      HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 200);
 
       //Enable CAM2 Power.
       HAL_GPIO_WritePin (GPIOG, CAM2_PWR_EN_Pin, GPIO_PIN_SET);
@@ -403,8 +417,8 @@ int main(void)
 	  HAL_Delay (200);
 	}
       /* Disable unwanted HSYNC (IT_LINE) / VSYNC (IT_VSYNC) interrupts */
-      __HAL_DCMI_DISABLE_IT(&hdcmi, DCMI_IT_LINE | DCMI_IT_VSYNC);
-      __HAL_DCMI_ENABLE_IT(&hdcmi, DCMI_IT_FRAME|DCMI_IT_VSYNC);
+      __HAL_DCMI_DISABLE_IT(&hdcmi, DCMI_IT_LINE | DCMI_IT_VSYNC|DCMI_IT_ERR|DCMI_IT_OVR);
+      __HAL_DCMI_ENABLE_IT(&hdcmi, DCMI_IT_FRAME);
 
       while (1)
 	{
@@ -413,43 +427,50 @@ int main(void)
 	    {
 	    case 0:
 	      sprintf (msg_buffer, "%s\r\n", "1-Start DMA");
-	      HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 2000);
-	      memset (frameBufferInfrared, 0, sizeof(frameBufferInfrared));
+	      HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 200);
+
 	      // 65535 (0xFFFF is the DMA maximum transfer length).
 	      //(640*512*16bits)/8bits/4bytes(int)=163840(int)
 	      //163840/4=40960 << 65535
 	      //Since DMA is in Circle mode, so it can not generate Complete Interrupt.
 	      //But we can use Frame Interrupt.
-	      HAL_DCMI_Start_DMA (&hdcmi, DCMI_MODE_SNAPSHOT, (uint32_t) frameBufferInfrared, 100/*INFRARED_IMGBUF_INT*/);
+	      // HAL_DCMI_Start_DMA (&hdcmi, DCMI_MODE_SNAPSHOT, (uint32_t) frameBufferInfrared, 40960/*INFRARED_IMGBUF_INT*/);
+
+	      //why can't DMA store data to External RAM?
+	      //if change to SoC RAM, we can get IT_FRAME interrupt!
+	      //why?????
+	      //HAL_DCMI_Start_DMA (&hdcmi, DCMI_MODE_SNAPSHOT, (uint32_t) frameBufferInfrared, 1024*64);
+	      memset (frameBufferSoC, 0, sizeof(frameBufferSoC));
+	      HAL_DCMI_Start_DMA (&hdcmi, DCMI_MODE_SNAPSHOT, (uint32_t) frameBufferSoC, 1024*64);
 	      g_iVSYNCFlag = 1;
 	      break;
 
 	    case 1:
 	      sprintf (msg_buffer, "%s\r\n", "2-Waiting IT_FRAME...");
-	      HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 2000);
+	      HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 200);
 	      HAL_Delay (100);
 	      break;
 
 	    case 2:
 	      sprintf (msg_buffer, "%s\r\n", "3-Get FRAME");
-	      HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 2000);
+	      HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 200);
 	      g_iVSYNCFlag = 3;
 	      break;
 
 	    case 3:
-	      recv_len = 65535 - __HAL_DMA_GET_COUNTER(hdcmi.DMA_Handle);
+	      recv_len = (1024*64) - __HAL_DMA_GET_COUNTER(hdcmi.DMA_Handle);
 	      sprintf (msg_buffer, "4-Get VSYNC %d,DMA %d\r\n", iVsyncCnt, recv_len);
-	      HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 2000);
+	      HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 200);
 	      //LED2 on.
 	      HAL_GPIO_WritePin (GPIOF, LED2_Pin, GPIO_PIN_RESET);
 	      //dump first 10 bytes data to UART3.
-	      sprintf (msg_buffer, "DATA-%08x-%08x\r\n", frameBufferInfrared[0], frameBufferInfrared[1]);
-	      HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 2000);
+	      sprintf (msg_buffer, "DATA-%08x-%08x\r\n", frameBufferSoC[0], frameBufferSoC[1]);
+	      HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 200);
 	      //dump all data to UART2, transmit via Laser Diode.
-	      for (i = 0; i < recv_len; i++)
-		{
-		  HAL_UART_Transmit (&huart2, (uint8_t*) &frameBufferInfrared[i], 4, 0xffffff);
-		}
+//	      for (i = 0; i < recv_len; i++)
+//		{
+//		  HAL_UART_Transmit (&huart2, (uint8_t*) &frameBufferSoC[i], 4, 0xffffff);
+//		}
 	      //LED2 off.
 	      HAL_GPIO_WritePin (GPIOF, LED2_Pin, GPIO_PIN_SET);
 	      g_iVSYNCFlag = 4;
@@ -457,11 +478,13 @@ int main(void)
 
 	    case 4:
 	      sprintf (msg_buffer, "%s\r\n", "5-Done");
-	      HAL_Delay (100);
+	      HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 200);
+	      HAL_Delay (2000);
 	      g_iVSYNCFlag = 0;
 	      break;
 
 	    default:
+	      g_iVSYNCFlag = 0;
 	      break;
 	    }
 	}
@@ -474,10 +497,15 @@ int main(void)
     {
       sprintf (msg_buffer, "%s\r\n", "App Overflow Here!");
       HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 2000);
+      //LED1 and LED2 on.
+      HAL_GPIO_WritePin (GPIOF, LED1_Pin | LED2_Pin, GPIO_PIN_RESET);
+      HAL_Delay (500);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-      HAL_Delay (5000);
+      //LED1 and LED2 off.
+      HAL_GPIO_WritePin (GPIOF, LED1_Pin | LED2_Pin, GPIO_PIN_SET);
+      HAL_Delay (500);
     }
   /* USER CODE END 3 */
 }
@@ -991,16 +1019,32 @@ HAL_DCMI_FrameEventCallback (DCMI_HandleTypeDef *hdcmi)
       g_iVSYNCFlag = 2;
     }
 }
+//https://community.st.com/s/question/0D50X0000AU3ZLtSQN/stm32f4-dcmi-difference-between-itframe-vs-itvsync-interrupt
+//STM32F4 DCMI - difference between IT_FRAME vs IT_VSYNC interrupt ?
+//VSYNC interrupt occurs always upon VSYNC changing from inactive to active,
+//regardless of whether there's a capture ongoing or not.
+//FRAME interrupt occurs only when capture achieves end of frame,
+//either indicated by VSYNC or before that if crop is set,
+//but certainly only if capture is going on.
 void
 HAL_DCMI_VsyncEventCallback(DCMI_HandleTypeDef *hdcmi)
 {
-//  if (hdcmi->Instance == DCMI)
-//    {
-//      HAL_DCMI_Suspend (hdcmi);
-//      HAL_DCMI_Stop (hdcmi);
-//      iVsyncCnt++;
-//      g_iVSYNCFlag = 2;
-//    }
+  if (hdcmi->Instance == DCMI)
+    {
+      char msg_buffer[32];
+      sprintf (msg_buffer, "%s\r\n", "VSYNC");
+      HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 2000);
+    }
+}
+void
+HAL_DCMI_LineEventCallback(DCMI_HandleTypeDef *hdcmi)
+{
+  if (hdcmi->Instance == DCMI)
+    {
+      char msg_buffer[32];
+      sprintf (msg_buffer, "%s\r\n", "HSYNC");
+      HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 2000);
+    }
 }
 /**
  * @brief DCMI Initialization Function
