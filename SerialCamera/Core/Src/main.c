@@ -109,7 +109,7 @@ static void MX_FMC_Init(void);
 //If the image size in words does not exceed 65535, the stream can be configured in normal mode.
 //In general, one frame of JPEG compressed image can be 50KBytes~80KBytes.
 //So here we use a 128KByte buffer.
-#define JPEG_BUFFER_SIZE  (1024*31)  //128KB buffer size= 1024*31 INT bytes.
+
 uint32_t iJpegBufferSize = JPEG_BUFFER_SIZE; //1024*128.
 //SoC RAM.
 //if we define this array as uint8_t, it will be failed. why?
@@ -120,7 +120,7 @@ uint32_t iJpegBufferSize = JPEG_BUFFER_SIZE; //1024*128.
 //so we must use DMA interrupt to copy data from SoC RAM to External RAM.
 uint32_t iJpegBuffer[JPEG_BUFFER_SIZE] __attribute__ ((section(".ExtRAM")));
 
-uint32_t iVsyncCnt = 0;
+uint32_t iITFrameCnt = 0;
 
 uint8_t g_iVSYNCFlag = 0;
 
@@ -244,7 +244,7 @@ int main(void)
   //read DAY_NIGHT signal.
   HAL_Delay (100);
   //if (HAL_GPIO_ReadPin (DAY_NIGHT_GPIO_Port, DAY_NIGHT_Pin))
-  if (1)
+  if (0)
     {
       MX_DCMI_Init_OV2640 ();
 
@@ -295,7 +295,7 @@ int main(void)
 
 	    case 3:
 	      recv_len = iJpegBufferSize - __HAL_DMA_GET_COUNTER(hdcmi.DMA_Handle);
-	      sprintf (msg_buffer, "4-Get VSYNC %d,DMA %d\r\n", iVsyncCnt, recv_len);
+	      sprintf (msg_buffer, "4-Get IT_FRAME %d,DMA %d\r\n", iITFrameCnt, recv_len);
 	      HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 2000);
 	      //LED1 on.
 	      HAL_GPIO_WritePin (GPIOF, LED1_Pin, GPIO_PIN_RESET);
@@ -329,6 +329,7 @@ int main(void)
     {
       uint8_t i;
 
+      //MX_DCMI_Init_OV2640 ();
       sprintf (msg_buffer, "%s\r\n", "Night - Infrared");
       HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 200);
 
@@ -441,7 +442,7 @@ int main(void)
 	      //why?????
 	      //HAL_DCMI_Start_DMA (&hdcmi, DCMI_MODE_SNAPSHOT, (uint32_t) frameBufferInfrared, 1024*64);
 	      memset (frameBufferSoC, 0, sizeof(frameBufferSoC));
-	      HAL_DCMI_Start_DMA (&hdcmi, DCMI_MODE_SNAPSHOT, (uint32_t) frameBufferSoC, 1024*64);
+	      HAL_DCMI_Start_DMA (&hdcmi, DCMI_MODE_SNAPSHOT, (uint32_t) frameBufferSoC, 1024*64/2);
 	      g_iVSYNCFlag = 1;
 	      break;
 
@@ -459,7 +460,7 @@ int main(void)
 
 	    case 3:
 	      recv_len = (1024*64) - __HAL_DMA_GET_COUNTER(hdcmi.DMA_Handle);
-	      sprintf (msg_buffer, "4-Get VSYNC %d,DMA %d\r\n", iVsyncCnt, recv_len);
+	      sprintf (msg_buffer, "4-Get IT_FRAME %d,DMA %d\r\n", iITFrameCnt, recv_len);
 	      HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 200);
 	      //LED2 on.
 	      HAL_GPIO_WritePin (GPIOF, LED2_Pin, GPIO_PIN_RESET);
@@ -1015,7 +1016,7 @@ HAL_DCMI_FrameEventCallback (DCMI_HandleTypeDef *hdcmi)
     {
       HAL_DCMI_Suspend (hdcmi);
       HAL_DCMI_Stop (hdcmi);
-      iVsyncCnt++;
+      iITFrameCnt++;
       g_iVSYNCFlag = 2;
     }
 }

@@ -83,7 +83,11 @@ void Error_Handler(void);
 #define VER2_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
 extern int gTimer1OverflowFlag;
+#define JPEG_BUFFER_SIZE  (1024*31)  //128KB buffer size= 1024*31 INT bytes.
+extern uint32_t iJpegBuffer[JPEG_BUFFER_SIZE];
 
+//64K SoC RAM Frame Buffer.
+extern uint32_t frameBufferSoC[1024*64];
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus
