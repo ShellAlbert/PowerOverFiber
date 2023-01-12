@@ -264,7 +264,7 @@ void USART3_IRQHandler(void)
 void DMA2_Channel5_IRQHandler(void)
 {
   /* USER CODE BEGIN DMA2_Channel5_IRQn 0 */
-  //memcpy(iJpegBuffer,frameBufferSoC,JPEG_BUFFER_SIZE);
+
   /* USER CODE END DMA2_Channel5_IRQn 0 */
   HAL_DMA_IRQHandler(&hdma_dcmi);
   /* USER CODE BEGIN DMA2_Channel5_IRQn 1 */
