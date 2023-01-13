@@ -30,7 +30,7 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-#define ZDBG_MSG_EN 1
+//#define ZDBG_MSG_EN 1
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -125,7 +125,7 @@ uint32_t frameBufferExt[INFRARED_IMGBUF_INT] __attribute__ ((section(".ExtRAM"))
 //640/2=320,512/2=256.
 //The size of 1/4 part of image is calculated by 320*256*16-bits/8-bits=163840bytes,/4bytes=40960words.
 #define SIZE_1_OF_4_WORD	(40960)
-uint32_t frameBufferSoC[SIZE_1_OF_4_WORD+128];
+uint32_t frameBufferSoC[SIZE_1_OF_4_WORD + 128];
 
 void
 vprint (const char *fmt, va_list argp)
@@ -508,29 +508,29 @@ main (void)
 	      //0x0000: 1 line
 	      //0x0001: 2 lines
 	      //0x0002: 3 lines
-
+	      //HAL_DCMI_ConfigCROP(&DCMIHandle, x*2, y, w*2-1, h-1);
 	      switch (iPieces)
 		{
 		case 0: //(0,0)
-		  HAL_DCMI_ConfigCrop (&hdcmi, 0, 0, 320 - 1, 256 - 1);
+		  HAL_DCMI_ConfigCrop (&hdcmi, 0, 0, 640 * 2 - 1, 128 - 1);
 		  break;
 		case 1: //(0,1)
-		  HAL_DCMI_ConfigCrop (&hdcmi, 30, 0, 320 - 1, 256 - 1);
+		  HAL_DCMI_ConfigCrop (&hdcmi, 0, 128, 640 * 2 - 1, 128 - 1);
 		  break;
 		case 2: //(1,0)
-		  HAL_DCMI_ConfigCrop (&hdcmi, 0, 30, 320  - 1, 256 - 1);
+		  HAL_DCMI_ConfigCrop (&hdcmi, 0, 256, 640 * 2 - 1, 128 - 1);
 		  break;
 		case 3: //(1,1)
-		  HAL_DCMI_ConfigCrop (&hdcmi, 30, 30, 320  - 1, 256 - 1);
+		  HAL_DCMI_ConfigCrop (&hdcmi, 0, 384, 640 * 2 - 1, 128 - 1);
 		  break;
 		default:
-		  HAL_DCMI_ConfigCrop (&hdcmi, 0, 0, 320 - 1, 256 - 1);
+		  HAL_DCMI_ConfigCrop (&hdcmi, 0, 0, 640 * 2 - 1, 128 - 1);
 		  break;
 		}
 	      HAL_DCMI_EnableCrop (&hdcmi);
 	      //the Frame Buffer Size must be a little greater than Expected Size.
 	      //Otherwise __HAL_DMA_GET_COUNTER() will not return correct result!!!
-	      HAL_DCMI_Start_DMA (&hdcmi, DCMI_MODE_SNAPSHOT, (uint32_t) frameBufferSoC, SIZE_1_OF_4_WORD+128);
+	      HAL_DCMI_Start_DMA (&hdcmi, DCMI_MODE_SNAPSHOT, (uint32_t) frameBufferSoC, SIZE_1_OF_4_WORD + 128);
 
 	      //error, why doesn't DMA store data to External RAM?
 	      //Blocked at 2-Waiting IT_FRAME.
@@ -560,7 +560,7 @@ main (void)
 
 	    case 3:
 	      remain_len = __HAL_DMA_GET_COUNTER(hdcmi.DMA_Handle);
-	      recv_len = (SIZE_1_OF_4_WORD+128) - remain_len;
+	      recv_len = (SIZE_1_OF_4_WORD + 128) - remain_len;
 #ifdef ZDBG_MSG_EN
 	      sprintf (msg_buffer, "4-Get IT_FRAME %d, DMA Transfered:%d\r\n", iITFrameCnt, recv_len);
 	      HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 200);
@@ -578,15 +578,35 @@ main (void)
 		{
 		case 0:
 		  memcpy ((void*) (frameBufferExt + 0), (void*) frameBufferSoC, SIZE_1_OF_4_WORD * 4); //copy by bytes.
+		  for (i = 0; i < SIZE_1_OF_4_WORD; i++)
+		    {
+		      HAL_UART_Transmit (&huart3, (const uint8_t*) &frameBufferSoC[i], 4, 2000);
+		    }
+		  HAL_Delay (2000);
 		  break;
 		case 1:
-		  memcpy ((void*) (frameBufferExt + SIZE_1_OF_4_WORD * 4 * 1), (void*) frameBufferSoC, SIZE_1_OF_4_WORD * 4); //copy by bytes.
+		  memcpy ((void*) (frameBufferExt + SIZE_1_OF_4_WORD * 1), (void*) frameBufferSoC, SIZE_1_OF_4_WORD * 4); //copy by bytes.
+		  for (i = 0; i < SIZE_1_OF_4_WORD; i++)
+		    {
+		      HAL_UART_Transmit (&huart3, (const uint8_t*) &frameBufferSoC[i], 4, 2000);
+		    }
+		  HAL_Delay (2000);
 		  break;
 		case 2:
-		  memcpy ((void*) (frameBufferExt + SIZE_1_OF_4_WORD * 4 * 2), (void*) frameBufferSoC, SIZE_1_OF_4_WORD * 4); //copy by bytes.
+		  memcpy ((void*) (frameBufferExt + SIZE_1_OF_4_WORD * 2), (void*) frameBufferSoC, SIZE_1_OF_4_WORD * 4); //copy by bytes.
+		  for (i = 0; i < SIZE_1_OF_4_WORD; i++)
+		    {
+		      HAL_UART_Transmit (&huart3, (const uint8_t*) &frameBufferSoC[i], 4, 2000);
+		    }
+		  HAL_Delay (2000);
 		  break;
 		case 3:
-		  memcpy ((void*) (frameBufferExt + SIZE_1_OF_4_WORD * 4 * 3), (void*) frameBufferSoC, SIZE_1_OF_4_WORD * 4); //copy by bytes.
+		  memcpy ((void*) (frameBufferExt + SIZE_1_OF_4_WORD * 3), (void*) frameBufferSoC, SIZE_1_OF_4_WORD * 4); //copy by bytes.
+		  for (i = 0; i < SIZE_1_OF_4_WORD; i++)
+		    {
+		      HAL_UART_Transmit (&huart3, (const uint8_t*) &frameBufferSoC[i], 4, 2000);
+		    }
+		  HAL_Delay (2000);
 		  break;
 		default:
 		  break;
@@ -616,22 +636,22 @@ main (void)
 	      //dump all data to UART2, transmit via Laser Diode.
 	      for (i = 0; i < SIZE_1_OF_4_WORD; i++)
 		{
-		  HAL_UART_Transmit (&huart3, (uint8_t*) (frameBufferExt + 0), 4, 2000);
+		  HAL_UART_Transmit (&huart3, ( const uint8_t*)&frameBufferExt[i], 4, 2000);
 		}
 	      HAL_Delay (2000);
 	      for (i = 0; i < SIZE_1_OF_4_WORD; i++)
 		{
-		  HAL_UART_Transmit (&huart3, (uint8_t*) (frameBufferExt + SIZE_1_OF_4_WORD * 4 * 1), 4, 2000);
+		  HAL_UART_Transmit (&huart3, (const uint8_t*) &frameBufferExt[SIZE_1_OF_4_WORD * 1 + i], 4, 2000);
 		}
 	      HAL_Delay (2000);
 	      for (i = 0; i < SIZE_1_OF_4_WORD; i++)
 		{
-		  HAL_UART_Transmit (&huart3, (uint8_t*) (frameBufferExt + SIZE_1_OF_4_WORD * 4 * 2), 4, 2000);
+		  HAL_UART_Transmit (&huart3, (const uint8_t*) &frameBufferExt[SIZE_1_OF_4_WORD * 2 + i], 4, 2000);
 		}
 	      HAL_Delay (2000);
 	      for (i = 0; i < SIZE_1_OF_4_WORD; i++)
 		{
-		  HAL_UART_Transmit (&huart3, (uint8_t*) (frameBufferExt + SIZE_1_OF_4_WORD * 4 * 3), 4, 2000);
+		  HAL_UART_Transmit (&huart3, (const uint8_t*) &frameBufferExt[SIZE_1_OF_4_WORD * 3 + i], 4, 2000);
 		}
 #endif
 	      HAL_Delay (2000);

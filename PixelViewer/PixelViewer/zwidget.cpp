@@ -24,7 +24,7 @@ bool Widget::loadRAWData()
         qDebug()<<"open file error!";
         return false;
     }
-    for(qint32 i=0;i<4;i++)
+    for(qint32 i=0;i<1;i++)
     {
         if(fread(buffer,sizeof(buffer),1,pFile)!=1)
         {
