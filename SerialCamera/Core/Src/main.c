@@ -95,6 +95,14 @@ MX_FMC_Init (void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+/* USER CODE END PFP */
+
+/* Private user code ---------------------------------------------------------*/
+/* USER CODE BEGIN 0 */
+/* USER CODE END PFP */
+
+/* Private user code ---------------------------------------------------------*/
+/* USER CODE BEGIN 0 */
 
 //the maximum linear address space is 65535 in word unit (32bits) for DMA.
 //If the image size in words does not exceed 65535, the stream can be configured in normal mode.
@@ -197,7 +205,7 @@ main (void)
 #endif
 
   /* External SRAM write-read test successfully!*/
-#if 1
+#if 0
   //clear RAM to zero.
   for (i = 0; i < INFRARED_IMGBUF_INT; i++)
     {
@@ -232,36 +240,32 @@ main (void)
   HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 200);
 #endif
 #endif
-
-  //Laser Diode Power up before Transmitting.
-  //0 = Laser Diode Power ON.
-  //1 = Laser Diode Power OFF.
-  //HAL_GPIO_WritePin(LD_PWR_EN_GPIO_Port, LD_PWR_EN_Pin, GPIO_PIN_RESET);
-  HAL_GPIO_WritePin (LD_PWR_EN_GPIO_Port, LD_PWR_EN_Pin, GPIO_PIN_SET);
+  //Two LEDs OFF.
+  HAL_GPIO_WritePin (GPIOF, LED1_Pin|LED2_Pin, GPIO_PIN_SET);
 
   //read DAY_NIGHT signal.
-  HAL_Delay (100);
+  HAL_Delay (50);
   //if (HAL_GPIO_ReadPin (DAY_NIGHT_GPIO_Port, DAY_NIGHT_Pin))
-  if (0)
+  if (1)
     {
       MX_DCMI_Init_OV2640 ();
-
+#ifdef ZDBG_MSG_EN
       sprintf (msg_buffer, "%s\r\n", "Day - Visible");
       HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 2000);
-
+#endif
       //Enable CAM1 power.
       HAL_GPIO_WritePin (GPIOG, CAM1_PWR_EN_Pin, GPIO_PIN_SET);
 
       //SYNC_SWITCH=0, CAM1 Signal Pass.
       //BUS_SWITCH=0, CAM1 Signal Pass.
       HAL_GPIO_WritePin (GPIOB, SYNC_SWITCH_Pin | BUS_SWITCH_Pin, GPIO_PIN_RESET);
-      HAL_Delay (500);
+      HAL_Delay (100);
 
       //Initial OV2640 registers via I2C.
       OV2640_Init (&hi2c1, &hdcmi);
-      HAL_Delay (500);
+      HAL_Delay (100);
       //OV2640_ResolutionOptions (imgRes);
-      HAL_Delay (500);
+      //HAL_Delay (100);
 
       /* Disable unwanted HSYNC (IT_LINE) / VSYNC (IT_VSYNC) interrupts */
       __HAL_DCMI_DISABLE_IT(&hdcmi, DCMI_IT_LINE | DCMI_IT_VSYNC|DCMI_IT_ERR|DCMI_IT_OVR);
@@ -273,38 +277,54 @@ main (void)
 	  switch (g_iFSMFlag)
 	    {
 	    case 0:
+#ifdef ZDBG_MSG_EN
 	      sprintf (msg_buffer, "%s\r\n", "1-Start DMA");
-	      HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 2000);
-	      memset (iJpegBuffer, 0, iJpegBufferSize);
-	      HAL_DCMI_Start_DMA (&hdcmi, DCMI_MODE_SNAPSHOT, (uint32_t) iJpegBuffer, iJpegBufferSize);
+	      HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 200);
+#endif
+	      memset (frameBufferSoC, 0, SIZE_1_OF_4_WORD * 4);
+	      HAL_DCMI_Start_DMA (&hdcmi, DCMI_MODE_SNAPSHOT, (uint32_t) frameBufferSoC, SIZE_1_OF_4_WORD);
 	      g_iFSMFlag = 1;
 	      break;
 
 	    case 1:
+#ifdef ZDBG_MSG_EN
 	      sprintf (msg_buffer, "%s\r\n", "2-Waiting IT_FRAME...");
-	      HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 2000);
+	      HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 200);
+#endif
 	      HAL_Delay (100);
 	      break;
 
 	    case 2:
+#ifdef ZDBG_MSG_EN
 	      sprintf (msg_buffer, "%s\r\n", "3-Get FRAME");
-	      HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 2000);
+	      HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 200);
+#endif
 	      g_iFSMFlag = 3;
 	      break;
 
 	    case 3:
-	      recv_len = iJpegBufferSize - __HAL_DMA_GET_COUNTER(hdcmi.DMA_Handle);
+	      recv_len = SIZE_1_OF_4_WORD - __HAL_DMA_GET_COUNTER(hdcmi.DMA_Handle);
+#ifdef ZDBG_MSG_EN
 	      sprintf (msg_buffer, "4-Get IT_FRAME %d,DMA %d\r\n", iITFrameCnt, recv_len);
-	      HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 2000);
+	      HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 200);
+#endif
 	      //LED1 on.
 	      HAL_GPIO_WritePin (GPIOF, LED1_Pin, GPIO_PIN_RESET);
 	      //dump first 10 bytes data to UART3.
-	      sprintf (msg_buffer, "DATA-%08x-%08x\r\n", iJpegBuffer[0], iJpegBuffer[1]);
-	      HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 2000);
+#ifdef ZDBG_MSG_EN
+	      sprintf (msg_buffer, "DATA-%08x-%08x\r\n", frameBufferSoC[0], frameBufferSoC[1]);
+	      HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 200);
+#endif
+	      //Laser Diode Power up before Transmitting.
+	      //0 = Laser Diode Power ON.
+	      //1 = Laser Diode Power OFF.
+	      HAL_GPIO_WritePin (LD_PWR_EN_GPIO_Port, LD_PWR_EN_Pin, GPIO_PIN_RESET);
+
 	      //dump all data to UART2, transmit via Laser Diode.
 	      for (i = 0; i < recv_len; i++)
 		{
-		  HAL_UART_Transmit (&huart2, (uint8_t*) &iJpegBuffer[i], 4, 0xffffff);
+		  //HAL_UART_Transmit (&huart2, (uint8_t*) &frameBufferSoC[i], 4, 2000);
+		  HAL_UART_Transmit (&huart3, (uint8_t*) &frameBufferSoC[i], 4, 2000);
 		}
 	      //LED1 off.
 	      HAL_GPIO_WritePin (GPIOF, LED1_Pin, GPIO_PIN_SET);
@@ -312,8 +332,51 @@ main (void)
 	      break;
 
 	    case 4:
+#ifdef ZDBG_MSG_EN
 	      sprintf (msg_buffer, "%s\r\n", "5-Done");
-	      HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 2000);
+	      HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 200);
+#endif
+	      if (1)
+		{
+		  //Configuration register pointer=0x02, 16-bits.
+		  //0x1000: bit[12]=1, Temperature and Humidity are acquired in sequence, Temperature First.
+		  uint8_t HDC_config[3] =
+		    { 0x02, 0x10, 0x00 };
+		  uint8_t HDC_trig = 0x00;
+		  uint8_t HDC_data[4];
+		  float temperature,humidity;
+		  uint32_t tmpData;
+
+		  //initial I2C Slave.
+		  HAL_I2C_Master_Transmit (&hi2c2, 0x80, HDC_config, 3, 0xffffffff);
+
+		  //Trigger the measurements by executing a pointer write transaction with the address pointer set to 0x00.
+		  HAL_I2C_Master_Transmit (&hi2c2, 0x80, &HDC_trig, 1, 0xffffffff);
+
+		  //Wait for the measurements to complete.
+		  while (HAL_GPIO_ReadPin (HT_DRDYn_GPIO_Port, HT_DRDYn_Pin) == 1)
+		    {
+		    }
+		  //receive data.
+		  HAL_I2C_Master_Receive (&hi2c2, 0x80, HDC_data, 4, 0xffffffff);
+		  //dump all data to UART2, transmit via Laser Diode.
+		  HAL_UART_Transmit (&huart2, HDC_data, 4, 0xffffffff);
+#ifdef ZDBG_MSG_EN
+		  sprintf (msg_buffer, "T: %02x%02x H:%02x%02x\r\n", HDC_data[0], HDC_data[1], HDC_data[2], HDC_data[3]);
+		  HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 200);
+		  tmpData=(uint32_t)HDC_data[0]<<8|HDC_data[1];
+		  temperature=tmpData/65536.0;
+		  temperature=temperature*165.0f-40.0f;
+		  tmpData=(uint32_t)HDC_data[2]<<8|HDC_data[3];
+		  humidity=tmpData/65536.0*100.0;
+		  sprintf (msg_buffer, "Temperature:%.2f, Humidity:%.2f%%\r\n", temperature,humidity);
+		  HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 200);
+#endif
+		  //Laser Diode Power down to save energy.
+		  //0 = Laser Diode Power ON.
+		  //1 = Laser Diode Power OFF.
+		  HAL_GPIO_WritePin (LD_PWR_EN_GPIO_Port, LD_PWR_EN_Pin, GPIO_PIN_SET);
+		}
 	      HAL_Delay (100);
 	      g_iFSMFlag = 0;
 	      break;
@@ -367,6 +430,10 @@ main (void)
 	  //Digital Video Source Selection=DRC, 8-bits.
 	  uint8_t cmd_DRCSource[] =
 	    { 0xAA, 0x05, 0x01, 0x5C, 0x01, 0x02, 0x0F, 0xEB, 0xAA };
+
+	  //Stop NUC.
+	  uint8_t cmd_NUCStop[] =
+	    { 0xAA, 0x05, 0x01, 0x01, 0x01, 0x00, 0xB2, 0xEB, 0xAA };
 
 	  //LED2 on.
 	  HAL_GPIO_WritePin (GPIOF, LED2_Pin, GPIO_PIN_RESET);
@@ -424,6 +491,21 @@ main (void)
 	      HAL_UART_Receive (&huart1, rxData, sizeof(rxData), 200);
 #ifdef ZDBG_MSG_EN
 	      sprintf (msg_buffer, "LVCMOS: %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x \r\n", ///<
+		       rxData[0], rxData[1], rxData[2], rxData[3], rxData[4], ///<
+		       rxData[5], rxData[6], rxData[7], rxData[8], rxData[9]);
+	      HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 100);
+#endif
+	      HAL_Delay (100);
+	    }
+
+	  //set NUC calibration.
+	  if (HAL_UART_Transmit (&huart1, (uint8_t*) cmd_NUCStop, sizeof(cmd_NUCStop), 200) == HAL_OK)
+	    {
+	      memset (rxData, 0, sizeof(rxData));
+	      //block rx with 200ms.
+	      HAL_UART_Receive (&huart1, rxData, sizeof(rxData), 200);
+#ifdef ZDBG_MSG_EN
+	      sprintf (msg_buffer, "NUC_Stop: %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x \r\n", ///<
 		       rxData[0], rxData[1], rxData[2], rxData[3], rxData[4], ///<
 		       rxData[5], rxData[6], rxData[7], rxData[8], rxData[9]);
 	      HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 100);
@@ -578,35 +660,35 @@ main (void)
 		{
 		case 0:
 		  memcpy ((void*) (frameBufferExt + 0), (void*) frameBufferSoC, SIZE_1_OF_4_WORD * 4); //copy by bytes.
-		  for (i = 0; i < SIZE_1_OF_4_WORD; i++)
-		    {
-		      HAL_UART_Transmit (&huart3, (const uint8_t*) &frameBufferSoC[i], 4, 2000);
-		    }
-		  HAL_Delay (2000);
+//		  for (i = 0; i < SIZE_1_OF_4_WORD; i++)
+//		    {
+//		      HAL_UART_Transmit (&huart3, (const uint8_t*) &frameBufferSoC[i], 4, 5000);
+//		    }
+//		  HAL_Delay (200);
 		  break;
 		case 1:
 		  memcpy ((void*) (frameBufferExt + SIZE_1_OF_4_WORD * 1), (void*) frameBufferSoC, SIZE_1_OF_4_WORD * 4); //copy by bytes.
-		  for (i = 0; i < SIZE_1_OF_4_WORD; i++)
-		    {
-		      HAL_UART_Transmit (&huart3, (const uint8_t*) &frameBufferSoC[i], 4, 2000);
-		    }
-		  HAL_Delay (2000);
+//		  for (i = 0; i < SIZE_1_OF_4_WORD; i++)
+//		    {
+//		      HAL_UART_Transmit (&huart3, (const uint8_t*) &frameBufferSoC[i], 4, 5000);
+//		    }
+//		  HAL_Delay (200);
 		  break;
 		case 2:
 		  memcpy ((void*) (frameBufferExt + SIZE_1_OF_4_WORD * 2), (void*) frameBufferSoC, SIZE_1_OF_4_WORD * 4); //copy by bytes.
-		  for (i = 0; i < SIZE_1_OF_4_WORD; i++)
-		    {
-		      HAL_UART_Transmit (&huart3, (const uint8_t*) &frameBufferSoC[i], 4, 2000);
-		    }
-		  HAL_Delay (2000);
+//		  for (i = 0; i < SIZE_1_OF_4_WORD; i++)
+//		    {
+//		      HAL_UART_Transmit (&huart3, (const uint8_t*) &frameBufferSoC[i], 4, 5000);
+//		    }
+//		  HAL_Delay (200);
 		  break;
 		case 3:
 		  memcpy ((void*) (frameBufferExt + SIZE_1_OF_4_WORD * 3), (void*) frameBufferSoC, SIZE_1_OF_4_WORD * 4); //copy by bytes.
-		  for (i = 0; i < SIZE_1_OF_4_WORD; i++)
-		    {
-		      HAL_UART_Transmit (&huart3, (const uint8_t*) &frameBufferSoC[i], 4, 2000);
-		    }
-		  HAL_Delay (2000);
+//		  for (i = 0; i < SIZE_1_OF_4_WORD; i++)
+//		    {
+//		      HAL_UART_Transmit (&huart3, (const uint8_t*) &frameBufferSoC[i], 4, 5000);
+//		    }
+//		  HAL_Delay (200);
 		  break;
 		default:
 		  break;
@@ -632,11 +714,11 @@ main (void)
 	      sprintf (msg_buffer, "%s\r\n", "5-Done");
 	      HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 200);
 #endif
-#if   0
+#if   1
 	      //dump all data to UART2, transmit via Laser Diode.
 	      for (i = 0; i < SIZE_1_OF_4_WORD; i++)
 		{
-		  HAL_UART_Transmit (&huart3, ( const uint8_t*)&frameBufferExt[i], 4, 2000);
+		  HAL_UART_Transmit (&huart3, (const uint8_t*) &frameBufferExt[i], 4, 2000);
 		}
 	      HAL_Delay (2000);
 	      for (i = 0; i < SIZE_1_OF_4_WORD; i++)
@@ -653,8 +735,8 @@ main (void)
 		{
 		  HAL_UART_Transmit (&huart3, (const uint8_t*) &frameBufferExt[SIZE_1_OF_4_WORD * 3 + i], 4, 2000);
 		}
-#endif
 	      HAL_Delay (2000);
+#endif
 	      g_iFSMFlag = 0;
 	      break;
 
@@ -977,7 +1059,7 @@ MX_USART2_UART_Init (void)
 
   /* USER CODE END USART2_Init 1 */
   huart2.Instance = USART2;
-  huart2.Init.BaudRate = 2000000;
+  huart2.Init.BaudRate = 460800;
   huart2.Init.WordLength = UART_WORDLENGTH_8B;
   huart2.Init.StopBits = UART_STOPBITS_1;
   huart2.Init.Parity = UART_PARITY_NONE;
@@ -1177,6 +1259,12 @@ MX_GPIO_Init (void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init (GPIOB, &GPIO_InitStruct);
 
+  /*Configure GPIO pins : HT_DRDYn_Pin VER2_Pin */
+  GPIO_InitStruct.Pin = HT_DRDYn_Pin | VER2_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init (GPIOB, &GPIO_InitStruct);
+
   /*Configure GPIO pins : DAY_NIGHT_Pin VER1_Pin */
   GPIO_InitStruct.Pin = DAY_NIGHT_Pin | VER1_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
@@ -1189,12 +1277,6 @@ MX_GPIO_Init (void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init (GPIOG, &GPIO_InitStruct);
-
-  /*Configure GPIO pin : VER2_Pin */
-  GPIO_InitStruct.Pin = VER2_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init (VER2_GPIO_Port, &GPIO_InitStruct);
 
 }
 
@@ -1220,31 +1302,40 @@ HAL_DCMI_FrameEventCallback (DCMI_HandleTypeDef *hdcmi)
 void
 HAL_DCMI_VsyncEventCallback (DCMI_HandleTypeDef *hdcmi)
 {
-  if (hdcmi->Instance == DCMI)
+  if (0)
     {
-      char msg_buffer[32];
-      sprintf (msg_buffer, "%s\r\n", "VSYNCCallback");
-      HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 2000);
+      if (hdcmi->Instance == DCMI)
+	{
+	  char msg_buffer[32];
+	  sprintf (msg_buffer, "%s\r\n", "VSYNCCallback");
+	  HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 2000);
+	}
     }
 }
 void
 HAL_DCMI_LineEventCallback (DCMI_HandleTypeDef *hdcmi)
 {
-  if (hdcmi->Instance == DCMI)
+  if (0)
     {
-      char msg_buffer[32];
-      sprintf (msg_buffer, "%s\r\n", "HSYNCCallback");
-      HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 2000);
+      if (hdcmi->Instance == DCMI)
+	{
+	  char msg_buffer[32];
+	  sprintf (msg_buffer, "%s\r\n", "HSYNCCallback");
+	  HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 2000);
+	}
     }
 }
 void
 HAL_DCMI_ErrorCallback (DCMI_HandleTypeDef *hdcmi)
 {
-  if (hdcmi->Instance == DCMI)
+  if (0)
     {
-      char msg_buffer[32];
-      sprintf (msg_buffer, "%s\r\n", "DCMI_ErrorCallback");
-      HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 2000);
+      if (hdcmi->Instance == DCMI)
+	{
+	  char msg_buffer[32];
+	  sprintf (msg_buffer, "%s\r\n", "DCMI_ErrorCallback");
+	  HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 2000);
+	}
     }
 }
 /**

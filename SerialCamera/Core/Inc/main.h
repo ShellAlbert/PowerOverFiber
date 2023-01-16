@@ -69,6 +69,8 @@ void Error_Handler(void);
 #define LD_PWR_EN_GPIO_Port GPIOA
 #define SYNC_SWITCH_Pin GPIO_PIN_1
 #define SYNC_SWITCH_GPIO_Port GPIOB
+#define HT_DRDYn_Pin GPIO_PIN_12
+#define HT_DRDYn_GPIO_Port GPIOB
 #define DAY_NIGHT_Pin GPIO_PIN_8
 #define DAY_NIGHT_GPIO_Port GPIOA
 #define VER1_Pin GPIO_PIN_15
