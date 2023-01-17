@@ -241,7 +241,7 @@ main (void)
 #endif
 #endif
   //Two LEDs OFF.
-  HAL_GPIO_WritePin (GPIOF, LED1_Pin|LED2_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin (GPIOF, LED1_Pin | LED2_Pin, GPIO_PIN_SET);
 
   //read DAY_NIGHT signal.
   HAL_Delay (50);
@@ -273,6 +273,10 @@ main (void)
 
       while (1)
 	{
+	  uint8_t *pJpegData = (uint8_t*) (frameBufferSoC);
+	  uint8_t iHeadFound = 0;
+	  uint8_t iTailFound = 0;
+	  uint32_t iValidEndPosition = 0;
 	  int recv_len;
 	  switch (g_iFSMFlag)
 	    {
@@ -282,6 +286,8 @@ main (void)
 	      HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 200);
 #endif
 	      memset (frameBufferSoC, 0, SIZE_1_OF_4_WORD * 4);
+	      //LED1 on.
+	      HAL_GPIO_WritePin (GPIOF, LED1_Pin, GPIO_PIN_RESET);
 	      HAL_DCMI_Start_DMA (&hdcmi, DCMI_MODE_SNAPSHOT, (uint32_t) frameBufferSoC, SIZE_1_OF_4_WORD);
 	      g_iFSMFlag = 1;
 	      break;
@@ -308,8 +314,7 @@ main (void)
 	      sprintf (msg_buffer, "4-Get IT_FRAME %d,DMA %d\r\n", iITFrameCnt, recv_len);
 	      HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 200);
 #endif
-	      //LED1 on.
-	      HAL_GPIO_WritePin (GPIOF, LED1_Pin, GPIO_PIN_RESET);
+
 	      //dump first 10 bytes data to UART3.
 #ifdef ZDBG_MSG_EN
 	      sprintf (msg_buffer, "DATA-%08x-%08x\r\n", frameBufferSoC[0], frameBufferSoC[1]);
@@ -320,14 +325,36 @@ main (void)
 	      //1 = Laser Diode Power OFF.
 	      HAL_GPIO_WritePin (LD_PWR_EN_GPIO_Port, LD_PWR_EN_Pin, GPIO_PIN_RESET);
 
-	      //dump all data to UART2, transmit via Laser Diode.
-	      for (i = 0; i < recv_len; i++)
+	      //frame head FF D8, frame end FF D9.
+	      //loop to find the frame end to skip the last ZEROs.
+	      for (i = 0; i < recv_len * 4; i++)
 		{
-		  //HAL_UART_Transmit (&huart2, (uint8_t*) &frameBufferSoC[i], 4, 2000);
-		  HAL_UART_Transmit (&huart3, (uint8_t*) &frameBufferSoC[i], 4, 2000);
+		  if (pJpegData[i + 0] == 0xFF && pJpegData[i + 1] == 0xD8)
+		    {
+		      iHeadFound = 1;
+		    }
+		  if (pJpegData[i + 0] == 0xFF && pJpegData[i + 1] == 0xD9 && iHeadFound)
+		    {
+		      iTailFound = 1;
+		    }
+		  if (iHeadFound && iTailFound)
+		    {
+		      iValidEndPosition = i + 2;
+		      break;
+		    }
 		}
-	      //LED1 off.
-	      HAL_GPIO_WritePin (GPIOF, LED1_Pin, GPIO_PIN_SET);
+
+	      //dump all data to UART2, transmit via Laser Diode.
+	      if (iHeadFound && iTailFound)
+		{
+		  HAL_UART_Transmit (&huart3, (uint8_t*) &iValidEndPosition, sizeof(iValidEndPosition) , 2000);
+		  for (i = 0; i < iValidEndPosition; i++)
+		    {
+		      //HAL_UART_Transmit (&huart2, (uint8_t*) &frameBufferSoC[i], 4, 2000);
+		      HAL_UART_Transmit (&huart3, (uint8_t*) &pJpegData[i], 1, 2000);
+		    }
+		}
+
 	      g_iFSMFlag = 4;
 	      break;
 
@@ -344,8 +371,9 @@ main (void)
 		    { 0x02, 0x10, 0x00 };
 		  uint8_t HDC_trig = 0x00;
 		  uint8_t HDC_data[4];
-		  float temperature,humidity;
+		  float temperature, humidity;
 		  uint32_t tmpData;
+		  uint32_t dataSize;
 
 		  //initial I2C Slave.
 		  HAL_I2C_Master_Transmit (&hi2c2, 0x80, HDC_config, 3, 0xffffffff);
@@ -361,21 +389,27 @@ main (void)
 		  HAL_I2C_Master_Receive (&hi2c2, 0x80, HDC_data, 4, 0xffffffff);
 		  //dump all data to UART2, transmit via Laser Diode.
 		  HAL_UART_Transmit (&huart2, HDC_data, 4, 0xffffffff);
+		  //4 bytes HT Data Size.
+		  dataSize=4;
+		  HAL_UART_Transmit (&huart3, (const uint8_t*)&dataSize, 4, 0xffffffff);
+		  HAL_UART_Transmit (&huart3, HDC_data, 4, 0xffffffff);
 #ifdef ZDBG_MSG_EN
 		  sprintf (msg_buffer, "T: %02x%02x H:%02x%02x\r\n", HDC_data[0], HDC_data[1], HDC_data[2], HDC_data[3]);
 		  HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 200);
-		  tmpData=(uint32_t)HDC_data[0]<<8|HDC_data[1];
-		  temperature=tmpData/65536.0;
-		  temperature=temperature*165.0f-40.0f;
-		  tmpData=(uint32_t)HDC_data[2]<<8|HDC_data[3];
-		  humidity=tmpData/65536.0*100.0;
-		  sprintf (msg_buffer, "Temperature:%.2f, Humidity:%.2f%%\r\n", temperature,humidity);
+		  tmpData = (uint32_t) HDC_data[0] << 8 | HDC_data[1];
+		  temperature = tmpData / 65536.0;
+		  temperature = temperature * 165.0f - 40.0f;
+		  tmpData = (uint32_t) HDC_data[2] << 8 | HDC_data[3];
+		  humidity = tmpData / 65536.0 * 100.0;
+		  sprintf (msg_buffer, "Temperature:%.2f, Humidity:%.2f%%\r\n", temperature, humidity);
 		  HAL_UART_Transmit (&huart3, (uint8_t*) msg_buffer, strlen (msg_buffer), 200);
 #endif
 		  //Laser Diode Power down to save energy.
 		  //0 = Laser Diode Power ON.
 		  //1 = Laser Diode Power OFF.
 		  HAL_GPIO_WritePin (LD_PWR_EN_GPIO_Port, LD_PWR_EN_Pin, GPIO_PIN_SET);
+		  //LED1 off.
+		  HAL_GPIO_WritePin (GPIOF, LED1_Pin, GPIO_PIN_SET);
 		}
 	      HAL_Delay (100);
 	      g_iFSMFlag = 0;
