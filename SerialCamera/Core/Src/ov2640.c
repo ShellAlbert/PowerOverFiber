@@ -27,6 +27,7 @@
  */
 
 #include "ov2640.h"
+//#define OV2640_DEBUG 1
 const unsigned char ZSY_OV2640_YUV422[][2] =
   {
     { 0xFF, 0x00 }, ///< bit[0]=0, DSP address.
@@ -265,7 +266,7 @@ const uint8_t zsy_ov2640_sxga_init_reg_tbl[][2]=
 	{0x05, 0x00,},
 };
 extern void
-uart_printf (const char *fmt, ...);
+ZUART_Printf(const char *fmt, ...);
 /**
  * Code debugging option
  */
@@ -1074,18 +1075,18 @@ OV2640_Init (I2C_HandleTypeDef *p_hi2c, DCMI_HandleTypeDef *p_hdcmi)
   SCCB_Write (0x12, 0x80);
   HAL_Delay (100);
 
-#ifdef DEBUG
+#ifdef OV2640_DEBUG
   uint8_t idHigh, idLow;
 
   //1. Read Manufacture ID.
   SCCB_Read (0x1c, &idHigh);  // 0x7F.
   SCCB_Read (0x1d, &idLow);  // 0xA2.
-  uart_printf ("MID: 0x%x - 0x%x (Default: 0x7F - 0xA2)\r\n", idHigh, idLow);
+  ZUART_Printf ("MID: 0x%x - 0x%x (Default: 0x7F - 0xA2)\r\n", idHigh, idLow);
 
   //2. Read production ID.
   SCCB_Read (0x0a, &idHigh);  // pid value is 0x26
   SCCB_Read (0x0b, &idLow);  // ver value is 0x42
-  uart_printf ("PID: 0x%x - 0x%x (Default: 0x26 - 0x42)\r\n", idHigh, idLow);
+  ZUART_Printf ("PID: 0x%x - 0x%x (Default: 0x26 - 0x42)\r\n", idHigh, idLow);
 #endif
 
   // Stop DCMI to clear buffer.
@@ -1163,14 +1164,15 @@ OV2640_ResolutionOptions (uint16_t opt)
 void
 OV2640_ResolutionConfiguration (short opt)
 {
-  uart_printf ("Starting resolution choice \r\n");
-
+#ifdef OV2640_DEBUG
+  ZUART_Printf ("Starting resolution choice \r\n");
+#endif
   OV2640_Configuration (OV2640_JPEG_INIT);
   OV2640_Configuration (OV2640_YUV422);
   OV2640_Configuration (OV2640_JPEG);
-  HAL_Delay (30);
+  HAL_Delay (50);
   SCCB_Write (0xff, 0x01);
-  HAL_Delay (30);
+  HAL_Delay (50);
   SCCB_Write (0x15, 0x00);
 
   switch (opt)
@@ -1197,8 +1199,9 @@ OV2640_ResolutionConfiguration (short opt)
       OV2640_Configuration (OV2640_320x240_JPEG);
       break;
     }
-
-  uart_printf ("Finalize configuration \r\n");
+#ifdef OV2640_DEBUG
+  ZUART_Printf ("Finalize configuration \r\n");
+#endif
 }
 
 /**
@@ -1220,14 +1223,16 @@ OV2640_Configuration (const unsigned char arr[][2])
 	}
       SCCB_Read (reg_addr, &data_read);
       SCCB_Write (reg_addr, data);
-
-      uart_printf ("SCCB write: [0x%x]: 0x%x changed to 0x%x\r\n", reg_addr, data_read, data);
-
-      HAL_Delay (30);
+#ifdef OV2640_DEBUG
+      ZUART_Printf ("SCCB write: [0x%x]: 0x%x changed to 0x%x\r\n", reg_addr, data_read, data);
+#endif
+      HAL_Delay (50);
       SCCB_Read (reg_addr, &data_read);
       if (data != data_read)
 	{
-	  uart_printf ("SCCB write failure: [0x%x] expect: 0x%x read-back:\r\n", reg_addr, data, data_read);
+#ifdef OV2640_DEBUG
+	  ZUART_Printf ("SCCB write failure: [0x%x] expect: 0x%x read-back:\r\n", reg_addr, data, data_read);
+#endif
 	}
       i++;
     }
@@ -1240,8 +1245,9 @@ OV2640_Configuration (const unsigned char arr[][2])
 void
 OV2640_SpecialEffect (short specialEffect)
 {
-  uart_printf ("Special effect value:%d\r\n", specialEffect);
-
+#ifdef OV2640_DEBUG
+  ZUART_Printf ("Special effect value:%d\r\n", specialEffect);
+#endif
   if (specialEffect == 0)
     {
       OV2640_Configuration (OV2640_SPECIAL_EFFECTS_ANTIQUE);
@@ -1282,8 +1288,9 @@ OV2640_SpecialEffect (short specialEffect)
 void
 OV2640_AdvancedWhiteBalance ()
 {
-  uart_printf ("Enable simple white balance mode\r\n");
-
+#ifdef OV2640_DEBUG
+  ZUART_Printf ("Enable simple white balance mode\r\n");
+#endif
   SCCB_Write (0xff, 0x00);
   HAL_Delay (1);
   SCCB_Write (0xc7, 0x00);
@@ -1295,8 +1302,8 @@ OV2640_AdvancedWhiteBalance ()
 void
 OV2640_SimpleWhiteBalance ()
 {
-#ifdef DEBUG
-  uart_printf ("Enable simple white balance mode\r\n");
+#ifdef OV2640_DEBUG
+  ZUART_Printf ("Enable simple white balance mode\r\n");
 #endif
   SCCB_Write (0xff, 0x00);
   HAL_Delay (1);
@@ -1310,8 +1317,8 @@ OV2640_SimpleWhiteBalance ()
 void
 OV2640_Brightness (short brightness)
 {
-#ifdef DEBUG
-  uart_printf ("Brightness value:%d\r\n", brightness);
+#ifdef OV2640_DEBUG
+  ZUART_Printf ("Brightness value:%d\r\n", brightness);
 #endif
 
   if (brightness == 0)
@@ -1343,8 +1350,8 @@ OV2640_Brightness (short brightness)
 void
 OV2640_LightMode (short lightMode)
 {
-#ifdef DEBUG
-  uart_printf ("Light mode value:%d\r\n", lightMode);
+#ifdef OV2640_DEBUG
+  ZUART_Printf ("Light mode value:%d\r\n", lightMode);
 #endif
 
   if (lightMode == 0)
@@ -1375,8 +1382,8 @@ OV2640_LightMode (short lightMode)
 void
 OV2640_Saturation (short saturation)
 {
-#ifdef DEBUG
-  uart_printf ("Saturation value:%d\r\n", saturation);
+#ifdef OV2640_DEBUG
+  ZUART_Printf ("Saturation value:%d\r\n", saturation);
 #endif
 
   if (saturation == 0)
@@ -1408,8 +1415,8 @@ OV2640_Saturation (short saturation)
 void
 OV2640_Contrast (short contrast)
 {
-#ifdef DEBUG
-  uart_printf ("Contrast value:%d\r\n", contrast);
+#ifdef OV2640_DEBUG
+  ZUART_Printf ("Contrast value:%d\r\n", contrast);
 #endif
 
   if (contrast == 0)
@@ -1440,8 +1447,9 @@ OV2640_Contrast (short contrast)
 void
 OV2640_StopDCMI (void)
 {
-  uart_printf ("DCMI has been stopped \r\n");
-
+#ifdef OV2640_DEBUG
+  ZUART_Printf ("DCMI has been stopped \r\n");
+#endif
   HAL_DCMI_Stop (phdcmi);
   HAL_Delay (30); // If you get a DCMI error (data is not received), increase value to 30.
 }
