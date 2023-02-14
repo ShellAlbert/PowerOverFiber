@@ -30,7 +30,7 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-#define ZDBG_MSG_EN 1
+//#define ZDBG_MSG_EN 1
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -190,17 +190,16 @@ main (void)
   /* Initialize all configured peripherals */
   //MX_USART1_UART_Init ();
   MX_USART2_UART_Init ();
-  MX_USART3_UART_Init ();
+  //MX_USART3_UART_Init ();
   MX_GPIO_Init ();
   MX_DMA_Init ();
   MX_DCMI_Init ();
   MX_I2C1_Init ();
   MX_I2C2_Init ();
-  MX_TIM1_Init ();
+  //MX_TIM1_Init ();
   //MX_FMC_Init ();
   /* USER CODE BEGIN 2 */
   //ZUART_Printf("SerialCAM built on %s %s\r\n", __DATE__, __TIME__);
-
   /* External SRAM write-read test successfully!*/
 #if 0
   //clear RAM to zero.
@@ -250,7 +249,6 @@ main (void)
 
       //Enable CAM1 power.
       HAL_GPIO_WritePin (GPIOG, CAM1_PWR_EN_Pin, GPIO_PIN_SET);
-
       //SYNC_SWITCH=0, CAM1 Signal Pass.
       //BUS_SWITCH=0, CAM1 Signal Pass.
       HAL_GPIO_WritePin (GPIOB, SYNC_SWITCH_Pin | BUS_SWITCH_Pin, GPIO_PIN_RESET);
@@ -258,9 +256,10 @@ main (void)
 
       //Initial OV2640 registers via I2C.
       OV2640_Init (&hi2c1, &hdcmi);
-      HAL_Delay (10);
+      //must delay X seconds to bypass white-balance images to get normal images.
+      HAL_Delay (2500);
       //OV2640_ResolutionOptions (imgRes);
-      //HAL_Delay (100);
+      //HAL_Delay (10);
 
       /* Disable unwanted HSYNC (IT_LINE) / VSYNC (IT_VSYNC) interrupts */
       __HAL_DCMI_DISABLE_IT(&hdcmi, DCMI_IT_LINE | DCMI_IT_VSYNC|DCMI_IT_ERR|DCMI_IT_OVR);
@@ -276,8 +275,8 @@ main (void)
 	  switch (g_iFSMFlag)
 	    {
 	    case 0:
-	      ZUART_Printf("1-Start DMA\r\n");
-	      memset (frameBufferSoC, 0, SIZE_1_OF_4_WORD * 4);
+	      //ZUART_Printf ("1-Start DMA\r\n");
+	      //memset (frameBufferSoC, 0, SIZE_1_OF_4_WORD * 4);
 	      //LED1 on.
 	      //HAL_GPIO_WritePin (GPIOF, LED1_Pin, GPIO_PIN_RESET);
 	      HAL_DCMI_Start_DMA (&hdcmi, DCMI_MODE_SNAPSHOT, (uint32_t) frameBufferSoC, SIZE_1_OF_4_WORD);
@@ -291,6 +290,8 @@ main (void)
 
 	    case 2:
 	      //ZUART_Printf("3-Get FRAME\r\n");
+	      //Disable CAM1 power.
+	      HAL_GPIO_WritePin (GPIOG, CAM1_PWR_EN_Pin, GPIO_PIN_RESET);
 	      g_iFSMFlag = 3;
 	      break;
 
@@ -301,11 +302,6 @@ main (void)
 	      //dump first 10 bytes data to UART3.
 	      //ZUART_Printf("DATA-%08x-%08x\r\n", frameBufferSoC[0], frameBufferSoC[1]);
 
-	      //Laser Diode Power up before Transmitting.
-	      //0 = Laser Diode Power ON.
-	      //1 = Laser Diode Power OFF.
-	      HAL_GPIO_WritePin (LD_PWR_EN_GPIO_Port, LD_PWR_EN_Pin, GPIO_PIN_RESET);
-
 	      //frame head FF D8, frame end FF D9.
 	      //loop to find the frame end to skip the last ZEROs.
 	      for (i = 0; i < recv_len * 4; i++)
@@ -313,14 +309,16 @@ main (void)
 		  if (pJpegData[i + 0] == 0xFF && pJpegData[i + 1] == 0xD8)
 		    {
 		      iHeadFound = 1;
+		      break;
 		    }
-		  if (pJpegData[i + 0] == 0xFF && pJpegData[i + 1] == 0xD9 && iHeadFound)
+		}
+	      for (i = recv_len * 4; i > 0; i--)
+		{
+		  if (pJpegData[i - 1] == 0xD9 && pJpegData[i - 2] == 0xFF)
 		    {
+		      uint32_t bypass = recv_len * 4 - i;
 		      iTailFound = 1;
-		    }
-		  if (iHeadFound && iTailFound)
-		    {
-		      iValidEndPosition = i + 2;
+		      iValidEndPosition = recv_len * 4 - bypass;
 		      break;
 		    }
 		}
@@ -328,6 +326,12 @@ main (void)
 	      //dump all data to UART2, transmit via Laser Diode.
 	      if (iHeadFound && iTailFound)
 		{
+		  //Laser Diode Power up before Transmitting.
+		  //0 = Laser Diode Power ON.
+		  //1 = Laser Diode Power OFF.
+		  HAL_GPIO_WritePin (LD_PWR_EN_GPIO_Port, LD_PWR_EN_Pin, GPIO_PIN_RESET);
+		  HAL_Delay (5);
+
 		  //Dump data to UART3 for debug.
 		  //frame structure: package size+package data.
 		  //HAL_UART_Transmit (&huart3, (uint8_t*) &iValidEndPosition, sizeof(iValidEndPosition) , 0xFFFFFFFF); //package size.
@@ -338,9 +342,11 @@ main (void)
 		      //UART3 is Debug Message Output.
 		      //HAL_UART_Transmit (&huart3, (uint8_t*) &pJpegData[i], 1, 0xFFFFFFFF); //package data.
 		    }
+		  //Laser Diode Power down to save energy.
+		  //0 = Laser Diode Power ON.
+		  //1 = Laser Diode Power OFF.
+		  HAL_GPIO_WritePin (LD_PWR_EN_GPIO_Port, LD_PWR_EN_Pin, GPIO_PIN_SET);
 		}
-	      //Disable CAM1 power.
-	      HAL_GPIO_WritePin (GPIOG, CAM1_PWR_EN_Pin, GPIO_PIN_RESET);
 	      g_iFSMFlag = 4;
 	      break;
 
@@ -369,39 +375,47 @@ main (void)
 		    }
 		  //receive data.
 		  HAL_I2C_Master_Receive (&hi2c2, 0x80, HDC_data, 4, 0xFFFFFFFF);
+
+		  //Laser Diode Power up before Transmitting.
+		  //0 = Laser Diode Power ON.
+		  //1 = Laser Diode Power OFF.
+		  HAL_GPIO_WritePin (LD_PWR_EN_GPIO_Port, LD_PWR_EN_Pin, GPIO_PIN_RESET);
+		  HAL_Delay (5);
+
 		  //dump all data to UART2, transmit via Laser Diode.
 		  HAL_UART_Transmit (&huart2, HDC_data, 4, 0xFFFFFFFF);
+
+		  //Laser Diode Power down to save energy.
+		  //0 = Laser Diode Power ON.
+		  //1 = Laser Diode Power OFF.
+		  HAL_GPIO_WritePin (LD_PWR_EN_GPIO_Port, LD_PWR_EN_Pin, GPIO_PIN_SET);
 
 		  //dump data to UART3, frame structure: package size+package data.
 //		  dataSize=4;  //package size=4 bytes.
 //		  HAL_UART_Transmit (&huart3, (const uint8_t*)&dataSize, 4, 0xffffffff);
 //		  //package data.
 //		  HAL_UART_Transmit (&huart3, HDC_data, 4, 0xffffffff);
-#if 1 //Disable to Save Energy.
+#if 0 //Disable to Save Energy.
 		  //ZUART_Printf("T: %02x%02x H:%02x%02x\r\n", HDC_data[0], HDC_data[1], HDC_data[2], HDC_data[3]);
 		  tmpData = (uint32_t) HDC_data[0] << 8 | HDC_data[1];
 		  temperature = tmpData / 65536.0;
 		  temperature = temperature * 165.0f - 40.0f;
 		  tmpData = (uint32_t) HDC_data[2] << 8 | HDC_data[3];
 		  humidity = tmpData / 65536.0 * 100.0;
-		  ZUART_Printf("Temperature:%.2f, Humidity:%.2f%%\r\n", temperature, humidity);
+		  //ZUART_Printf ("Temperature:%.2f, Humidity:%.2f%%\r\n", temperature, humidity);
 #endif
-		  //Laser Diode Power down to save energy.
-		  //0 = Laser Diode Power ON.
-		  //1 = Laser Diode Power OFF.
-		  HAL_GPIO_WritePin (LD_PWR_EN_GPIO_Port, LD_PWR_EN_Pin, GPIO_PIN_SET);
 		  //LED1 off.
 		  //HAL_GPIO_WritePin (GPIOF, LED1_Pin, GPIO_PIN_SET);
 		}
-	      ZUART_Printf("5-Done\r\n");
+	      //ZUART_Printf ("5-Done\r\n");
 	      //HAL_PWR_EnterSTANDBYMode();
 	      //dead loop to consume power till voltage drops down below 2.489V to reset MCU.
-	      while(1)
+	      while (1)
 		{
-		    HAL_GPIO_WritePin (GPIOF, LED1_Pin, GPIO_PIN_RESET);
-		    HAL_Delay(100);
-		    HAL_GPIO_WritePin (GPIOF, LED1_Pin, GPIO_PIN_SET);
-		    HAL_Delay(100);
+		  HAL_GPIO_WritePin (GPIOF, LED1_Pin, GPIO_PIN_RESET);
+		  HAL_Delay (100);
+		  HAL_GPIO_WritePin (GPIOF, LED1_Pin, GPIO_PIN_SET);
+		  HAL_Delay (100);
 		}
 	      g_iFSMFlag = 0;
 	      break;
@@ -417,7 +431,7 @@ main (void)
       uint32_t i;
       uint8_t iPieces = 0;
 
-      ZUART_Printf("Night - Infrared\r\n");
+      ZUART_Printf ("Night - Infrared\r\n");
 
       //Enable CAM2 Power.
       HAL_GPIO_WritePin (GPIOG, CAM2_PWR_EN_Pin, GPIO_PIN_SET);
@@ -465,9 +479,9 @@ main (void)
 	      memset (rxData, 0, sizeof(rxData));
 	      //block rx with 200ms.
 	      HAL_UART_Receive (&huart1, rxData, sizeof(rxData), 200);
-	      ZUART_Printf("FPA_Temperature: %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x \r\n", ///<
-		       rxData[0], rxData[1], rxData[2], rxData[3], rxData[4], ///<
-		       rxData[5], rxData[6], rxData[7], rxData[8], rxData[9]);
+	      ZUART_Printf ("FPA_Temperature: %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x \r\n", ///<
+		  rxData[0], rxData[1], rxData[2], rxData[3], rxData[4], ///<
+		  rxData[5], rxData[6], rxData[7], rxData[8], rxData[9]);
 	      HAL_Delay (100);
 	    }
 
@@ -477,9 +491,9 @@ main (void)
 	      memset (rxData, 0, sizeof(rxData));
 	      //block rx with 200ms.
 	      HAL_UART_Receive (&huart1, rxData, sizeof(rxData), 200);
-	      ZUART_Printf("Chip_Temperature: %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x \r\n", ///<
-		       rxData[0], rxData[1], rxData[2], rxData[3], rxData[4], ///<
-		       rxData[5], rxData[6], rxData[7], rxData[8], rxData[9]);
+	      ZUART_Printf ("Chip_Temperature: %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x \r\n", ///<
+		  rxData[0], rxData[1], rxData[2], rxData[3], rxData[4], ///<
+		  rxData[5], rxData[6], rxData[7], rxData[8], rxData[9]);
 	      HAL_Delay (100);
 	    }
 
@@ -490,9 +504,9 @@ main (void)
 	      memset (rxData, 0, sizeof(rxData));
 	      //block rx with 200ms.
 	      HAL_UART_Receive (&huart1, rxData, sizeof(rxData), 200);
-	      ZUART_Printf("dvSource: %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x \r\n", ///<
-		       rxData[0], rxData[1], rxData[2], rxData[3], rxData[4], ///<
-		       rxData[5], rxData[6], rxData[7], rxData[8], rxData[9]);
+	      ZUART_Printf ("dvSource: %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x \r\n", ///<
+		  rxData[0], rxData[1], rxData[2], rxData[3], rxData[4], ///<
+		  rxData[5], rxData[6], rxData[7], rxData[8], rxData[9]);
 	      HAL_Delay (100);
 	    }
 
@@ -502,9 +516,9 @@ main (void)
 	      memset (rxData, 0, sizeof(rxData));
 	      //block rx with 200ms.
 	      HAL_UART_Receive (&huart1, rxData, sizeof(rxData), 200);
-	      ZUART_Printf("LVCMOS: %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x \r\n", ///<
-		       rxData[0], rxData[1], rxData[2], rxData[3], rxData[4], ///<
-		       rxData[5], rxData[6], rxData[7], rxData[8], rxData[9]);
+	      ZUART_Printf ("LVCMOS: %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x \r\n", ///<
+		  rxData[0], rxData[1], rxData[2], rxData[3], rxData[4], ///<
+		  rxData[5], rxData[6], rxData[7], rxData[8], rxData[9]);
 	      HAL_Delay (100);
 	    }
 
@@ -514,9 +528,9 @@ main (void)
 	      memset (rxData, 0, sizeof(rxData));
 	      //block rx with 200ms.
 	      HAL_UART_Receive (&huart1, rxData, sizeof(rxData), 200);
-	      ZUART_Printf("NUC_Stop: %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x \r\n", ///<
-		       rxData[0], rxData[1], rxData[2], rxData[3], rxData[4], ///<
-		       rxData[5], rxData[6], rxData[7], rxData[8], rxData[9]);
+	      ZUART_Printf ("NUC_Stop: %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x \r\n", ///<
+		  rxData[0], rxData[1], rxData[2], rxData[3], rxData[4], ///<
+		  rxData[5], rxData[6], rxData[7], rxData[8], rxData[9]);
 	      HAL_Delay (100);
 	    }
 
@@ -535,7 +549,7 @@ main (void)
 	  switch (g_iFSMFlag)
 	    {
 	    case 0:
-	      ZUART_Printf("1-Start DMA\r\n");
+	      ZUART_Printf ("1-Start DMA\r\n");
 	      // 65535 (0xFFFF is the DMA maximum transfer length).
 	      //(640*512*16bits)/8bits=655360bytes=//4bytes(int)=163840(int)
 	      //163840(int)/65535(int)=2.5 times.
@@ -629,23 +643,23 @@ main (void)
 	      break;
 
 	    case 1:
-	      ZUART_Printf("2-Waiting IT_FRAME...\r\n");
+	      ZUART_Printf ("2-Waiting IT_FRAME...\r\n");
 	      HAL_Delay (100);
 	      break;
 
 	    case 2:
-	      ZUART_Printf("3-Get FRAME\r\n");
+	      ZUART_Printf ("3-Get FRAME\r\n");
 	      g_iFSMFlag = 3;
 	      break;
 
 	    case 3:
 	      remain_len = __HAL_DMA_GET_COUNTER(hdcmi.DMA_Handle);
 	      recv_len = (SIZE_1_OF_4_WORD + 128) - remain_len;
-	      ZUART_Printf("4-Get IT_FRAME %d, DMA Transfered:%d\r\n", iITFrameCnt, recv_len);
+	      ZUART_Printf ("4-Get IT_FRAME %d, DMA Transfered:%d\r\n", iITFrameCnt, recv_len);
 	      //LED2 on.
 	      HAL_GPIO_WritePin (GPIOF, LED2_Pin, GPIO_PIN_RESET);
 	      //dump first 10 bytes data to UART3.
-	      ZUART_Printf("DATA-%08x-%08x\r\n", frameBufferSoC[0], frameBufferSoC[1]);
+	      ZUART_Printf ("DATA-%08x-%08x\r\n", frameBufferSoC[0], frameBufferSoC[1]);
 
 	      //move data from SoC RAM to External RAM.
 	      switch (iPieces)
@@ -702,7 +716,7 @@ main (void)
 	      break;
 
 	    case 4:
-	      ZUART_Printf("5-Done\r\n");
+	      ZUART_Printf ("5-Done\r\n");
 #if   1
 	      //dump all data to UART2, transmit via Laser Diode.
 	      for (i = 0; i < SIZE_1_OF_4_WORD; i++)
@@ -741,7 +755,7 @@ main (void)
   /* USER CODE BEGIN WHILE */
   while (1)
     {
-      ZUART_Printf("App Overflow Here!\r\n");
+      ZUART_Printf ("App Overflow Here!\r\n");
 
       //LED1 and LED2 on.
       HAL_GPIO_WritePin (GPIOF, LED1_Pin | LED2_Pin, GPIO_PIN_RESET);
@@ -1295,7 +1309,7 @@ HAL_DCMI_VsyncEventCallback (DCMI_HandleTypeDef *hdcmi)
     {
       if (hdcmi->Instance == DCMI)
 	{
-	  ZUART_Printf("VSYNCCallback\r\n");
+	  ZUART_Printf ("VSYNCCallback\r\n");
 	}
     }
 }
@@ -1306,7 +1320,7 @@ HAL_DCMI_LineEventCallback (DCMI_HandleTypeDef *hdcmi)
     {
       if (hdcmi->Instance == DCMI)
 	{
-	  ZUART_Printf("HSYNCCallback\r\n");
+	  ZUART_Printf ("HSYNCCallback\r\n");
 	}
     }
 }
@@ -1317,7 +1331,7 @@ HAL_DCMI_ErrorCallback (DCMI_HandleTypeDef *hdcmi)
     {
       if (hdcmi->Instance == DCMI)
 	{
-	  ZUART_Printf("DCMI_ErrorCallback\r\n");
+	  ZUART_Printf ("DCMI_ErrorCallback\r\n");
 	}
     }
 }
